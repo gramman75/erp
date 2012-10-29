@@ -1,0 +1,25 @@
+{% extends 'common/base.html' %}
+
+{% block title %}
+	User Utilization
+{% endblock %}
+
+
+{% block content %}
+	<form action="/erp/utilization/userCount/" method="post"> 
+		Year <input type="text" name="year">
+		<input type="submit">
+	</form>
+	<table border ="1">
+		<TR>
+			<TH> User Name</TH>
+			<TH> Description </TH>
+		</TR>
+	{% for user in users %}
+		<tr>
+			<td>{{ user.user_name }}</td>
+			<td>{{ user.description }}</td>
+		</tr>		
+	{% endfor %}
+	</table>
+{% endblock %}
