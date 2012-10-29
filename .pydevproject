@@ -13,6 +13,7 @@
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
 <path>/erp</path>
 </pydev_pathproperty>
+
 <pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
 <path>/Library/Python/2.7/site-packages/django</path>
 </pydev_pathproperty>

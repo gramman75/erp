@@ -1,7 +1,7 @@
 # -*- encoding:utf-8 -*-
 from django.db import models
-# Create your models here.
 
+# Create your models here.
 class Department(models.Model):
     '''
     ERP 부서 정보 
