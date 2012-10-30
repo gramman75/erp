@@ -19,13 +19,20 @@ def util_user_search(request):
     return render_to_response('userCount/user_search.html')
 
 def util_user_result(request):
-    users =''
+    monthCount = {}
+    result = {}
     if 'year' in request.POST and request.POST['year']:
         year = request.POST['year']
         
         users = User.objects.all()
-        
-    return render_to_response('userCount/user_result.html',{'users' : users})
+        for user in users:
+            for i in range(1,13):
+                userCount = UserLogin.objects.filter(user_id__exact=user, year__exact=year, month__exact=i).count()
+                monthCount[i] = userCount   
+            result[user.user_name] = monthCount
+            
+    return render_to_response('userCount/user_result.html',{'result' : result,
+                                                            'month' : range(1,13)})
         
     
         
