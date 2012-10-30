@@ -1,0 +1,8 @@
+{% extends "common/search_base.html" %}
+{% block search %}
+	<form method = "post" action="/erp/util/user/result/" target="result">
+		Year <input type = "text" name="year" />
+		<input type="submit" onclick="alter('aaa');"/>
+	</form>
+
+{% endblock %}
