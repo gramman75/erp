@@ -21,8 +21,13 @@
 	float : left;	
 }
 
-table {	
-	border : "1";
+.result {
+	width : 600px;
+	height :500px;	
+}
+
+.result_table {	
+	border : 1;
 	backgroud-color : blue;
 }
 

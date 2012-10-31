@@ -1,0 +1,45 @@
+ # data file을 csv, utf-8로 저장
+ 
+ load data infile 'd:\\project\\test_data\\users.csv'
+ into TABLE erp.xxsm_users_v
+ fields terminated by ','
+ lines terminated by '\r\n';
+ 
+# 부서조회 쿼리
+SELECT b.flex_value, b.description
+FROM fnd_flex_value_sets a
+    , fnd_flex_values_vl b
+WHERE a.flex_value_set_name = 'LSIS_KR_GL_COSTCENTER'
+AND   a.flex_value_set_id = b.flex_value_set_id;
+
+# Location조회 쿼리
+SELECT b.flex_value, b.description
+FROM fnd_flex_value_sets a
+    , fnd_flex_values_vl b
+WHERE a.flex_value_set_name = 'LSIS_KR_GL_PHYSICAL_LOCATION'
+AND   a.flex_value_set_id = b.flex_value_set_id;
+
+ #사용자 조회 쿼리
+SELECT fu.user_name, papf.full_name, ffv_d.FLEX_VALUE, ffv_l.FLEX_VALUE, 'Y', fu.end_date
+FROM per_all_people_f papf,
+     fnd_flex_value_sets ffvs_d,
+     fnd_flex_values_vl ffv_d,
+     fnd_flex_value_sets ffvs_l,
+     fnd_flex_values_vl ffv_l,
+     fnd_user fu 
+WHERE ffvs_d.flex_value_set_name = 'LSIS_KR_GL_COSTCENTER'
+AND   ffvs_d.flex_value_set_id = ffv_d.FLEX_VALUE_SET_ID
+AND   ffvs_l.flex_value_set_name = 'LSIS_KR_GL_PHYSICAL_LOCATION'
+AND   ffvs_l.flex_value_set_id = ffv_l.FLEX_VALUE_SET_ID
+AND   papf.attribute2 = ffv_d.FLEX_VALUE
+AND   ffv_d.attribute1 = ffv_l.FLEX_VALUE
+AND   papf.person_id = fu.employee_id;
+
+ load data infile 'd:\\project\\test_data\\users.txt'
+ into TABLE erp.xxsm_users_v(id, user_name,description,department_code_id, location_code_id,enable,inactive_date)
+ fields terminated by '\t'
+ lines terminated by '\r\n';
+ 
+ load data infile 'd:\\project\\test_data\\users.txt'
+ into TABLE erp.xxsm_users_v
+ ignore 1 lines;

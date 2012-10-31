@@ -1,6 +1,6 @@
 {% extends "common/result_base.html" %}
 {% block result %}
-<table>
+<table class="result_table">
 		<tr>
 			<th>User Name</th>
 			{% for i in month %}
@@ -9,7 +9,7 @@
 		</tr>
 		{% for key, value in result.items %}
 		<tr>
-			<td>{{ key }}</td>			
+			
 			{% for count in value.values %}
 				<td>{{ count }}</td>			
 			{% endfor %}
