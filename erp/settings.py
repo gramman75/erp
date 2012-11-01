@@ -3,6 +3,7 @@ import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+DJANGO_TOOLBAR = False
 
 PROJECT_DIR = os.path.dirname(__file__)
 
@@ -159,7 +160,7 @@ LOGGING = {
 }
 
 
-if DEBUG:
+if DJANGO_TOOLBAR:
     INTERNAL_IPS = ('127.0.0.1',)
     MIDDLEWARE_CLASSES += (
         'debug_toolbar.middleware.DebugToolbarMiddleware',

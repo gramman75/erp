@@ -2,15 +2,16 @@
 <html>
 	<head>
 		<Title> User List</Title>
+		{% include 'common/media.html' %}
 	</head>
 
 	<body>
 		<div class="search">
-			<iframe src ="/erp/util/user/search" width="100%" height="50" frameborder="0"></iframe>
+			<iframe src ="/erp/util/user/search" scrolling="no" height="50" width="750" frameborder="0">></iframe>
 		</div>
-		<div class="line" style = "background-color; block; width :500px; height :2px"></div>
-		<div class="result" style="width : 1000px; height : 500px; ">
-			<iframe name="result" src ="/erp/util/user/result" width="100%" height="500%" frameborder="0"></iframe>
+		<div class="line" style = "background-color; block; width :750px; height :2px" frameborder="0"></div>
+		<div class="result">
+			<iframe name="result" src ="/erp/util/user/result" width = "750" height ="650" frameborder="0" ></iframe>
 		</div>
 		
 	</body>
