@@ -7,3 +7,6 @@ def home(request):
 
 def hello(request):
     return HttpResponse('hello')
+
+def test(request):
+    return render_to_response('common/test.html')

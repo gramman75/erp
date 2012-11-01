@@ -41,7 +41,7 @@
 		
 }
 
-.result_table {	
+body table.result_table {	
 	border : 1;
 	backgroud-color : blue;
 }
