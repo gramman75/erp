@@ -56,7 +56,7 @@ class UserLogin(models.Model):
     '''
     
     # composite Key가 지원되지 않음.
-    user_id = models.ForeignKey(User)
+    user_id = models.ForeignKey(User,db_column='user_id')
     year = models.IntegerField()
     month = models.IntegerField()
     day = models.IntegerField()

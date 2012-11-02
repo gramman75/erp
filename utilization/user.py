@@ -1,8 +1,11 @@
 from django.shortcuts import render_to_response
 from utilization.models import User, UserLogin
-#import logging
+from django.core.paginator import Paginator
+from django.conf import settings
 
-#logging.basicConfig(filename="/home/gramman75/debug.log", level=logging.INFO)
+import logging, os
+
+logging.basicConfig(filename=os.path.join(settings.PROJECT_DIR,'log\\debug.txt'), level=logging.DEBUG)
 #log = logging.getLogger("ex")
 
 # Create your views here.
@@ -18,20 +21,30 @@ def util_user(request):
 def util_user_search(request):
     return render_to_response('userCount/user_search.html')
 
-def util_user_result(request):
-    monthCount = {}
-    result = {}
+def util_user_result(request,page=1):
+    result = []
     if 'year' in request.POST and request.POST['year']:
         year = request.POST['year']
         
-        users = User.objects.all()
+        users = User.objects.filter(user_name__icontains='STM')
         for user in users:
+            userResult = []
+            userResult.append(user)
             for i in range(1,13):
-                userCount = UserLogin.objects.filter(user_id__exact=user, year__exact=year, month__exact=i).count()
-                monthCount[i] = userCount   
-            result[user.user_name] = monthCount
+                userCount = UserLogin.objects.filter(user_id__exact=user, year__exact=year, month__exact=i)
+                #monthCount[i] = userCount
+                userResult.append(userCount)   
+                
+            result.append(userResult)            
+
+    
+    
+    paginator = Paginator(result, 25)
+    
+    
+    logging.debug('paginator %s', paginator.count)
             
-    return render_to_response('userCount/user_result.html',{'result' : result,
+    return render_to_response('userCount/user_result.html',{'result' : paginator.page(page),
                                                             'month' : range(1,13)})
         
     

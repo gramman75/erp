@@ -35,11 +35,8 @@ AND   papf.attribute2 = ffv_d.FLEX_VALUE
 AND   ffv_d.attribute1 = ffv_l.FLEX_VALUE
 AND   papf.person_id = fu.employee_id;
 
- load data infile 'd:\\project\\test_data\\users.txt'
- into TABLE erp.xxsm_users_v(id, user_name,description,department_code_id, location_code_id,enable,inactive_date)
- fields terminated by '\t'
- lines terminated by '\r\n';
- 
- load data infile 'd:\\project\\test_data\\users.txt'
- into TABLE erp.xxsm_users_v
- ignore 1 lines;
+
+LOAD DATA LOCAL INFILE 'd:\\project\\test_data\\users.csv' 
+INTO TABLE erp.xxsm_users_v
+FIELDS TERMINATED BY '","' ENCLOSED BY '"'
+LINES TERMINATED BY '\r'

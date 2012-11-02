@@ -7,11 +7,11 @@
 			<th>{{i}}월</th>			
 			{% endfor %}			
 		</tr>
-		{% for key, value in result.items %}
+		{% for row in result %}
 		<tr>
 			
-			{% for count in value.values %}
-				<td>{{ count }}</td>			
+			{% for column in row %}
+				<td>{{ column }}</td>			
 			{% endfor %}
 		</tr>
 		{% endfor %}

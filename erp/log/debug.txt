@@ -1,0 +1,4 @@
+DEBUG:root:test
+DEBUG:root:paginator
+DEBUG:django.db.backends:(0.010) SELECT `xxsm_users_v`.`id`, `xxsm_users_v`.`user_name`, `xxsm_users_v`.`description`, `xxsm_users_v`.`department_code_id`, `xxsm_users_v`.`location_code_id`, `xxsm_users_v`.`enable`, `xxsm_users_v`.`inactive_date` FROM `xxsm_users_v` WHERE `xxsm_users_v`.`user_name` LIKE '%STM%' ; args=(u'%STM%',)
+DEBUG:root:paginator

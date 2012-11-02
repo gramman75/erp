@@ -14,7 +14,6 @@
 	width : 250px;
 	height : 650px;	
 	float : left;
-	background-color : yellow;
 	
 }
 
@@ -22,13 +21,11 @@
 	width : 750px;
 	height : 650px;
 	margin-left : 250px;
-	background-color: red	
 }
 
 .footer {
 	width : 1000px;
 	height : 30px;
- 	background-color: blue;
  	clear : left;
 }
 
