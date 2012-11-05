@@ -1,55 +1,50 @@
 # -*- encoding:utf-8 -*-
-from django.db import models
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import backref, relationship
+from sqlalchemy import Column, Integer, String, ForeignKey, Date
 
-class Department(models.Model):
-    '''
-    ERP 부서 정보 
-    '''
-    department_code = models.CharField(primary_key=True, max_length=30)
-    department      = models.CharField(max_length=100)
-    
-    def __unicode__(self):
-        return self.department
-    
-    class Meta:
-        verbose_name_plural = 'departments'
-        db_table = 'xxsm_departments_v'
+Base = declarative_base()
 
-class Location(models.Model):
-    '''
-    사업장 위치
-    '''
-    location_code = models.CharField(primary_key = True, max_length=30)
-    location      = models.CharField(max_length=100)
+class Department(Base):
+    __tablename__ = 'xxsm_departments_v'
+    department_code = Column(String(30),primary_key=True)
+    department      = Column(String(100))
     
-    def __unicode__(self):
-        return self.location
-    
-    class Meta:
-        verbose_name_plural = 'locations'
-        db_table = 'xxsm_locations_v'
-             
-class User(models.Model):
-
-    '''
-    ERP사용자 정보 Class
-    '''
-    user_name       = models.CharField(max_length=100)
-    description     = models.CharField(max_length=250)
-    department_code = models.ForeignKey(Department) # CharField(max_length=30)
-    #department      = models.CharField(max_length=100)
-    location_code   = models.ForeignKey(Location) #CharField(max_length=30)
-    #location        = models.CharField(max_length=30)
-    enable          = models.CharField(max_length=1)
-    inactive_date   = models.DateField(null=True,blank=True )
-    
-    def __unicode__(self):
-        return self.description
+    def __init__(self,department_code, department):
+        self.department_code = department_code
+        self.department      = department
         
-    class Meta:
-        verbose_name_plural = 'users'
-        db_table = 'xxsm_users_v'
+    def __repr__(self):
+        return '<Department : %s, %s>' % (self.department_code, self.department)
 
+class Location(Base):
+    __tablename__ = 'xxsm_locations_v'
+    
+    location_code = Column(String(30),primary_key=True)
+    location      = Column(String(100))
+    
+    def __init__(self,location_code, location):
+        self.location_code = location_code
+        self.location      = location
+        
+    def __repr__(self):
+        return '<Location : %s, %s>' %(self.location_code, self.location)
+    
+class User(Base):
+    __tablename__ = 'xxsm_users_v'
+    
+    id = Column(Integer,primary_key=True)
+    user_name = Column(String(100))
+    description = Column(String(250))
+    department_code = Column('department_code_id',String(30),ForeignKey('xxsm_departments_v.department_code'))
+    location_code   = Column('location_code_id',String(30),ForeignKey('xxsm_locations_v.location_code'))
+    enable          = Column(String(1))
+    inactive_date   = Column(Date)  
+    
+    department = relationship('Department',backref('xxsm_users_v'))
+    location   = relationship('Location',backref('xxsm_users_v'))   
+    
+"""    
 class UserLogin(models.Model):
     '''
     일별 사용자 Login 횟수
@@ -138,3 +133,4 @@ class ProgramCountDetail(models.Model):
     class Meta:
         db_table = 'xxsm_prog_count_detail'
         verbose_name_plural = 'programCountDetails'
+"""

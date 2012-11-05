@@ -7,11 +7,37 @@
 
 	<body>
 		<div class="search">
-			<iframe src ="/erp/util/user/search" scrolling="no" height="50" width="750" frameborder="0">></iframe>
+			<form method = "post" action="/erp/util/user/" target="_self">
+				Year <input type = "text" name="year" />
+				<input type="submit" onclick="alter('aaa');"/>
+			</form>
 		</div>
 		<div class="line" style = "background-color; block; width :750px; height :2px" frameborder="0"></div>
 		<div class="result">
-			<iframe name="result" src ="/erp/util/user/result" width = "750" height ="650" frameborder="0" scrolling="no"></iframe>
+				<table id="result_table">
+			<tr>
+				<th>User Name</th>
+				{% for i in month %}
+				<th>{{i}}월</th>			
+				{% endfor %}			
+			</tr>
+			{% for row in result %}
+			<tr>
+				
+				{% for column in row %}
+					<td>{{ column }}</td>			
+				{% endfor %}
+			</tr>
+			{% endfor %}
+			
+	</table>	
+	
+	{% for p in  result.paginator.page_range %}
+		{{ p }} 
+		{% if p != result.paginator.num_pages %}
+			|
+		{% endif %}
+	{% endfor %}	
 		</div>
 		
 	</body>

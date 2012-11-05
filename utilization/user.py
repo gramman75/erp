@@ -14,14 +14,14 @@ def header(requeset):
 
 def nav(requeset):
     return render_to_response('common/nav.html')
-
+'''
 def util_user(request):
     return render_to_response('userCount/user_content.html')
-
+'''
 def util_user_search(request):
     return render_to_response('userCount/user_search.html')
 
-def util_user_result(request,page=1):
+def util_user(request,page=1):
     result = []
     if 'year' in request.POST and request.POST['year']:
         year = request.POST['year']
@@ -47,7 +47,7 @@ def util_user_result(request,page=1):
     
     logging.debug('paginator %s', paginator.page_range)
             
-    return render_to_response('userCount/user_result.html',{'result' : paginator.page(page),
+    return render_to_response('userCount/user_content.html',{'result' : paginator.page(page),
                                                             'month' : range(1,13)})
         
     
