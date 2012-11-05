@@ -10,7 +10,7 @@ urlpatterns = patterns('',
                        url(r'^erp/nav/$','utilization.user.nav'),                       
                        url(r'^erp/util/user/$','utilization.user.util_user'),
                        url(r'^erp/util/user/search/$','utilization.user.util_user_search'),
-                       url(r'^erp/util/user/result/(?p<page>\d)/$','utilization.user.util_user_result'),
+                       url(r'^erp/util/user/result/$','utilization.user.util_user_result'),
                        url(r'^erp/test','erp.views.test'),
 
                        

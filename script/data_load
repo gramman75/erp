@@ -5,6 +5,17 @@
  fields terminated by ','
  lines terminated by '\r\n';
  
+ load data infile '/departments.csv'
+ into TABLE erp.xxsm_departments_v
+ fields terminated by ','
+ lines terminated by '\r\n';
+ 
+ 
+ load data infile '/Volumes/Data/project/test_data/locations.csv'
+ into TABLE erp.xxsm_locations_v
+ fields terminated by ','
+ lines terminated by '\r\n';
+ 
 # 부서조회 쿼리
 SELECT b.flex_value, b.description
 FROM fnd_flex_value_sets a
@@ -35,8 +46,10 @@ AND   papf.attribute2 = ffv_d.FLEX_VALUE
 AND   ffv_d.attribute1 = ffv_l.FLEX_VALUE
 AND   papf.person_id = fu.employee_id;
 
+SET FOREIGN_KEY_CHECKS = 0;
 
-LOAD DATA LOCAL INFILE 'd:\\project\\test_data\\users.csv' 
+
+LOAD DATA LOCAL INFILE '/Volumes/Data/project/test_data/users.csv'
 INTO TABLE erp.xxsm_users_v
-FIELDS TERMINATED BY '","' ENCLOSED BY '"'
-LINES TERMINATED BY '\r'
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\r';

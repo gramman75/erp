@@ -27,22 +27,25 @@ def util_user_result(request,page=1):
         year = request.POST['year']
         
         users = User.objects.filter(user_name__icontains='STM')
+        #users = User.objects.all()
         for user in users:
             userResult = []
             userResult.append(user)
             for i in range(1,13):
                 userCount = UserLogin.objects.filter(user_id__exact=user, year__exact=year, month__exact=i)
-                #monthCount[i] = userCount
-                userResult.append(userCount)   
+                if userCount.count():
+                    userResult.append(userCount)
+                else:
+                    userResult.append(0)   
                 
             result.append(userResult)            
 
     
     
-    paginator = Paginator(result, 25)
+    paginator = Paginator(result, 10)
     
     
-    logging.debug('paginator %s', paginator.count)
+    logging.debug('paginator %s', paginator.page_range)
             
     return render_to_response('userCount/user_result.html',{'result' : paginator.page(page),
                                                             'month' : range(1,13)})

@@ -18,4 +18,10 @@
 		
 </table>	
 
+{% for p in  result.paginator.page_range %}
+	{{ p }} 
+	{% if p != result.paginator.num_pages %}
+		|
+	{% endif %}
+{% endfor %}	
 {% endblock %}

@@ -44,7 +44,7 @@ class User(models.Model):
     inactive_date   = models.DateField(null=True,blank=True )
     
     def __unicode__(self):
-        return self.user_name
+        return self.description
         
     class Meta:
         verbose_name_plural = 'users'
