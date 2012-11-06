@@ -1,12 +1,19 @@
 from django.shortcuts import render_to_response
-from utilization.models import User, UserLogin
+from utilization.models import User, UserLogin, Base
 from django.core.paginator import Paginator
 from django.conf import settings
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 import logging, os
 
 logging.basicConfig(filename=os.path.join(settings.PROJECT_DIR,'log\\debug.txt'), level=logging.DEBUG)
 #log = logging.getLogger("ex")
+
+engine = create_engine(settings.CONNECT_INFO,echo=True)
+Session = sessionmaker(engine)
+session = Session()
+
 
 # Create your views here.
 def header(requeset):

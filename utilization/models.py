@@ -29,7 +29,7 @@ class Location(Base):
         
     def __repr__(self):
         return '<Location : %s, %s>' %(self.location_code, self.location)
-    
+"""
 class User(Base):
     __tablename__ = 'xxsm_users_v'
     
@@ -44,6 +44,17 @@ class User(Base):
     department = relationship('Department',backref('xxsm_users_v'))
     location   = relationship('Location',backref('xxsm_users_v'))   
     
+class UserLogin(Base):
+    __tablename__ = 'xxsm_user_logins'
+    id = Column(Integer, primary_key=True)
+    user_id =  Column(Integer, ForeignKey('xxsm_users_v.id'))
+    year    = Column(Integer)
+    month   = Column(Integer)
+    day     = Column(Integer)
+    counts  = Column(Integer)
+    
+    user = relationship('User',backref('xxsm_user_logins'))   
+"""     
 """    
 class UserLogin(models.Model):
     '''
