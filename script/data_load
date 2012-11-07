@@ -49,6 +49,16 @@ AND   papf.person_id = fu.employee_id;
 SET FOREIGN_KEY_CHECKS = 0;
 
 
+LOAD DATA LOCAL INFILE 'd:\\project\\test_data\\users.csv'
+INTO TABLE erp.xxsm_users_v
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\r';
+
+LOAD DATA LOCAL INFILE 'd:\\project\\test_data\\upload_logins.csv'
+INTO TABLE erp.xxsm_user_logins
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\r';
+
 LOAD DATA LOCAL INFILE '/Volumes/Data/project/test_data/users.csv'
 INTO TABLE erp.xxsm_users_v
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'

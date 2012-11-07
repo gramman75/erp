@@ -1,11 +1,16 @@
 from django.shortcuts import render_to_response
-from utilization.models import User, UserLogin, Base
+from utilization.models import  User, UserLogin, Department, Location
 from django.core.paginator import Paginator
 from django.conf import settings
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql.expression import case
+from sqlalchemy import func
+import time
 
 import logging, os
+
+
 
 logging.basicConfig(filename=os.path.join(settings.PROJECT_DIR,'log\\debug.txt'), level=logging.DEBUG)
 #log = logging.getLogger("ex")
@@ -32,24 +37,27 @@ def util_user(request,page=1):
     result = []
     if 'year' in request.POST and request.POST['year']:
         year = request.POST['year']
-        
-        users = User.objects.filter(user_name__icontains='STM')
-        #users = User.objects.all()
-        for user in users:
-            userResult = []
-            userResult.append(user)
-            for i in range(1,13):
-                userCount = UserLogin.objects.filter(user_id__exact=user, year__exact=year, month__exact=i)
-                if userCount.count():
-                    userResult.append(userCount)
-                else:
-                    userResult.append(0)   
-                
-            result.append(userResult)            
 
-    
-    
-    paginator = Paginator(result, 10)
+        jan = func.sum(case([(UserLogin.month == 1,UserLogin.counts)],else_ = 0)).label('jan')
+        feb = func.sum(case([(UserLogin.month == 2,UserLogin.counts)],else_ = 0)).label('feb')
+        mar = func.sum(case([(UserLogin.month == 3,UserLogin.counts)],else_ = 0)).label('mar')
+        apr = func.sum(case([(UserLogin.month == 4,UserLogin.counts)],else_ = 0)).label('apr')
+        may = func.sum(case([(UserLogin.month == 5,UserLogin.counts)],else_ = 0)).label('may')        
+        jun = func.sum(case([(UserLogin.month == 6,UserLogin.counts)],else_ = 0)).label('jun')        
+        jul = func.sum(case([(UserLogin.month == 7,UserLogin.counts)],else_ = 0)).label('jul')
+        aug = func.sum(case([(UserLogin.month == 8,UserLogin.counts)],else_ = 0)).label('aug')
+        sep = func.sum(case([(UserLogin.month == 9,UserLogin.counts)],else_ = 0)).label('sep')
+        oct = func.sum(case([(UserLogin.month == 10,UserLogin.counts)],else_ = 0)).label('oct')
+        nov = func.sum(case([(UserLogin.month == 11,UserLogin.counts)],else_ = 0)).label('nov')
+        dec = func.sum(case([(UserLogin.month == 12,UserLogin.counts)],else_ = 0)).label('dec')
+                   
+        time1 = time.time()
+        logins  = session.query(User.user_name, unicode(User.description), jan, feb, mar, apr,may,jun,jul,aug,sep,oct,nov,dec).join(UserLogin).filter(UserLogin.year == year).group_by(User.user_name,User.description)                   
+        logging.debug(time.time()-time1)
+        for user in logins:            
+            result.append(user)
+                
+    paginator = Paginator(result, 1000)
     
     
     logging.debug('paginator %s', paginator.page_range)

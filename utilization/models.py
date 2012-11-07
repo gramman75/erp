@@ -4,11 +4,13 @@ from sqlalchemy.orm import backref, relationship
 from sqlalchemy import Column, Integer, String, ForeignKey, Date
 
 Base = declarative_base()
-
+  
 class Department(Base):
     __tablename__ = 'xxsm_departments_v'
     department_code = Column(String(30),primary_key=True)
     department      = Column(String(100))
+    
+    user = relationship('User',backref='xxsm_departments_v')
     
     def __init__(self,department_code, department):
         self.department_code = department_code
@@ -29,7 +31,7 @@ class Location(Base):
         
     def __repr__(self):
         return '<Location : %s, %s>' %(self.location_code, self.location)
-"""
+
 class User(Base):
     __tablename__ = 'xxsm_users_v'
     
@@ -41,9 +43,14 @@ class User(Base):
     enable          = Column(String(1))
     inactive_date   = Column(Date)  
     
-    department = relationship('Department',backref('xxsm_users_v'))
-    location   = relationship('Location',backref('xxsm_users_v'))   
+    #department = relationship('Department',backref('xxsm_users_v'))
+    #location   = relationship('Location',backref('xxsm_users_v'))   
     
+    department = relationship('Department',backref = backref('xxsm_users_v',order_by=id))
+    location   = relationship('Location')
+
+
+
 class UserLogin(Base):
     __tablename__ = 'xxsm_user_logins'
     id = Column(Integer, primary_key=True)
@@ -53,8 +60,11 @@ class UserLogin(Base):
     day     = Column(Integer)
     counts  = Column(Integer)
     
-    user = relationship('User',backref('xxsm_user_logins'))   
-"""     
+    user = relationship('User',backref=backref('xxsm_user_logins',order_by=id))
+                                               
+                                                  
+
+    
 """    
 class UserLogin(models.Model):
     '''
