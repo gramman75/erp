@@ -15,7 +15,7 @@ import logging, os
 logging.basicConfig(filename=os.path.join(settings.PROJECT_DIR,'log\\debug.txt'), level=logging.DEBUG)
 #log = logging.getLogger("ex")
 
-engine = create_engine(settings.CONNECT_INFO,echo=True)
+engine = create_engine(settings.CONNECT_INFO,echo=True,encoding='euc-kr',convert_unicode=True)
 Session = sessionmaker(engine)
 session = Session()
 
@@ -52,7 +52,7 @@ def util_user(request,page=1):
         dec = func.sum(case([(UserLogin.month == 12,UserLogin.counts)],else_ = 0)).label('dec')
                    
         time1 = time.time()
-        logins  = session.query(User.user_name, unicode(User.description), jan, feb, mar, apr,may,jun,jul,aug,sep,oct,nov,dec).join(UserLogin).filter(UserLogin.year == year).group_by(User.user_name,User.description)                   
+        logins  = session.query(User.user_name, User.description, jan, feb, mar, apr,may,jun,jul,aug,sep,oct,nov,dec).join(UserLogin).filter(UserLogin.year == year).group_by(User.user_name,User.description)                   
         logging.debug(time.time()-time1)
         for user in logins:            
             result.append(user)

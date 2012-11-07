@@ -63,3 +63,8 @@ LOAD DATA LOCAL INFILE '/Volumes/Data/project/test_data/users.csv'
 INTO TABLE erp.xxsm_users_v
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\r';
+
+LOAD DATA LOCAL INFILE '/Volumes/Data/project/test_data/mac_logins.csv'
+INTO TABLE erp.xxsm_user_logins
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\r';

@@ -1,7 +1,7 @@
 # -*- encoding:utf-8 -*-
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import backref, relationship
-from sqlalchemy import Column, Integer, String, ForeignKey, Date
+from sqlalchemy import Column, Integer, String, ForeignKey, Date, Unicode
 
 Base = declarative_base()
   
@@ -37,7 +37,7 @@ class User(Base):
     
     id = Column(Integer,primary_key=True)
     user_name = Column(String(100))
-    description = Column(String(250))
+    description = Column(Unicode(250))
     department_code = Column('department_code_id',String(30),ForeignKey('xxsm_departments_v.department_code'))
     location_code   = Column('location_code_id',String(30),ForeignKey('xxsm_locations_v.location_code'))
     enable          = Column(String(1))
