@@ -33,11 +33,18 @@ def util_user(request):
 def util_user_search(request):
     return render_to_response('userCount/user_search.html')
 
-def util_user(request,page=1):
+def util_user(request):
     result = []
-    if 'year' in request.POST and request.POST['year']:
-        year = request.POST['year']
-
+    
+    year = ''    
+    page = 1
+    userName = ''
+    
+    if 'year' in request.GET and request.GET['year']:
+        year = request.GET['year']
+        page = request.GET['page']
+        userName = request.GET['userName']
+        
         jan = func.sum(case([(UserLogin.month == 1,UserLogin.counts)],else_ = 0)).label('jan')
         feb = func.sum(case([(UserLogin.month == 2,UserLogin.counts)],else_ = 0)).label('feb')
         mar = func.sum(case([(UserLogin.month == 3,UserLogin.counts)],else_ = 0)).label('mar')
@@ -51,19 +58,22 @@ def util_user(request,page=1):
         nov = func.sum(case([(UserLogin.month == 11,UserLogin.counts)],else_ = 0)).label('nov')
         dec = func.sum(case([(UserLogin.month == 12,UserLogin.counts)],else_ = 0)).label('dec')
                    
-        time1 = time.time()
-        logins  = session.query(User.user_name, User.description, jan, feb, mar, apr,may,jun,jul,aug,sep,oct,nov,dec).join(UserLogin).filter(UserLogin.year == year).group_by(User.user_name,User.description)                   
-        logging.debug(time.time()-time1)
+        logins  = session.query( User.description, jan, feb, mar, apr,may,jun,jul,aug,sep,oct,nov,dec).join(UserLogin).filter(UserLogin.year == year, User.user_name.like('%'+userName+'%')).group_by(User.user_name,User.description)                   
+        
         for user in logins:            
             result.append(user)
                 
-    paginator = Paginator(result, 1000)
+    paginator = Paginator(result, 20, orphans=10)
     
     
     logging.debug('paginator %s', paginator.page_range)
             
     return render_to_response('userCount/user_content.html',{'result' : paginator.page(page),
-                                                            'month' : range(1,13)})
+                                                            'month' : range(1,13),
+                                                            'year' : year,
+                                                            'userName' : userName
+                                                            }
+                              )
         
     
         

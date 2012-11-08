@@ -7,14 +7,16 @@
 
 	<body>
 		<div class="search">
-			<form method = "post" action="/erp/util/user/" target="_self">
-				Year <input type = "text" name="year" />
-				<input type="submit" onclick="alter('aaa');"/>
+			<form method = "get" action="/erp/util/user/" target="_self">
+				Year <input type = "text" name="year" value="{{ year }}" />
+				Name <input type = "text" name="userName" value="{{ userName }}" />
+				<input type = "hidden" name="page" value ="1" />	
+				<input type = "submit" />			
 			</form>
 		</div>
-		<div class="line" style = "background-color; block; width :750px; height :2px" frameborder="0"></div>
+		<div class="line" style = "background-color: black ; width :750px; height :2px" frameborder="0"></div>
 		<div class="result">
-				<table id="result_table">
+				<table id="result_table" border ="1" background="9ef7e9">
 			<tr>
 				<th>User Name</th>
 				{% for i in month %}
@@ -25,15 +27,23 @@
 			<tr>
 				
 				{% for column in row %}
-					<td>{{ column }}</td>			
+					{% if forloop.counter == 1 %}
+						<td>{{ column }}</td>
+					{% else %}
+						<td><a href="#">{{ column }}</a></td>
+					{% endif %}			
 				{% endfor %}
 			</tr>
 			{% endfor %}
 			
 	</table>	
-	
+
 	{% for p in  result.paginator.page_range %}
-		{{ p }} 
+		{% if result.number == p %}
+			<B>{{ p }}</B>
+		{% else %}	
+			<a href="/erp/util/user/?year={{ year }}&page={{ p }}&userName={{ userName }}">{{ p }}</a>
+		{% endif %} 
 		{% if p != result.paginator.num_pages %}
 			|
 		{% endif %}
