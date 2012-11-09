@@ -1,4 +1,4 @@
-# -*- encoding:utf-8 -*-
+# -*- coding: utf8 -*-
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import backref, relationship
 from sqlalchemy import Column, Integer, String, ForeignKey, Date, Unicode
@@ -48,6 +48,9 @@ class User(Base):
     
     department = relationship('Department',backref = backref('xxsm_users_v',order_by=id))
     location   = relationship('Location')
+    
+    def __repr__(self):
+        return '<User : %s, %s>' %(self.user_name, self.description)
 
 
 
@@ -63,7 +66,13 @@ class UserLogin(Base):
     user = relationship('User',backref=backref('xxsm_user_logins',order_by=id))
                                                
                                                   
-
+class Computer(Base):
+    __tablename__ = 'computer'
+    id = Column(Integer, primary_key=True)
+    name = Column(Unicode(200))
+    
+    def __repr__(self):
+        return '<Computer %s>' %self.name
     
 """    
 class UserLogin(models.Model):

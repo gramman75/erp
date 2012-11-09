@@ -1,3 +1,4 @@
+# -*- coding: euckr -*-
 from django.shortcuts import render_to_response
 from utilization.models import  User, UserLogin, Department, Location
 from django.core.paginator import Paginator
@@ -44,6 +45,8 @@ def util_user(request):
         year = request.GET['year']
         page = request.GET['page']
         userName = request.GET['userName']
+        
+        logging.debug('username : ' + userName)
         
         jan = func.sum(case([(UserLogin.month == 1,UserLogin.counts)],else_ = 0)).label('jan')
         feb = func.sum(case([(UserLogin.month == 2,UserLogin.counts)],else_ = 0)).label('feb')
