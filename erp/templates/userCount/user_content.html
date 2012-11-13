@@ -6,6 +6,7 @@
 	</head>
 
 	<body>
+	
 		<div class="search">
 			<form method = "get" action="/erp/util/user/" target="_self">
 				Year <input type = "text" name="year" value="{{ year }}" />
@@ -37,7 +38,7 @@
 			{% endfor %}
 			
 	</table>	
-
+	<!--
 	{% for p in  result.paginator.page_range %}
 		{% if result.number == p %}
 			<B>{{ p }}</B>
@@ -48,6 +49,20 @@
 			|
 		{% endif %}
 	{% endfor %}	
+	-->
+	{% if hasPrevGroup %}
+		 <a href="/erp/util/user/?year={{ year }}&page={{ prevStartNum }}&userName={{ userName }}"> before </a>
+ 	{% endif %}
+ 	{% for p in pageRange %}
+ 		{% if result.number == p %}
+ 			<b> {{ P }}</b>
+ 		{% else %}
+ 			<a href="/erp/util/user/?year={{ year }}&page={{ p }}&userName={{ userName }}">{{ p }}</a>
+ 		{% endif %}
+ 	{% endfor %}
+ 	{% if hasNextGroup %}
+ 		<a href="/erp/util/user/?year={{ year }}&page={{ nextStartNum }}&userName={{ userName }}"> next </a>
+ 	{% endif %}
 		</div>
 		
 	</body>

@@ -11,6 +11,7 @@ else:
     DB_PASSWORD =''
     
 CONNECT_INFO = 'mysql://root:'+DB_PASSWORD+'@localhost/erp'
+MAX_PAGES = 10.0
 
 PROJECT_DIR = os.path.dirname(__file__)
 
@@ -100,6 +101,11 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
 )
+
+# template context processor
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'erp.context_processors.max_pages',
+    )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',

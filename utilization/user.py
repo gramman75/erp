@@ -1,11 +1,15 @@
 from django.shortcuts import render_to_response
 from utilization.models import  User, UserLogin, Department, Location
+from django.template import RequestContext
+from utilization.forms import UserSearchForm
 from django.core.paginator import Paginator
 from django.conf import settings
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql.expression import case
 from sqlalchemy import func
+from django.conf import settings
+import math
 import time
 
 import logging, os
@@ -39,43 +43,79 @@ def util_user(request):
     year = ''    
     page = 1
     userName = ''
+    max_pages = settings.MAX_PAGES
     
     if 'year' in request.GET and request.GET['year']:
-        year = request.GET['year']
-        page = request.GET['page']
-        userName = request.GET['userName']
+        form = UserSearchForm(request.GET)
         
-        jan = func.sum(case([(UserLogin.month == 1,UserLogin.counts)],else_ = 0)).label('jan')
-        feb = func.sum(case([(UserLogin.month == 2,UserLogin.counts)],else_ = 0)).label('feb')
-        mar = func.sum(case([(UserLogin.month == 3,UserLogin.counts)],else_ = 0)).label('mar')
-        apr = func.sum(case([(UserLogin.month == 4,UserLogin.counts)],else_ = 0)).label('apr')
-        may = func.sum(case([(UserLogin.month == 5,UserLogin.counts)],else_ = 0)).label('may')        
-        jun = func.sum(case([(UserLogin.month == 6,UserLogin.counts)],else_ = 0)).label('jun')        
-        jul = func.sum(case([(UserLogin.month == 7,UserLogin.counts)],else_ = 0)).label('jul')
-        aug = func.sum(case([(UserLogin.month == 8,UserLogin.counts)],else_ = 0)).label('aug')
-        sep = func.sum(case([(UserLogin.month == 9,UserLogin.counts)],else_ = 0)).label('sep')
-        oct = func.sum(case([(UserLogin.month == 10,UserLogin.counts)],else_ = 0)).label('oct')
-        nov = func.sum(case([(UserLogin.month == 11,UserLogin.counts)],else_ = 0)).label('nov')
-        dec = func.sum(case([(UserLogin.month == 12,UserLogin.counts)],else_ = 0)).label('dec')
-                   
-        logins  = session.query( User.description, jan, feb, mar, apr,may,jun,jul,aug,sep,oct,nov,dec).join(UserLogin).filter(UserLogin.year == year, User.user_name.like('%'+userName+'%')).group_by(User.user_name,User.description)                   
+        if form.is_valid():
+            cd = form.cleaned_data
+            year = cd['year']
+            page = cd['page']
+            userName = cd['userName']
         
-        for user in logins:            
-            result.append(user)
+            jan = func.sum(case([(UserLogin.month == 1,UserLogin.counts)],else_ = 0)).label('jan')
+            feb = func.sum(case([(UserLogin.month == 2,UserLogin.counts)],else_ = 0)).label('feb')
+            mar = func.sum(case([(UserLogin.month == 3,UserLogin.counts)],else_ = 0)).label('mar')
+            apr = func.sum(case([(UserLogin.month == 4,UserLogin.counts)],else_ = 0)).label('apr')
+            may = func.sum(case([(UserLogin.month == 5,UserLogin.counts)],else_ = 0)).label('may')        
+            jun = func.sum(case([(UserLogin.month == 6,UserLogin.counts)],else_ = 0)).label('jun')        
+            jul = func.sum(case([(UserLogin.month == 7,UserLogin.counts)],else_ = 0)).label('jul')
+            aug = func.sum(case([(UserLogin.month == 8,UserLogin.counts)],else_ = 0)).label('aug')
+            sep = func.sum(case([(UserLogin.month == 9,UserLogin.counts)],else_ = 0)).label('sep')
+            oct = func.sum(case([(UserLogin.month == 10,UserLogin.counts)],else_ = 0)).label('oct')
+            nov = func.sum(case([(UserLogin.month == 11,UserLogin.counts)],else_ = 0)).label('nov')
+            dec = func.sum(case([(UserLogin.month == 12,UserLogin.counts)],else_ = 0)).label('dec')
+            
+            logging.debug('user name : %s ', userName)
+                       
+            logins  = session.query( User.description, jan, feb, mar, apr,may,jun,jul,aug,sep,oct,nov,dec).join(UserLogin).filter(UserLogin.year == year, User.description.like('%'+userName+'%')).group_by(User.user_name,User.description)                   
+            
+            for user in logins:            
+                result.append(user)
                 
     paginator = Paginator(result, 20, orphans=10)
     
     
     logging.debug('paginator %s', paginator.page_range)
+    logging.debug('paginator.num_pages %s', paginator.num_pages)
+    
+    currentPosition = int(math.ceil(page/max_pages))
+    lastGroup = int(math.ceil(paginator.num_pages/max_pages))
+    prevStartNum = 0
+    nextStartNum = 0
+    
+    if paginator.num_pages <= max_pages:
+        hasPrevGroup = False
+        hasNextGroup = False
+        
+    else:
+        if currentPosition < lastGroup:
+            hasPrevGroup = True
+            hasNextGroup = True
+            prevStartNum = currentPosition * max_pages - 1
+            nextStartNum = currentPosition * max_pages + 1
+        else:
+            hasPrevGroup = True
+            hasNextGroup = False
+            prevStartNum = currentPosition * max_pages - 1
             
     return render_to_response('userCount/user_content.html',{'result' : paginator.page(page),
                                                             'month' : range(1,13),
                                                             'year' : year,
-                                                            'userName' : userName
+                                                            'userName' : userName,
+                                                            'hasPrevGroup' : hasPrevGroup,
+                                                            'hasNextGroup' : hasNextGroup,
+                                                            'prevStartNum' : prevStartNum,
+                                                            'nextStartNum' : nextStartNum,
+                                                            'currentPosition ' : currentPosition,
+                                                            'pageRange' : range(currentPosition, int(currentPosition*max_pages))
                                                             }
+                                                           ,context_instance=RequestContext(request)
                               )
-        
     
+
+        
         
     #monthCount = {}
     #result ={}
