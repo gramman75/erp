@@ -49,13 +49,11 @@ def util_user(request):
     if 'year' in request.GET and request.GET['year']:
         form = UserSearchForm(request.GET)
         
-<<<<<<< HEAD
         if form.is_valid():
             cd = form.cleaned_data
             year = cd['year']
             page = cd['page']
             userName = cd['userName']
-=======
         logging.debug('username : ' + userName)
         
         jan = func.sum(case([(UserLogin.month == 1,UserLogin.counts)],else_ = 0)).label('jan')
@@ -72,27 +70,10 @@ def util_user(request):
         dec = func.sum(case([(UserLogin.month == 12,UserLogin.counts)],else_ = 0)).label('dec')
                    
         logins  = session.query( User.description, jan, feb, mar, apr,may,jun,jul,aug,sep,oct,nov,dec).join(UserLogin).filter(UserLogin.year == year, User.user_name.like('%'+userName+'%')).group_by(User.user_name,User.description)                   
->>>>>>> eabc5fb1c4890a68cb02f95dcdc3575e5ddfb431
+
         
-            jan = func.sum(case([(UserLogin.month == 1,UserLogin.counts)],else_ = 0)).label('jan')
-            feb = func.sum(case([(UserLogin.month == 2,UserLogin.counts)],else_ = 0)).label('feb')
-            mar = func.sum(case([(UserLogin.month == 3,UserLogin.counts)],else_ = 0)).label('mar')
-            apr = func.sum(case([(UserLogin.month == 4,UserLogin.counts)],else_ = 0)).label('apr')
-            may = func.sum(case([(UserLogin.month == 5,UserLogin.counts)],else_ = 0)).label('may')        
-            jun = func.sum(case([(UserLogin.month == 6,UserLogin.counts)],else_ = 0)).label('jun')        
-            jul = func.sum(case([(UserLogin.month == 7,UserLogin.counts)],else_ = 0)).label('jul')
-            aug = func.sum(case([(UserLogin.month == 8,UserLogin.counts)],else_ = 0)).label('aug')
-            sep = func.sum(case([(UserLogin.month == 9,UserLogin.counts)],else_ = 0)).label('sep')
-            oct = func.sum(case([(UserLogin.month == 10,UserLogin.counts)],else_ = 0)).label('oct')
-            nov = func.sum(case([(UserLogin.month == 11,UserLogin.counts)],else_ = 0)).label('nov')
-            dec = func.sum(case([(UserLogin.month == 12,UserLogin.counts)],else_ = 0)).label('dec')
-            
-            logging.debug('user name : %s ', userName)
-                       
-            logins  = session.query( User.description, jan, feb, mar, apr,may,jun,jul,aug,sep,oct,nov,dec).join(UserLogin).filter(UserLogin.year == year, User.description.like('%'+userName+'%')).group_by(User.user_name,User.description)                   
-            
-            for user in logins:            
-                result.append(user)
+        for user in logins:            
+            result.append(user)
                 
     paginator = Paginator(result, 20, orphans=10)
     
