@@ -77,14 +77,11 @@ def util_user(request):
                 
     paginator = Paginator(result, 20, orphans=10)
     
-    
-    logging.debug('paginator %s', paginator.page_range)
-    logging.debug('paginator.num_pages %s', paginator.num_pages)
-    
     currentPosition = int(math.ceil(page/max_pages))
     lastGroup = int(math.ceil(paginator.num_pages/max_pages))
     prevStartNum = 0
     nextStartNum = 0
+    
     
     if paginator.num_pages <= max_pages:
         hasPrevGroup = False
@@ -94,23 +91,34 @@ def util_user(request):
         if currentPosition < lastGroup:
             hasPrevGroup = True
             hasNextGroup = True
-            prevStartNum = currentPosition * max_pages - 1
-            nextStartNum = currentPosition * max_pages + 1
+            prevStartNum = int((currentPosition-1) * max_pages)
+            nextStartNum = int(currentPosition * max_pages + 1)
         else:
             hasPrevGroup = True
             hasNextGroup = False
-            prevStartNum = currentPosition * max_pages - 1
+            prevStartNum = int(currentPosition * max_pages - 1)
+    
+    logging.debug('currentPosition %s', currentPosition)
+    logging.debug('lastGroup %s', lastGroup)
+    logging.debug('prevStartNum %s', prevStartNum)
+    logging.debug('nextStartNum %s', nextStartNum)
+    logging.debug('hasPrevGroup %s', hasPrevGroup)
+    logging.debug('hasNextGroup %s', hasNextGroup)
+    logging.debug('max_pages %s', max_pages)
+    logging.debug('paginator.num_pages %s',  paginator.num_pages)
+    logging.debug('end page %s',  (lambda x : int((currentPosition * max_pages)) + 1 if hasNextGroup else paginator.num_pages))
             
     return render_to_response('userCount/user_content.html',{'result' : paginator.page(page),
                                                             'month' : range(1,13),
                                                             'year' : year,
+                                                            'page' : page,
                                                             'userName' : userName,
                                                             'hasPrevGroup' : hasPrevGroup,
                                                             'hasNextGroup' : hasNextGroup,
                                                             'prevStartNum' : prevStartNum,
                                                             'nextStartNum' : nextStartNum,
                                                             'currentPosition ' : currentPosition,
-                                                            'pageRange' : range(currentPosition, int(currentPosition*max_pages))
+                                                            'pageRange' : range(int((currentPosition-1)*max_pages + 1), int((currentPosition * max_pages)+1) if hasNextGroup else paginator.num_pages)
                                                             }
                                                            ,context_instance=RequestContext(request)
                               )

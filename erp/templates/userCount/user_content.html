@@ -1,3 +1,5 @@
+{% load bootstrap_toolkit %}
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,12 +14,13 @@
 				Year <input type = "text" name="year" value="{{ year }}" />
 				Name <input type = "text" name="userName" value="{{ userName }}" />
 				<input type = "hidden" name="page" value ="1" />	
-				<input type = "submit" />			
+				<button type="submit" class="btn">Submit</button>
+				<i class="icon-search"></i>
 			</form>
 		</div>
 		<div class="line" style = "background-color: black ; width :750px; height :2px" frameborder="0"></div>
 		<div class="result">
-				<table id="result_table" border ="1" background="9ef7e9">
+				<table id="result_table" border ="1" background="9ef7e9" class="table table-striped">
 			<tr>
 				<th>User Name</th>
 				{% for i in month %}
@@ -50,12 +53,13 @@
 		{% endif %}
 	{% endfor %}	
 	-->
+	
 	{% if hasPrevGroup %}
 		 <a href="/erp/util/user/?year={{ year }}&page={{ prevStartNum }}&userName={{ userName }}"> before </a>
  	{% endif %}
  	{% for p in pageRange %}
  		{% if result.number == p %}
- 			<b> {{ P }}</b>
+ 			<b> {{ p }}</b>
  		{% else %}
  			<a href="/erp/util/user/?year={{ year }}&page={{ p }}&userName={{ userName }}">{{ p }}</a>
  		{% endif %}
