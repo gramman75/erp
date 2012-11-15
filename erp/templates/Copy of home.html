@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<Title>
+			ERP Portal
+		</Title>
+		{% include 'common/media.html' %}
+		
+	</head>
+	<body>
+		
+		
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -20,3 +32,26 @@
         </div>
       </div>
     </div>
+			
+		<div class ="container-fluid">	
+			<div class="row-fluid">
+				<div class="span2">
+					<!-- <iframe src = "/erp/nav/"  frameborder="0" height="650" scrolling="no"></iframe> -->
+					<!-- {% include 'common/nav.html' %} -->
+					test
+				</div>
+			</div>
+
+			<div class="span10">				
+				<!-- <iframe name="content" src = "/erp/util/user/" width="500" height ="650" frameborder="0"></iframe> -->
+				{% include 'userCount/user_content.html' %}
+			</div>
+			
+			<div class ="row">
+				<div class="span12">
+					Footer
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
