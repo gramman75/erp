@@ -13,6 +13,7 @@ from django.conf import settings
 import math
 import time
 
+import pygal
 import logging, os
 
 

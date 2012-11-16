@@ -37,7 +37,25 @@ var content_ajax = function(href,param){
 
 
 var popup = function(me){
+	var $this = $(me);
+	alert($this.text());
+	$(me).tooltip();
 	
-	var val = $(me);	
-	alert(val.text());
 }
+
+// 메뉴 active
+$(document).ready(function(){
+	var $navList = $('#nav li a');
+	$navList.click(function(){
+		var $this = $(this);
+		$this.parent().addClass('active');
+		$navList.each(function(){
+			var $eachThis = $(this);
+			if ($eachThis.parent().text() != $this.parent().text()) {
+				$eachThis.parent().removeClass('active');
+			}
+		})
+	})
+	
+
+})
