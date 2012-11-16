@@ -1,15 +1,15 @@
 
 	
 		<div class="search">
-			<form method = "get" action="/erp/util/user/" target="_self">
+			<form method = "get" id="form">
 				Year <input type = "text" name="year" value="{{ year }}" />
 				Name <input type = "text" name="userName" value="{{ userName }}" />
 				<input type = "hidden" name="page" value ="1" />	
-				<button type="submit" class="btn">Submit</button>
+				<button class="btn" onclick="content_ajax('/erp/util/user/',getform('input','#form')); return false;">Submit</button>
 				<i class="icon-search"></i>
 			</form>
+			
 		</div>
-		<div class="line" style = "background-color: black ; width :750px; height :2px" frameborder="0"></div>
 		<div class="result">
 				<table id="result_table" border ="1" background="9ef7e9" class="table table-striped">
 			<tr>
@@ -25,7 +25,7 @@
 					{% if forloop.counter == 1 %}
 						<td>{{ column }}</td>
 					{% else %}
-						<td><a href="#">{{ column }}</a></td>
+						<td><a href="#" onclick="popup(this);">{{ column }}</a></td>
 					{% endif %}			
 				{% endfor %}
 			</tr>
@@ -44,20 +44,23 @@
 		{% endif %}
 	{% endfor %}	
 	-->
-	
+	<div class="pagination pagination-centered">
+		<ul>
 	{% if hasPrevGroup %}
-		 <a href="/erp/util/user/?year={{ year }}&page={{ prevStartNum }}&userName={{ userName }}"> before </a>
+		 <li class="active"><span><a href="/erp/util/user/?year={{ year }}&page={{ prevStartNum }}&userName={{ userName }}" onclick="content_ajax(this.href); return false;">Prev </a></span></li>
  	{% endif %}
  	{% for p in pageRange %}
  		{% if result.number == p %}
- 			<b> {{ p }}</b>
+ 			<li class="disabled"><span><b>{{ p }}</b></span></li>
  		{% else %}
- 			<a href="/erp/util/user/?year={{ year }}&page={{ p }}&userName={{ userName }}">{{ p }}</a>
+ 			<li class="active"><span><a class="page" href="/erp/util/user/?year={{ year }}&page={{ p }}&userName={{ userName }}" onclick="content_ajax(this.href); return false;">{{ p }}</a></span></li>
  		{% endif %}
  	{% endfor %}
  	{% if hasNextGroup %}
- 		<a href="/erp/util/user/?year={{ year }}&page={{ nextStartNum }}&userName={{ userName }}"> next </a>
+ 		<li class="active"><span><a href="/erp/util/user/?year={{ year }}&page={{ nextStartNum }}&userName={{ userName }}" onclick="content_ajax(this.href); return false;">Next</a></span></li>
  	{% endif %}
-		</div>
+ 	</ul>
+ 	</div>
+</div>
 		
 	

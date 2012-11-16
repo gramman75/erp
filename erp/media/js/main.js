@@ -1,23 +1,43 @@
-var content_ajax = function(href){
+var getform = function(element, parent){
+	var ret ="";
+	var Length = $(element, parent).length;
+	
+	var idnamelist = new Array();
+	var idvaluelist = new Array();
+	
+	for (var i=0; i < Length;i++){
+		idnamelist[i] = $(element, parent)[i].name;
+		idvaluelist[i] = $(element, parent)[i].value;
+		ret += idnamelist[i] + '=' + idvaluelist[i];
+		if (i < Length - 1)
+			ret += "&";
+	}
+	
+	return ret;
+	
+}
+
+
+var content_ajax = function(href,param){
 	var callback = function(dataReceived){
 		$(this).hide();
-		$('.content').html(dataReceived);		
-	}
-		
-	$.get(href,null,callback,'html');
-};
+		$('#content').html(dataReceived);		
+	};
+	
+	$.ajax({
+		url : href,
+		data : param,
+		async : false,
+		success : function(html){			
+			$("#content").html(html);
+		}
+	});		
+}
 
-$(document).ready(function(){	
-	var vNav = $('div.vNav');
-	var vNav_i = vNav.find('>ul>li>a');
-	var vNav_ii = vNav.find('>ul>li>ul>li>a');
-	vNav_i.find('ul').hide();
-	vNav_i.click(function(){
-		$(this).siblings('ul').slideToggle('fast');
-		}).trigger('click');
 
-	vNav_ii.click(function(){	
-		$(this).parent().toggleClass('active');
-	})
 
-})
+var popup = function(me){
+	
+	var val = $(me);	
+	alert(val.text());
+}
