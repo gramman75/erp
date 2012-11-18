@@ -9,3 +9,5 @@ class UserSearchForm(forms.Form):
     year     = forms.CharField()
     page     = forms.IntegerField()
     userName = forms.CharField()
+    dept     = forms.CharField
+    loc      = forms.CharField()

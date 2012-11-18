@@ -1,5 +1,6 @@
 # -*- coding: euckr -*-
 from django.shortcuts import render_to_response
+from django.http import HttpResponse
 from utilization.models import  User, UserLogin, Department, Location
 from django.template import RequestContext
 from utilization.forms import UserSearchForm
@@ -13,7 +14,6 @@ from django.conf import settings
 import math
 import time
 
-import pygal
 import logging, os
 
 
@@ -40,11 +40,13 @@ def util_user_search(request):
     return render_to_response('userCount/user_search.html')
 
 def util_user(request):
-    result = []
+    result =[]
     
     year = ''    
     page = 1
     userName = ''
+    loc =''
+    dept =''
     max_pages = settings.MAX_PAGES
     
     if 'year' in request.GET and request.GET['year']:
@@ -55,6 +57,10 @@ def util_user(request):
             year = cd['year']
             page = cd['page']
             userName = cd['userName']
+            dept = cd['dept']
+            loc  = cd['loc']
+        else:
+            HttpResponse('Error!')
         logging.debug('username : ' + userName)
         
         jan = func.sum(case([(UserLogin.month == 1,UserLogin.counts)],else_ = 0)).label('jan')
@@ -70,12 +76,17 @@ def util_user(request):
         nov = func.sum(case([(UserLogin.month == 11,UserLogin.counts)],else_ = 0)).label('nov')
         dec = func.sum(case([(UserLogin.month == 12,UserLogin.counts)],else_ = 0)).label('dec')
                    
-        logins  = session.query( User.description, jan, feb, mar, apr,may,jun,jul,aug,sep,oct,nov,dec).join(UserLogin).filter(UserLogin.year == year, User.user_name.like('%'+userName+'%')).group_by(User.user_name,User.description)                   
-
+        #logins  = session.query( User.description, Department.department, Location.location, jan, feb, mar, apr,may,jun,jul,aug,sep,oct,nov,dec).outerjoin(UserLogin, Department, Location).filter(UserLogin.year == year, User.description.like('%'+userName+'%')).group_by(User.user_name,User.description, Department.department, Location.location)                  
+        logins  = session.query( User, jan, feb, mar, apr,may,jun,jul,aug,sep,oct,nov,dec)\
+                .join(UserLogin, Department, Location)\
+                .filter(UserLogin.year == year, User.description.like('%'+userName+'%'),Department.department.like('%'+dept+'%'),Location.location.like('%'+loc+'%'))\
+                .group_by(User.user_name,User.description, Department.department, Location.location)                  
+        logging.debug('dept :  %s', dept)
+        logging.debug('loc : %s', loc)
         
-        for user in logins:            
-            result.append(user)
-                
+        for login in logins:            
+            result.append(login)
+        
     paginator = Paginator(result, 20, orphans=10)
     
     currentPosition = int(math.ceil(page/max_pages))
@@ -114,6 +125,8 @@ def util_user(request):
                                                             'year' : year,
                                                             'page' : page,
                                                             'userName' : userName,
+                                                            'loc' : loc,
+                                                            'dept' : dept,
                                                             'hasPrevGroup' : hasPrevGroup,
                                                             'hasNextGroup' : hasNextGroup,
                                                             'prevStartNum' : prevStartNum,

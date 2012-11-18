@@ -3,7 +3,7 @@ import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-DJANGO_TOOLBAR = True
+DJANGO_TOOLBAR = False
 
 if os.name == 'nt':
     DB_PASSWORD = 'kmk7504'
