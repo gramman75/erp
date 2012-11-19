@@ -8,6 +8,6 @@ from django import forms
 class UserSearchForm(forms.Form):
     year     = forms.CharField()
     page     = forms.IntegerField()
-    userName = forms.CharField()
-    dept     = forms.CharField
-    loc      = forms.CharField()
+    userName = forms.CharField(required=False)
+    dept     = forms.CharField(required=False)
+    loc      = forms.CharField(required=False)

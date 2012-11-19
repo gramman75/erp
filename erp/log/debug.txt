@@ -1,0 +1,197 @@
+DEBUG:root:username :  
+DEBUG:root:dept :  IT
+DEBUG:root:loc : 본사
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jan, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS feb, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS mar, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS apr, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS may, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jun, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jul, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS aug, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS sep, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS oct, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS nov, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS `dec` 
+FROM xxsm_users_v INNER JOIN xxsm_user_logins ON xxsm_users_v.id = xxsm_user_logins.user_id INNER JOIN xxsm_departments_v ON xxsm_departments_v.department_code = xxsm_users_v.department_code_id INNER JOIN xxsm_locations_v ON xxsm_locations_v.location_code = xxsm_users_v.location_code_id 
+WHERE xxsm_user_logins.year = %s AND xxsm_users_v.description LIKE %s AND xxsm_departments_v.department LIKE %s AND xxsm_locations_v.location LIKE %s GROUP BY xxsm_users_v.user_name, xxsm_users_v.description, xxsm_departments_v.department, xxsm_locations_v.location
+INFO:sqlalchemy.engine.base.Engine:(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, '2012', '%%', '%IT%', '%\xba\xbb\xbb\xe7%')
+DEBUG:root:currentPosition 1
+DEBUG:root:lastGroup 1
+DEBUG:root:prevStartNum 0
+DEBUG:root:nextStartNum 0
+DEBUG:root:hasPrevGroup False
+DEBUG:root:hasNextGroup False
+DEBUG:root:max_pages 10.0
+DEBUG:root:paginator.num_pages 2
+DEBUG:root:end page <function <lambda> at 0x02B6CF70>
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA114',)
+DEBUG:root:currentPosition 1
+DEBUG:root:lastGroup 1
+DEBUG:root:prevStartNum 0
+DEBUG:root:nextStartNum 0
+DEBUG:root:hasPrevGroup False
+DEBUG:root:hasNextGroup False
+DEBUG:root:max_pages 10.0
+DEBUG:root:paginator.num_pages 1
+DEBUG:root:end page <function <lambda> at 0x02BD8EB0>
+DEBUG:root:username :  
+DEBUG:root:dept :  IT
+DEBUG:root:loc : 본사
+INFO:sqlalchemy.engine.base.Engine:SELECT DATABASE()
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:SHOW VARIABLES LIKE 'character_set%%'
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:SHOW VARIABLES LIKE 'sql_mode'
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jan, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS feb, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS mar, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS apr, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS may, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jun, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jul, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS aug, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS sep, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS oct, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS nov, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS `dec` 
+FROM xxsm_users_v INNER JOIN xxsm_user_logins ON xxsm_users_v.id = xxsm_user_logins.user_id INNER JOIN xxsm_departments_v ON xxsm_departments_v.department_code = xxsm_users_v.department_code_id INNER JOIN xxsm_locations_v ON xxsm_locations_v.location_code = xxsm_users_v.location_code_id 
+WHERE xxsm_user_logins.year = %s AND xxsm_users_v.description LIKE %s AND xxsm_departments_v.department LIKE %s AND xxsm_locations_v.location LIKE %s GROUP BY xxsm_users_v.user_name, xxsm_users_v.description, xxsm_departments_v.department, xxsm_locations_v.location
+INFO:sqlalchemy.engine.base.Engine:(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, '2012', '%%', '%IT%', '%\xba\xbb\xbb\xe7%')
+DEBUG:root:currentPosition 1
+DEBUG:root:lastGroup 1
+DEBUG:root:prevStartNum 0
+DEBUG:root:nextStartNum 0
+DEBUG:root:hasPrevGroup False
+DEBUG:root:hasNextGroup False
+DEBUG:root:max_pages 10.0
+DEBUG:root:paginator.num_pages 2
+DEBUG:root:end page <function <lambda> at 0x02BEF270>
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA114',)
+DEBUG:root:username :  
+DEBUG:root:dept :  IT
+DEBUG:root:loc : 본사
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jan, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS feb, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS mar, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS apr, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS may, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jun, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jul, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS aug, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS sep, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS oct, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS nov, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS `dec` 
+FROM xxsm_users_v INNER JOIN xxsm_user_logins ON xxsm_users_v.id = xxsm_user_logins.user_id INNER JOIN xxsm_departments_v ON xxsm_departments_v.department_code = xxsm_users_v.department_code_id INNER JOIN xxsm_locations_v ON xxsm_locations_v.location_code = xxsm_users_v.location_code_id 
+WHERE xxsm_user_logins.year = %s AND xxsm_users_v.description LIKE %s AND xxsm_departments_v.department LIKE %s AND xxsm_locations_v.location LIKE %s GROUP BY xxsm_users_v.user_name, xxsm_users_v.description, xxsm_departments_v.department, xxsm_locations_v.location
+INFO:sqlalchemy.engine.base.Engine:(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, '2012', '%%', '%IT%', '%\xba\xbb\xbb\xe7%')
+DEBUG:root:currentPosition 1
+DEBUG:root:lastGroup 1
+DEBUG:root:prevStartNum 0
+DEBUG:root:nextStartNum 0
+DEBUG:root:hasPrevGroup False
+DEBUG:root:hasNextGroup False
+DEBUG:root:max_pages 10.0
+DEBUG:root:paginator.num_pages 2
+DEBUG:root:end page <function <lambda> at 0x02C4DE70>
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA114',)
+DEBUG:root:username : STM 
+DEBUG:root:dept :  IT
+DEBUG:root:loc : 본사
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jan, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS feb, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS mar, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS apr, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS may, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jun, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jul, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS aug, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS sep, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS oct, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS nov, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS `dec` 
+FROM xxsm_users_v INNER JOIN xxsm_user_logins ON xxsm_users_v.id = xxsm_user_logins.user_id INNER JOIN xxsm_departments_v ON xxsm_departments_v.department_code = xxsm_users_v.department_code_id INNER JOIN xxsm_locations_v ON xxsm_locations_v.location_code = xxsm_users_v.location_code_id 
+WHERE xxsm_user_logins.year = %s AND xxsm_users_v.description LIKE %s AND xxsm_departments_v.department LIKE %s AND xxsm_locations_v.location LIKE %s GROUP BY xxsm_users_v.user_name, xxsm_users_v.description, xxsm_departments_v.department, xxsm_locations_v.location
+INFO:sqlalchemy.engine.base.Engine:(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, '2012', '%STM%', '%IT%', '%\xba\xbb\xbb\xe7%')
+DEBUG:root:currentPosition 1
+DEBUG:root:lastGroup 1
+DEBUG:root:prevStartNum 0
+DEBUG:root:nextStartNum 0
+DEBUG:root:hasPrevGroup False
+DEBUG:root:hasNextGroup False
+DEBUG:root:max_pages 10.0
+DEBUG:root:paginator.num_pages 1
+DEBUG:root:end page <function <lambda> at 0x02C4DEF0>
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA114',)
+DEBUG:root:username : STM 
+DEBUG:root:dept :  IT
+DEBUG:root:loc : 본사
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jan, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS feb, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS mar, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS apr, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS may, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jun, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jul, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS aug, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS sep, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS oct, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS nov, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS `dec` 
+FROM xxsm_users_v INNER JOIN xxsm_user_logins ON xxsm_users_v.id = xxsm_user_logins.user_id INNER JOIN xxsm_departments_v ON xxsm_departments_v.department_code = xxsm_users_v.department_code_id INNER JOIN xxsm_locations_v ON xxsm_locations_v.location_code = xxsm_users_v.location_code_id 
+WHERE xxsm_user_logins.year = %s AND xxsm_users_v.description LIKE %s AND xxsm_departments_v.department LIKE %s AND xxsm_locations_v.location LIKE %s GROUP BY xxsm_users_v.user_name, xxsm_users_v.description, xxsm_departments_v.department, xxsm_locations_v.location
+INFO:sqlalchemy.engine.base.Engine:(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, '2012', '%STM%', '%IT%', '%\xba\xbb\xbb\xe7%')
+DEBUG:root:currentPosition 1
+DEBUG:root:lastGroup 1
+DEBUG:root:prevStartNum 0
+DEBUG:root:nextStartNum 0
+DEBUG:root:hasPrevGroup False
+DEBUG:root:hasNextGroup False
+DEBUG:root:max_pages 10.0
+DEBUG:root:paginator.num_pages 1
+DEBUG:root:end page <function <lambda> at 0x02C69230>
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA114',)
+DEBUG:root:currentPosition 1
+DEBUG:root:lastGroup 1
+DEBUG:root:prevStartNum 0
+DEBUG:root:nextStartNum 0
+DEBUG:root:hasPrevGroup False
+DEBUG:root:hasNextGroup False
+DEBUG:root:max_pages 10.0
+DEBUG:root:paginator.num_pages 1
+DEBUG:root:end page <function <lambda> at 0x02C4D9B0>
+DEBUG:root:username : STM 
+DEBUG:root:dept :  
+DEBUG:root:loc : 
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jan, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS feb, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS mar, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS apr, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS may, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jun, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jul, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS aug, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS sep, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS oct, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS nov, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS `dec` 
+FROM xxsm_users_v INNER JOIN xxsm_user_logins ON xxsm_users_v.id = xxsm_user_logins.user_id INNER JOIN xxsm_departments_v ON xxsm_departments_v.department_code = xxsm_users_v.department_code_id INNER JOIN xxsm_locations_v ON xxsm_locations_v.location_code = xxsm_users_v.location_code_id 
+WHERE xxsm_user_logins.year = %s AND xxsm_users_v.description LIKE %s AND xxsm_departments_v.department LIKE %s AND xxsm_locations_v.location LIKE %s GROUP BY xxsm_users_v.user_name, xxsm_users_v.description, xxsm_departments_v.department, xxsm_locations_v.location
+INFO:sqlalchemy.engine.base.Engine:(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, '2012', '%STM%', '%%', '%%')
+DEBUG:root:currentPosition 1
+DEBUG:root:lastGroup 1
+DEBUG:root:prevStartNum 0
+DEBUG:root:nextStartNum 0
+DEBUG:root:hasPrevGroup False
+DEBUG:root:hasNextGroup False
+DEBUG:root:max_pages 10.0
+DEBUG:root:paginator.num_pages 1
+DEBUG:root:end page <function <lambda> at 0x02C4DC30>
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA114',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA191',)
+DEBUG:root:username : STM 
+DEBUG:root:dept :  
+DEBUG:root:loc : 
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jan, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS feb, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS mar, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS apr, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS may, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jun, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jul, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS aug, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS sep, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS oct, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS nov, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS `dec` 
+FROM xxsm_users_v INNER JOIN xxsm_user_logins ON xxsm_users_v.id = xxsm_user_logins.user_id INNER JOIN xxsm_departments_v ON xxsm_departments_v.department_code = xxsm_users_v.department_code_id INNER JOIN xxsm_locations_v ON xxsm_locations_v.location_code = xxsm_users_v.location_code_id 
+WHERE xxsm_user_logins.year = %s AND xxsm_users_v.description LIKE %s AND xxsm_departments_v.department LIKE %s AND xxsm_locations_v.location LIKE %s GROUP BY xxsm_users_v.user_name, xxsm_users_v.description, xxsm_departments_v.department, xxsm_locations_v.location
+INFO:sqlalchemy.engine.base.Engine:(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, '2012', '%STM%', '%%', '%%')
+DEBUG:root:currentPosition 1
+DEBUG:root:lastGroup 1
+DEBUG:root:prevStartNum 0
+DEBUG:root:nextStartNum 0
+DEBUG:root:hasPrevGroup False
+DEBUG:root:hasNextGroup False
+DEBUG:root:max_pages 10.0
+DEBUG:root:paginator.num_pages 1
+DEBUG:root:end page <function <lambda> at 0x02C4DD70>
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA114',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA191',)
+DEBUG:root:username : STM 
+DEBUG:root:dept :  
+DEBUG:root:loc : 
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jan, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS feb, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS mar, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS apr, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS may, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jun, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jul, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS aug, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS sep, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS oct, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS nov, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS `dec` 
+FROM xxsm_users_v INNER JOIN xxsm_user_logins ON xxsm_users_v.id = xxsm_user_logins.user_id INNER JOIN xxsm_departments_v ON xxsm_departments_v.department_code = xxsm_users_v.department_code_id INNER JOIN xxsm_locations_v ON xxsm_locations_v.location_code = xxsm_users_v.location_code_id 
+WHERE xxsm_user_logins.year = %s AND xxsm_users_v.description LIKE %s AND xxsm_departments_v.department LIKE %s AND xxsm_locations_v.location LIKE %s GROUP BY xxsm_users_v.user_name, xxsm_users_v.description, xxsm_departments_v.department, xxsm_locations_v.location
+INFO:sqlalchemy.engine.base.Engine:(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, '2012', '%STM%', '%%', '%%')
+DEBUG:root:currentPosition 1
+DEBUG:root:lastGroup 1
+DEBUG:root:prevStartNum 0
+DEBUG:root:nextStartNum 0
+DEBUG:root:hasPrevGroup False
+DEBUG:root:hasNextGroup False
+DEBUG:root:max_pages 10.0
+DEBUG:root:paginator.num_pages 1
+DEBUG:root:end page <function <lambda> at 0x02C4DE30>
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA114',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA191',)

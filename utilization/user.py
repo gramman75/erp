@@ -60,8 +60,9 @@ def util_user(request):
             dept = cd['dept']
             loc  = cd['loc']
         else:
-            HttpResponse('Error!')
-        logging.debug('username : ' + userName)
+            logging.debug('form error %s' , form.errors)
+            return HttpResponse('Error!')
+        logging.debug('username : %s ',  userName)
         
         jan = func.sum(case([(UserLogin.month == 1,UserLogin.counts)],else_ = 0)).label('jan')
         feb = func.sum(case([(UserLogin.month == 2,UserLogin.counts)],else_ = 0)).label('feb')
@@ -132,7 +133,7 @@ def util_user(request):
                                                             'prevStartNum' : prevStartNum,
                                                             'nextStartNum' : nextStartNum,
                                                             'currentPosition ' : currentPosition,
-                                                            'pageRange' : range(int((currentPosition-1)*max_pages + 1), int((currentPosition * max_pages)+1) if hasNextGroup else paginator.num_pages)
+                                                            'pageRange' : range(int((currentPosition-1)*max_pages + 1), int((currentPosition * max_pages)+1) if hasNextGroup else paginator.num_pages + 1)
                                                             }
                                                            ,context_instance=RequestContext(request)
                               )
