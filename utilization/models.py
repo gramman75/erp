@@ -65,7 +65,11 @@ class UserLogin(Base):
     
     user = relationship('User',backref=backref('xxsm_user_logins',order_by=id))
                                                
-                                                  
+       
+class Month(Base):
+    __tablename__ = 'xxsm_months'
+    month = Column(Integer, primary_key=True)
+                                                      
 class Computer(Base):
     __tablename__ = 'computer'
     id = Column(Integer, primary_key=True)

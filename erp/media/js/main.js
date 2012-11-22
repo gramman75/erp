@@ -19,11 +19,7 @@ var getform = function(element, parent){
 
 
 var content_ajax = function(href,param){
-	var callback = function(dataReceived){
-		$(this).hide();
-		$('#content').html(dataReceived);		
-	};
-	
+
 	$.ajax({
 		url : href,
 		data : param,

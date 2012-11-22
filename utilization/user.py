@@ -13,7 +13,8 @@ from sqlalchemy import func
 from django.conf import settings
 import math
 import time
-
+import pygal
+    
 import logging, os
 
 
@@ -60,6 +61,7 @@ def util_user(request):
             dept = cd['dept']
             loc  = cd['loc']
         else:
+            form = UserSearchForm()
             logging.debug('form error %s' , form.errors)
             return HttpResponse('Error!')
         logging.debug('username : %s ',  userName)
@@ -87,7 +89,9 @@ def util_user(request):
         
         for login in logins:            
             result.append(login)
-        
+    else:
+        form = UserSearchForm()
+              
     paginator = Paginator(result, 20, orphans=10)
     
     currentPosition = int(math.ceil(page/max_pages))
@@ -123,11 +127,7 @@ def util_user(request):
             
     return render_to_response('userCount/user_content.html',{'result' : paginator.page(page),
                                                             'month' : range(1,13),
-                                                            'year' : year,
-                                                            'page' : page,
-                                                            'userName' : userName,
-                                                            'loc' : loc,
-                                                            'dept' : dept,
+                                                            'cond' : form,                                                           
                                                             'hasPrevGroup' : hasPrevGroup,
                                                             'hasNextGroup' : hasNextGroup,
                                                             'prevStartNum' : prevStartNum,
@@ -137,29 +137,36 @@ def util_user(request):
                                                             }
                                                            ,context_instance=RequestContext(request)
                               )
+def month_graph(request):
+
     
-
+    data ={}
+    chartData =[]
+    if 'userId' in request.GET and request.GET['userId']:
+        userId = request.GET['userId']
         
+        result = session.query( UserLogin.year, UserLogin.month, func.sum(UserLogin.counts).label('count')).filter(UserLogin.user_id == userId).group_by(UserLogin.year, UserLogin.month)
+        user = session.query(User).filter(User.id == userId).one()
+        for row in result:
+            data[int(row.month)] = int(row.count)
         
-    #monthCount = {}
-    #result ={}
-    #users = fnd_user_c.objects.filter(user_name__contains ='STM')
-    #users = fnd_user_c.objects.filter(fnd_logins_c__start_time__gt=('2012-09-27 00:00:00'),fnd_logins_c__login_type__exact='FORM')    
-    #logins = FndLogins.objects.select_related().filter(start_time__gt=('2012-05-01 00:00:00'),login_type__exact='FORM').extra(select={"Month" : "to_char(START_time,'RRRRMM')"}).values('user_id','Month').annotate(cnt = Count('login_id'))
-    '''
-    if user_name :
-        users = FndUser.objects.filter(end_date__isnull=True,user_name__icontains=user_name)
+        for month in range(1,13):
+            try:
+                value = data[month]
+            except KeyError:
+                value = 0
+            
+            chartData.append(value)
+        
+        line_chart = pygal.Line()
+        line_chart.title = user.description
+        line_chart.x_labels = map(str,range(1,13))
+        line_chart.add('',chartData)
+        
+        return HttpResponse(line_chart.render(False))
     else:
-        users = FndUser.objects.filter(end_date__isnull=True)
+        return  HttpResponse('No Data')   
+            
+            
         
-    for user in users:
-        monthCount = {}
-        for i in range(1,13):            
-            loginCount = FndLogins.objects.select_related().filter(start_time__gt='2012-01-01 00:00:00',start_time__month=i,login_type__exact='FORM',user_id__exact=user.user_id).count()
-            monthCount[i] = loginCount
-        result[user.user_name] = monthCount
-
-    #log.exception(result)
-    print result
-    '''
-    #return render_to_response('userCount/user_result.html',{'month' : range(1,13), 'result' : result })
+        
