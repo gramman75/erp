@@ -12,6 +12,7 @@ urlpatterns = patterns('',
                        url(r'^erp/util/user/search/$','utilization.user.util_user_search'),
                        url(r'^erp/util/user/result/$','utilization.user.util_user_result'),
                        url(r'^erp/util/user/month_graph/$','utilization.user.month_graph'),
+                       url(r'^erp/util/user/day_graph/$','utilization.user.day_graph'),
                        url(r'^erp/test','erp.views.test'),
 
                        

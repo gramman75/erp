@@ -13,6 +13,7 @@ from sqlalchemy import func
 from django.conf import settings
 import math
 import time
+import calendar
 import pygal
     
 import logging, os
@@ -87,7 +88,7 @@ def util_user(request):
         logging.debug('dept :  %s', dept)
         logging.debug('loc : %s', loc)
         
-        for login in logins:            
+        for login in logins:  
             result.append(login)
     else:
         form = UserSearchForm()
@@ -127,7 +128,7 @@ def util_user(request):
             
     return render_to_response('userCount/user_content.html',{'result' : paginator.page(page),
                                                             'month' : range(1,13),
-                                                            'cond' : form,                                                           
+                                                            'cond' : form,      
                                                             'hasPrevGroup' : hasPrevGroup,
                                                             'hasNextGroup' : hasNextGroup,
                                                             'prevStartNum' : prevStartNum,
@@ -142,6 +143,7 @@ def month_graph(request):
     
     data ={}
     chartData =[]
+    
     if 'userId' in request.GET and request.GET['userId']:
         userId = request.GET['userId']
         
@@ -159,6 +161,7 @@ def month_graph(request):
             chartData.append(value)
         
         line_chart = pygal.Line()
+        
         line_chart.title = user.description
         line_chart.x_labels = map(str,range(1,13))
         line_chart.add('',chartData)
@@ -167,6 +170,40 @@ def month_graph(request):
     else:
         return  HttpResponse('No Data')   
             
+def day_graph(request):
+    data ={}
+    chartData =[]
+    
+    if 'userId' in request.GET and request.GET['userId']:
+        userId = request.GET['userId']
+        year   = request.GET['year']
+        month  = request.GET['month']
+        
+        result = session.query( UserLogin.year, UserLogin.month, UserLogin.day, UserLogin.counts.label('count'))\
+                 .filter(UserLogin.user_id == userId, UserLogin.year==year, UserLogin.month==month)
+                 
+        user = session.query(User).filter(User.id == userId).one()
+        for row in result:
+            data[int(row.day)] = int(row.count)
+        
+        lastDay = calendar.monthrange(year, month)
+        
+        for day in range(1,lastDay+1):
+            try:
+                value = data[day]
+            except KeyError:
+                value = 0
             
+            chartData.append(value)
+        
+        line_chart = pygal.Line()
+        
+        line_chart.title = user.description
+        line_chart.x_labels = map(str,range(1,lastDay+1))
+        line_chart.add('Á¢¼ÓÈ½¼ö',chartData)
+        
+        return HttpResponse(line_chart.render(False))
+    else:
+        return  HttpResponse('No Data')                 
         
         

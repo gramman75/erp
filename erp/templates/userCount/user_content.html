@@ -25,59 +25,50 @@
 				
 				{% for column in row %}
 					{% if forloop.counter == 1 %}
-						<td><a href="#{{ column.id}}"  onclick="chart_ajax({{ 'column.id' }} ); return false;" data-toggle="modal" rel="tooltip" data-placement="right" data-title ="{{ column.location_code }} /  {{ column.department.department }}"> {{ column.description }}</a></td>
-						<div id="{{ column.id }}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<td id="{{ column.id }}"><a href="#month"  onclick="month_graph_ajax({{ column.id }}); return false;" data-toggle="modal" rel="tooltip" data-placement="right" data-title ="{{ column.location_code }} /  {{ column.department.department }}"> {{ column.description }}</a></td>
 						
-							<div class="modal-header">
-								<h3 id="myModalLabel">Modal Header</h3>								
-							</div>
-							
-							<div class="modal-body" id="{{ column.id }}">
-								
-							</div>
-							
-							<div class="modal-footer">
-								<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    							<button class="btn btn-primary">Save changes</button>
-							</div>
-						</div>						
 					{% else %}
-						<td><a href="#myModal" data-toggle="modal">{{ column }}</a></td>
-
-
-
-						<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-							<div class="modal-header">
-								<h3 id="myModalLabel">Modal Header</h3>								
-							</div>
-							
-							<div class="modal-body">
-								
-							</div>
-							
-							<div class="modal-footer">
-								<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    							<button class="btn btn-primary">Save changes</button>
-							</div>
-						</div>
+						<td><a href="#day" data-toggle="modal" onclick="day_graph_ajax(this, {{ cond.year.data}},{{ forloop.counter }}); return false;" > {{ column }}</a></td>
+						
 					{% endif %}			
 				{% endfor %}
 			</tr>
 			{% endfor %}
 			
 	</table>	
-	<!--
-	{% for p in  result.paginator.page_range %}
-		{% if result.number == p %}
-			<B>{{ p }}</B>
-		{% else %}	
-			<a href="/erp/util/user/?year={{ year }}&page={{ p }}&userName={{ userName }}">{{ p }}</a>
-		{% endif %} 
-		{% if p != result.paginator.num_pages %}
-			|
-		{% endif %}
-	{% endfor %}	
-	-->
+
+	<!-- 월별 그래프를 위한 Modal div -->
+	<div id="month" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	
+		<div class="modal-header">
+			<h3 id="myModalLabel">월별 접속 횟수</h3>								
+		</div>
+		
+		<div class="modal-body" id="month">								
+		</div>
+		
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<button class="btn btn-primary">Save changes</button>
+		</div>
+	</div>
+	
+	<!-- 일별  그래프를 위한 Modal div -->
+	<div id="day" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	
+		<div class="modal-header">
+			<h3 id="myModalLabel">일별 접속 횟수</h3>								
+		</div>
+		
+		<div class="modal-body" id="month">								
+		</div>
+		
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<button class="btn btn-primary">Save changes</button>
+		</div>
+	</div>	
+						
 	<div class="pagination pagination-centered">
 		<ul>
 	{% if hasPrevGroup %}
@@ -100,4 +91,32 @@
  	<script type="text/javascript">
     	$("[rel=tooltip]").tooltip();
     	$("[rel=popover]").popover();
+    	var month_graph_ajax = function(userId){
+    		    //var id = "div#"+userId+".modal-body";    		   
+				$.ajax({
+					url : '/erp/util/user/month_graph',
+					data : 'userId='+userId,
+					async : false,
+					success : function(html){			
+						$("div#month.modal-body").html(html);
+					}
+				});		
+			}
+	    var day_graph_ajax = function(me, year, month){
+	    		alert(me);
+	    		var $this = $(me);
+	    		var userId = $this.parents('*').slice(0).attr('id');
+	    		alert(userId);
+	    		var param = 'year='+year+'&month='+(month-1)+'&userId='+ userId;
+	    	
+    		    //var id = "div#"+userId+".modal-body";    		   
+				$.ajax({
+					url : '/erp/util/user/day_graph',
+					data : 'year='+year,
+					async : false,
+					success : function(html){			
+						$("div#month.modal-body").html(html);
+					}
+				});		
+			}
 	</script>

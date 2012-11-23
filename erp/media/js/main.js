@@ -31,16 +31,16 @@ var content_ajax = function(href,param){
 }
 
 var chart_ajax = function(userId){
-
-	$.ajax({
-		url : '/erp/util/user/month_graph',
-		data : userId,
-		async : false,
-		success : function(html){			
-			$("#"+userId).html(html);
-		}
-	});		
-}
+    		    var id = "div#"+userId+".modal-body";    		   
+				$.ajax({
+					url : '/erp/util/user/month_graph',
+					data : 'userId='+userId,
+					async : false,
+					success : function(html){			
+						$(id).html(html);
+					}
+				});		
+			}
 
 var popup = function(me){
 	var $this = $(me);
