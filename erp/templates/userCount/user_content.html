@@ -25,8 +25,8 @@
 				
 				{% for column in row %}
 					{% if forloop.counter == 1 %}
-						<td><a href="util/user/month_graph/?userId={{ column.id }}" data-toggle="modal" rel="tooltip" data-placement="right" data-title ="{{ column.location_code }} /  {{ column.department.department }}"> {{ column.description }}</a></td>
-						<div id="util/user/month_graph/?userId={{ column.id }}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<td><a href="#{{ column.id}}"  onclick="chart_ajax({{ 'column.id' }} ); return false;" data-toggle="modal" rel="tooltip" data-placement="right" data-title ="{{ column.location_code }} /  {{ column.department.department }}"> {{ column.description }}</a></td>
+						<div id="{{ column.id }}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						
 							<div class="modal-header">
 								<h3 id="myModalLabel">Modal Header</h3>								
@@ -100,9 +100,4 @@
  	<script type="text/javascript">
     	$("[rel=tooltip]").tooltip();
     	$("[rel=popover]").popover();
-    	$("[data-toggle=modal]").click(function(){
-    		$.get(this.href,function(data){
-    			$('#15385').html(data);	
-    		})    		
-    	})
 	</script>
