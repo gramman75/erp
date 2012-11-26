@@ -28,7 +28,7 @@
 						<td id="{{ column.id }}"><a href="#month"  onclick="month_graph_ajax({{ column.id }}); return false;" data-toggle="modal" rel="tooltip" data-placement="right" data-title ="{{ column.location_code }} /  {{ column.department.department }}"> {{ column.description }}</a></td>
 						
 					{% else %}
-						<td><a href="#day" data-toggle="modal" onclick="day_graph_ajax(this, {{ cond.year.data}},{{ forloop.counter }}); return false;" > {{ column }}</a></td>
+						<td><a href="#day" class="day-graph" data-toggle="modal" year={{ cond.year.data}} month={{ forloop.counter }} > {{ column }}</a></td>
 						
 					{% endif %}			
 				{% endfor %}
@@ -102,6 +102,23 @@
 					}
 				});		
 			}
+		$('.day-graph').click(function(){
+			var $this = $(this);
+			userId = $this.parent().siblings().slice(0,1).attr('id');	
+			year = $this.attr('year');
+			month = $this.attr('month');		
+			var param = 'year='+year+'&month='+(month-1)+'&userId='+ userId;
+			$.ajax({
+					url : '/erp/util/user/day_graph',
+					data : param,
+					async : false,
+					success : function(html){			
+						$("div#month.modal-body").html(html);
+					}
+				});
+				
+		})
+	    /*
 	    var day_graph_ajax = function(me, year, month){
 	    		alert(me);
 	    		var $this = $(me);
@@ -119,4 +136,5 @@
 					}
 				});		
 			}
+			*/
 	</script>

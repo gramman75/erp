@@ -176,8 +176,8 @@ def day_graph(request):
     
     if 'userId' in request.GET and request.GET['userId']:
         userId = request.GET['userId']
-        year   = request.GET['year']
-        month  = request.GET['month']
+        year   = int(request.GET['year'])
+        month  = int(request.GET['month'])
         
         result = session.query( UserLogin.year, UserLogin.month, UserLogin.day, UserLogin.counts.label('count'))\
                  .filter(UserLogin.user_id == userId, UserLogin.year==year, UserLogin.month==month)
@@ -186,7 +186,7 @@ def day_graph(request):
         for row in result:
             data[int(row.day)] = int(row.count)
         
-        lastDay = calendar.monthrange(year, month)
+        lastDay = calendar.monthrange(year, month)[1]
         
         for day in range(1,lastDay+1):
             try:
@@ -200,7 +200,7 @@ def day_graph(request):
         
         line_chart.title = user.description
         line_chart.x_labels = map(str,range(1,lastDay+1))
-        line_chart.add('Á¢¼ÓÈ½¼ö',chartData)
+        line_chart.add('Counts',chartData)
         
         return HttpResponse(line_chart.render(False))
     else:
