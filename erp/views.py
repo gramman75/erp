@@ -25,6 +25,7 @@ def loginProcess(request):
             userName = cd['userName']
             password = cd['password']
             remmemberMe = cd['rememberMe']
+            
     else:
         form = LoginForm()
     

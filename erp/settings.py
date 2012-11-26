@@ -16,7 +16,7 @@ MAX_PAGES = 10.0
 PROJECT_DIR = os.path.dirname(__file__)
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+     ('gramman75', 'gramman75@gmail.com')
 )
 
 MANAGERS = ADMINS
@@ -151,6 +151,14 @@ INSTALLED_APPS = (
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
@@ -161,7 +169,13 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
-        }
+        },
+        'file_handler' : {
+            'level' : 'DEBUG',
+            'class' : 'logging.handlers.RotatingFileHandler',
+            'formatter' : 'verbose',
+            'filename' : 'erp/log/logconfig.log'
+            }
     },
     'loggers': {
         'django.request': {
@@ -169,6 +183,10 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+        'file' : {
+             'handlers' : ['file_handler'],
+             'level' : 'DEBUG'
+             }
     }
 }
 

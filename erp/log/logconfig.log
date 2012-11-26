@@ -1,0 +1,14 @@
+DEBUG 2012-11-26 23:18:13,716 forms logging test
+DEBUG 2012-11-26 23:31:47,564 forms password 1234rtyhf
+DEBUG 2012-11-26 23:31:47,564 forms m 1234rtyhf
+DEBUG 2012-11-26 23:32:11,045 forms password 123
+DEBUG 2012-11-26 23:33:31,631 forms password 234
+DEBUG 2012-11-26 23:33:57,354 forms password 123
+DEBUG 2012-11-26 23:35:23,883 forms password 23
+DEBUG 2012-11-26 23:35:35,145 forms password asd
+DEBUG 2012-11-26 23:36:13,518 forms password 123
+DEBUG 2012-11-26 23:36:33,241 forms password asd
+DEBUG 2012-11-26 23:36:58,839 forms password asdf1234
+DEBUG 2012-11-26 23:36:58,839 forms m asdf1234
+DEBUG 2012-11-26 23:45:33,728 forms password 098
+DEBUG 2012-11-26 23:46:23,695 forms password 123

@@ -1,9 +1,16 @@
+# -*- coding: euckr -*-
 '''
 Created on 2012. 11. 13.
 
 @author: stmkmk
 '''
 from django import forms
+import re, logging
+from django.conf import settings
+logging.config.dictConfig(settings.LOGGING)
+logger = logging.getLogger('file')
+
+
 
 class LoginForm(forms.Form):
     userName = forms.CharField()
@@ -15,3 +22,15 @@ class LoginForm(forms.Form):
         if userName == '':
             raise forms.ValidationError("Input User Name")
         return userName
+    
+    def clean_password(self):
+        password = self.cleaned_data['password']
+        p = re.compile('^(?=([a-zA-Z]+[0-9]+[a-zA-Z0-9]*|[0-9]+[a-zA-Z]+[a-zA-Z0-9]*)$).{6,12}')
+        m = p.match(password)
+        logger.debug('password %s', password)
+        logger.debug('m %s', m.group())
+        
+        if not(m):
+            logger.debug('%s','error')
+            raise forms.ValidationError('123')
+        return password
