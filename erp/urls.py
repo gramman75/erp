@@ -13,6 +13,8 @@ urlpatterns = patterns('',
                        url(r'^erp/util/user/result/$','utilization.user.util_user_result'),
                        url(r'^erp/util/user/month_graph/$','utilization.user.month_graph'),
                        url(r'^erp/util/user/day_graph/$','utilization.user.day_graph'),
+                       url(r'^erp/login/$','erp.views.login'),
+                       url(r'^erp/loginProcess/$','erp.views.loginProcess'),
                        url(r'^erp/test','erp.views.test'),
 
                        

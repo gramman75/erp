@@ -65,7 +65,7 @@ def util_user(request):
             form = UserSearchForm()
             logging.debug('form error %s' , form.errors)
             return HttpResponse('Error!')
-        logging.debug('username : %s ',  userName)
+        #logging.debug('username : %s ',  userName)
         
         jan = func.sum(case([(UserLogin.month == 1,UserLogin.counts)],else_ = 0)).label('jan')
         feb = func.sum(case([(UserLogin.month == 2,UserLogin.counts)],else_ = 0)).label('feb')
@@ -85,8 +85,8 @@ def util_user(request):
                 .join(UserLogin, Department, Location)\
                 .filter(UserLogin.year == year, User.description.like('%'+userName+'%'),Department.department.like('%'+dept+'%'),Location.location.like('%'+loc+'%'))\
                 .group_by(User.user_name,User.description, Department.department, Location.location)                  
-        logging.debug('dept :  %s', dept)
-        logging.debug('loc : %s', loc)
+        #logging.debug('dept :  %s', dept)
+        #logging.debug('loc : %s', loc)
         
         for login in logins:  
             result.append(login)
@@ -115,7 +115,7 @@ def util_user(request):
             hasPrevGroup = True
             hasNextGroup = False
             prevStartNum = int(currentPosition * max_pages - 1)
-    
+    '''
     logging.debug('currentPosition %s', currentPosition)
     logging.debug('lastGroup %s', lastGroup)
     logging.debug('prevStartNum %s', prevStartNum)
@@ -125,7 +125,7 @@ def util_user(request):
     logging.debug('max_pages %s', max_pages)
     logging.debug('paginator.num_pages %s',  paginator.num_pages)
     logging.debug('end page %s',  (lambda x : int((currentPosition * max_pages)) + 1 if hasNextGroup else paginator.num_pages))
-            
+    '''       
     return render_to_response('userCount/user_content.html',{'result' : paginator.page(page),
                                                             'month' : range(1,13),
                                                             'cond' : form,      

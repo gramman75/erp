@@ -203,3 +203,6 @@ if DJANGO_TOOLBAR:
 
     def custom_show_toolbar(request):
         return True
+
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
