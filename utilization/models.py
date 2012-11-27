@@ -42,6 +42,7 @@ class User(Base):
     location_code   = Column('location_code_id',String(30),ForeignKey('xxsm_locations_v.location_code'))
     enable          = Column(String(1))
     inactive_date   = Column(Date)  
+    password        = Column(String(100))
     
     #department = relationship('Department',backref('xxsm_users_v'))
     #location   = relationship('Location',backref('xxsm_users_v'))   

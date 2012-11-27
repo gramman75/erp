@@ -26,11 +26,14 @@ class LoginForm(forms.Form):
     def clean_password(self):
         password = self.cleaned_data['password']
         p = re.compile('^(?=([a-zA-Z]+[0-9]+[a-zA-Z0-9]*|[0-9]+[a-zA-Z]+[a-zA-Z0-9]*)$).{6,12}')
-        m = p.match(password)
-        logger.debug('password %s', password)
-        logger.debug('m %s', m.group())
+        m = p.match(password)       
         
-        if not(m):
-            logger.debug('%s','error')
-            raise forms.ValidationError('123')
+        if m:
+            pass
+        else:
+            raise forms.ValidationError('Password Error')
+        
         return password
+    
+    
+    
