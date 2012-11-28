@@ -3442,3 +3442,916 @@ DjangoUnicodeDecodeError: 'utf8' codec can't decode byte 0xc6 in position 0: inv
 11-27 16:39 root         DEBUG    request GET
 11-27 16:39 root         DEBUG    valid False
 11-27 16:39 root         DEBUG    form error <ul class="errorlist"><li>userName<ul class="errorlist"><li>This field is required.</li></ul></li><li>password<ul class="errorlist"><li>Password Error</li></ul></li></ul>
+INFO:sqlalchemy.engine.base.Engine:SELECT DATABASE()
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:SHOW VARIABLES LIKE 'character_set%%'
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:SHOW VARIABLES LIKE 'sql_mode'
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jan, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS feb, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS mar, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS apr, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS may, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jun, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jul, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS aug, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS sep, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS oct, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS nov, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS `dec` 
+FROM xxsm_users_v INNER JOIN xxsm_user_logins ON xxsm_users_v.id = xxsm_user_logins.user_id INNER JOIN xxsm_departments_v ON xxsm_departments_v.department_code = xxsm_users_v.department_code_id INNER JOIN xxsm_locations_v ON xxsm_locations_v.location_code = xxsm_users_v.location_code_id 
+WHERE xxsm_user_logins.year = %s AND xxsm_users_v.description LIKE %s AND xxsm_departments_v.department LIKE %s AND xxsm_locations_v.location LIKE %s GROUP BY xxsm_users_v.user_name, xxsm_users_v.description, xxsm_departments_v.department, xxsm_locations_v.location
+INFO:sqlalchemy.engine.base.Engine:(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, '2012', '%%', '%%', '%%')
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB098',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB021',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA071',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC044',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB131',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KD024',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KD005',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KD015',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB012',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC007',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC008',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KF002',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA307',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB019',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC015',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KD039',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA246',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB144',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC004',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.id = %s
+INFO:sqlalchemy.engine.base.Engine:('11607',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_user_logins.year AS xxsm_user_logins_year, xxsm_user_logins.month AS xxsm_user_logins_month, sum(xxsm_user_logins.counts) AS count 
+FROM xxsm_user_logins 
+WHERE xxsm_user_logins.user_id = %s GROUP BY xxsm_user_logins.year, xxsm_user_logins.month
+INFO:sqlalchemy.engine.base.Engine:('11607',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.id = %s
+INFO:sqlalchemy.engine.base.Engine:('11638',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_user_logins.year AS xxsm_user_logins_year, xxsm_user_logins.month AS xxsm_user_logins_month, xxsm_user_logins.day AS xxsm_user_logins_day, xxsm_user_logins.counts AS count 
+FROM xxsm_user_logins 
+WHERE xxsm_user_logins.user_id = %s AND xxsm_user_logins.year = %s AND xxsm_user_logins.month = %s
+INFO:sqlalchemy.engine.base.Engine:('11638', 2012, 5)
+11-28 07:24 root         DEBUG    request GET
+11-28 07:24 root         DEBUG    valid False
+11-28 07:24 root         DEBUG    form error <ul class="errorlist"><li>password<ul class="errorlist"><li>Password Error</li></ul></li></ul>
+11-28 07:25 root         DEBUG    request GET
+11-28 07:25 root         DEBUG    valid True
+11-28 07:25 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 37, in loginProcess
+    remmemberMe = cd['rememberMe']
+KeyError: 'rememberMe'
+11-28 07:25 root         DEBUG    request GET
+11-28 07:25 root         DEBUG    valid True
+11-28 07:25 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 37, in loginProcess
+    remmemberMe = cd['rememberMe']
+KeyError: 'rememberMe'
+11-28 07:27 root         DEBUG    request GET
+11-28 07:27 root         DEBUG    valid True
+11-28 07:27 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 41, in loginProcess
+    password == md5.md5(password).hexdigest()
+  File "<string>", line 1, in <lambda>
+  File "c:\python27\lib\site-packages\sqlalchemy\orm\query.py", line 50, in generate
+    fn(self, *args[1:], **kw)
+  File "c:\python27\lib\site-packages\sqlalchemy\orm\query.py", line 1196, in filter
+    "filter() argument must be of type "
+ArgumentError: filter() argument must be of type sqlalchemy.sql.ClauseElement or string
+11-28 07:28 root         DEBUG    request GET
+11-28 07:28 root         DEBUG    valid True
+11-28 07:28 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 07:28 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:28 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 07:28 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:28 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 07:28 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:28 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 07:28 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:28 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:28 root         DEBUG    form error 
+11-28 07:28 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 62, in loginProcess
+    return redirect('erp/')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 07:28 django.db.backends DEBUG    (0.060) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:28 django.db.backends DEBUG    (0.001) SAVEPOINT s1260_x1; args=()
+11-28 07:28 django.db.backends DEBUG    (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:28 django.db.backends DEBUG    (0.025) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('6be62c2ce29ee3ae077c5ecbc32f2924', 'NTc4MmVmYzkwN2IxNjUxOWYwMzc2Mzk5MDdkOWY2NzJiMGM3OGMxMDqAAn1xAShVCHVzZXJOYW1l\ncQJYBgAAAFNUTUtNS3EDVQtkZXNjcmlwdGlvbnEEWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RN\nS01LcQV1Lg==\n', '2012-12-11 22:28:19'); args=('6be62c2ce29ee3ae077c5ecbc32f2924', 'NTc4MmVmYzkwN2IxNjUxOWYwMzc2Mzk5MDdkOWY2NzJiMGM3OGMxMDqAAn1xAShVCHVzZXJOYW1l\ncQJYBgAAAFNUTUtNS3EDVQtkZXNjcmlwdGlvbnEEWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RN\nS01LcQV1Lg==\n', u'2012-12-11 22:28:19')
+11-28 07:29 root         DEBUG    request GET
+11-28 07:29 root         DEBUG    valid True
+11-28 07:29 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 07:29 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:29 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 07:29 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:29 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 07:29 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:29 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 07:29 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:29 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:29 root         DEBUG    form error 
+11-28 07:29 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:29:42' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:29:42')
+11-28 07:29 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 62, in loginProcess
+    return redirect('/erp')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 07:29 django.db.backends DEBUG    (0.000) SAVEPOINT s3836_x1; args=()
+11-28 07:29 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:29 django.db.backends DEBUG    (0.057) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 22:29:42' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 22:29:42', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 07:34 root         DEBUG    request GET
+11-28 07:34 root         DEBUG    valid True
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:34 root         DEBUG    form error 
+11-28 07:34 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:34:23' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:34:23')
+11-28 07:34 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 62, in loginProcess
+    return render_to_response('home.htm')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "c:\python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "c:\python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "c:\python27\lib\site-packages\django\template\loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: home.htm
+11-28 07:34 django.db.backends DEBUG    (0.000) SAVEPOINT s7064_x1; args=()
+11-28 07:34 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:34 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 22:34:23' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 22:34:23', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 07:34 root         DEBUG    request GET
+11-28 07:34 root         DEBUG    valid True
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:34 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:34 root         DEBUG    form error 
+11-28 07:34 django.db.backends DEBUG    (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:34:57' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:34:57')
+11-28 07:34 django.db.backends DEBUG    (0.000) SAVEPOINT s7936_x1; args=()
+11-28 07:34 django.db.backends DEBUG    (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:34 django.db.backends DEBUG    (0.000) UPDATE `django_session` SET `session_data` = 'MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', `expire_date` = '2012-12-11 22:34:57' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', u'2012-12-11 22:34:57', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 07:35 root         DEBUG    request GET
+11-28 07:35 root         DEBUG    valid True
+11-28 07:35 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 07:35 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:35 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 07:35 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:35 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 07:35 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:35 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 07:35 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:35 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:35 root         DEBUG    form error 
+11-28 07:35 django.db.backends DEBUG    (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:35:59' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:35:59')
+11-28 07:35 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 62, in loginProcess
+    return redirect('/erp/')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 07:35 django.db.backends DEBUG    (0.000) SAVEPOINT s7244_x1; args=()
+11-28 07:35 django.db.backends DEBUG    (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:35 django.db.backends DEBUG    (0.000) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 22:35:59' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 22:35:59', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 07:41 root         DEBUG    request GET
+11-28 07:41 root         DEBUG    valid True
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:41 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:41:01' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:41:01')
+11-28 07:41 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 61, in loginProcess
+    return redirect('common/test.html')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 07:41 django.db.backends DEBUG    (0.000) SAVEPOINT s7108_x1; args=()
+11-28 07:41 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:41 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 22:41:01' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 22:41:01', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 07:41 root         DEBUG    request GET
+11-28 07:41 root         DEBUG    valid True
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:41 django.db.backends DEBUG    (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:41:13' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:41:13')
+11-28 07:41 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 61, in loginProcess
+    return redirect('common/test.html')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 07:41 django.db.backends DEBUG    (0.000) SAVEPOINT s6192_x1; args=()
+11-28 07:41 django.db.backends DEBUG    (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:41 django.db.backends DEBUG    (0.000) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 22:41:13' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 22:41:13', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 07:41 root         DEBUG    request GET
+11-28 07:41 root         DEBUG    valid True
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:41 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:41:14' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:41:14')
+11-28 07:41 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 61, in loginProcess
+    return redirect('common/test.html')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 07:41 django.db.backends DEBUG    (0.000) SAVEPOINT s6156_x1; args=()
+11-28 07:41 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:41 django.db.backends DEBUG    (0.000) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 22:41:14' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 22:41:14', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 07:41 root         DEBUG    request GET
+11-28 07:41 root         DEBUG    valid True
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:41 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:41 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:41:51' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:41:51')
+11-28 07:41 django.db.backends DEBUG    (0.001) SAVEPOINT s6476_x1; args=()
+11-28 07:41 django.db.backends DEBUG    (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:41 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', `expire_date` = '2012-12-11 22:41:51' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', u'2012-12-11 22:41:51', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 07:45 root         DEBUG    request GET
+11-28 07:45 root         DEBUG    valid True
+11-28 07:45 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 07:45 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:45 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 07:45 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:45 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 07:45 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:45 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 07:45 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:45 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:45 django.db.backends DEBUG    (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:45:52' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:45:52')
+11-28 07:45 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 62, in loginProcess
+    return urllib2('http://127.0.0.1:8000/erp')
+TypeError: 'module' object is not callable
+11-28 07:45 django.db.backends DEBUG    (0.000) SAVEPOINT s6108_x1; args=()
+11-28 07:45 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:45 django.db.backends DEBUG    (0.000) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 22:45:53' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 22:45:53', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 07:46 root         DEBUG    request GET
+11-28 07:46 root         DEBUG    valid True
+11-28 07:46 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 07:46 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:46 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 07:46 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:46 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 07:46 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:46 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 07:46 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:46 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:46 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:46:37' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:46:37')
+11-28 07:46 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 188, in get_response
+    response = middleware_method(request, response)
+  File "c:\python27\lib\site-packages\django\contrib\sessions\middleware.py", line 26, in process_response
+    patch_vary_headers(response, ('Cookie',))
+  File "c:\python27\lib\site-packages\django\utils\cache.py", line 140, in patch_vary_headers
+    if response.has_header('Vary'):
+AttributeError: addinfourl instance has no attribute 'has_header'
+11-28 07:49 root         DEBUG    request GET
+11-28 07:49 root         DEBUG    valid True
+11-28 07:49 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 07:49 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:49 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 07:49 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:49 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 07:49 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:49 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 07:49 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:49 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:49 django.db.backends DEBUG    (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:49:26' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:49:26')
+11-28 07:49 django.db.backends DEBUG    (0.000) SAVEPOINT s7176_x1; args=()
+11-28 07:49 django.db.backends DEBUG    (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:49 django.db.backends DEBUG    (0.000) UPDATE `django_session` SET `session_data` = 'MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', `expire_date` = '2012-12-11 22:49:26' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', u'2012-12-11 22:49:26', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 07:57 root         DEBUG    request GET
+11-28 07:57 root         DEBUG    valid True
+11-28 07:57 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:57 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:57 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:57:28' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:57:28')
+11-28 07:57 django.db.backends DEBUG    (0.000) SAVEPOINT s6924_x1; args=()
+11-28 07:57 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:57 django.db.backends DEBUG    (0.000) UPDATE `django_session` SET `session_data` = 'MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', `expire_date` = '2012-12-11 22:57:29' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', u'2012-12-11 22:57:29', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 07:58 root         DEBUG    request GET
+11-28 07:58 root         DEBUG    valid True
+11-28 07:58 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 07:58 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:58 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 07:58 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:58 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 07:58 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:58 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 07:58 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:58 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:58 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:58:03' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:58:03')
+11-28 07:58 django.db.backends DEBUG    (0.001) SAVEPOINT s5864_x1; args=()
+11-28 07:58 django.db.backends DEBUG    (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:58 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', `expire_date` = '2012-12-11 22:58:03' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', u'2012-12-11 22:58:03', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 07:59 root         DEBUG    request GET
+11-28 07:59 root         DEBUG    valid True
+11-28 07:59 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 07:59 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:59 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 07:59 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:59 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 07:59 sqlalchemy.engine.base.Engine INFO     ()
+11-28 07:59 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 07:59 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 07:59 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 07:59 root         DEBUG    pass
+11-28 07:59 django.db.backends DEBUG    (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 22:59:13' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 22:59:13')
+11-28 07:59 django.db.backends DEBUG    (0.000) SAVEPOINT s5408_x1; args=()
+11-28 07:59 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 07:59 django.db.backends DEBUG    (0.000) UPDATE `django_session` SET `session_data` = 'MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', `expire_date` = '2012-12-11 22:59:13' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', u'2012-12-11 22:59:13', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:00 root         DEBUG    request GET
+11-28 08:00 root         DEBUG    valid True
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:00 root         DEBUG    pass
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:00:02' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:00:02')
+11-28 08:00 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 64, in loginProcess
+    return redirect('/erp')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 08:00 django.db.backends DEBUG    (0.000) SAVEPOINT s6768_x1; args=()
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:00 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 23:00:02' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 23:00:02', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:00 root         DEBUG    request GET
+11-28 08:00 root         DEBUG    valid True
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:00 root         DEBUG    pass
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:00:04' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:00:04')
+11-28 08:00 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 64, in loginProcess
+    return redirect('/erp')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 08:00 django.db.backends DEBUG    (0.000) SAVEPOINT s6200_x1; args=()
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:00 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 23:00:04' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 23:00:04', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:00 root         DEBUG    request GET
+11-28 08:00 root         DEBUG    valid True
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:00 root         DEBUG    pass
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:00:05' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:00:05')
+11-28 08:00 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 64, in loginProcess
+    return redirect('/erp')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 08:00 django.db.backends DEBUG    (0.000) SAVEPOINT s4848_x1; args=()
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:00 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 23:00:05' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 23:00:05', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:00 root         DEBUG    request GET
+11-28 08:00 root         DEBUG    valid True
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:00 root         DEBUG    pass
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:00:07' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:00:07')
+11-28 08:00 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 64, in loginProcess
+    return redirect('/erp')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 08:00 django.db.backends DEBUG    (0.001) SAVEPOINT s7268_x1; args=()
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:00 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 23:00:07' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 23:00:07', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:00 root         DEBUG    request GET
+11-28 08:00 root         DEBUG    valid True
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:00 root         DEBUG    pass
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:00:07' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:00:07')
+11-28 08:00 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 64, in loginProcess
+    return redirect('/erp')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 08:00 django.db.backends DEBUG    (0.000) SAVEPOINT s5232_x1; args=()
+11-28 08:00 django.db.backends DEBUG    (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:00 django.db.backends DEBUG    (0.000) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 23:00:08' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 23:00:08', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:00 root         DEBUG    request GET
+11-28 08:00 root         DEBUG    valid True
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:00 root         DEBUG    pass
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:00:08' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:00:08')
+11-28 08:00 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 64, in loginProcess
+    return redirect('/erp')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 08:00 django.db.backends DEBUG    (0.001) SAVEPOINT s7460_x1; args=()
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:00 django.db.backends DEBUG    (0.000) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 23:00:08' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 23:00:08', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:00 root         DEBUG    request GET
+11-28 08:00 root         DEBUG    valid True
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:00 root         DEBUG    pass
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:00:17' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:00:17')
+11-28 08:00 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 64, in loginProcess
+    return redirect('/erp/')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 08:00 django.db.backends DEBUG    (0.000) SAVEPOINT s6676_x1; args=()
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:00 django.db.backends DEBUG    (0.002) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 23:00:18' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 23:00:18', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:00 root         DEBUG    request GET
+11-28 08:00 root         DEBUG    valid True
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:00 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:00 root         DEBUG    pass
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:00:21' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:00:21')
+11-28 08:00 django.request ERROR    Internal Server Error: /erp/loginProcess/
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\erp\erp\views.py", line 64, in loginProcess
+    return redirect('/erp/')
+  File "c:\python27\lib\site-packages\django\shortcuts\__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 363, in _reverse_with_prefix
+    possibilities = self.reverse_dict.getlist(lookup_view)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 276, in reverse_dict
+    self._populate()
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 265, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 216, in callback
+    self._callback = get_callable(self._callback_str)
+  File "c:\python27\lib\site-packages\django\utils\functional.py", line 27, in wrapper
+    result = func(*args)
+  File "c:\python27\lib\site-packages\django\core\urlresolvers.py", line 101, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import utilization.user.util_user_result. View does not exist in module utilization.user.
+11-28 08:00 django.db.backends DEBUG    (0.001) SAVEPOINT s6800_x1; args=()
+11-28 08:00 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:00 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', `expire_date` = '2012-12-11 23:00:21' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('ZmNiMTMxZTQwZGNhZTA2MGMyNjU5NjQyMGU0MjA0Y2U1ZGY0ZGNmNzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtxAlULZGVzY3JpcHRpb25YGQAAAOq5gOusuOq3vChMRyBDTlMpLCBTVE1LTUtx\nA3Uu\n', u'2012-12-11 23:00:21', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:01 root         DEBUG    request GET
+11-28 08:01 root         DEBUG    valid True
+11-28 08:01 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 08:01 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:01 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 08:01 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:01 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 08:01 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:01 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 08:01 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:01 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:01 root         DEBUG    pass
+11-28 08:01 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:01:02' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:01:02')
+11-28 08:01 django.db.backends DEBUG    (0.000) SAVEPOINT s6664_x1; args=()
+11-28 08:01 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:01 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', `expire_date` = '2012-12-11 23:01:02' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', u'2012-12-11 23:01:02', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:03 root         DEBUG    request POST
+11-28 08:03 root         DEBUG    valid True
+11-28 08:03 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 08:03 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:03 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 08:03 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:03 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 08:03 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:03 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 08:03 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:03 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:03 root         DEBUG    pass
+11-28 08:03 django.db.backends DEBUG    (0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:03:12' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:03:12')
+11-28 08:03 django.db.backends DEBUG    (0.000) SAVEPOINT s7216_x1; args=()
+11-28 08:03 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:03 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', `expire_date` = '2012-12-11 23:03:12' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', u'2012-12-11 23:03:12', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:05 root         DEBUG    request POST
+11-28 08:05 root         DEBUG    valid True
+11-28 08:05 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:05 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:05 root         DEBUG    pass
+11-28 08:05 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:05:26' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:05:26')
+11-28 08:05 django.db.backends DEBUG    (0.000) SAVEPOINT s4248_x1; args=()
+11-28 08:05 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:05 django.db.backends DEBUG    (0.000) UPDATE `django_session` SET `session_data` = 'MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', `expire_date` = '2012-12-11 23:05:26' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', u'2012-12-11 23:05:26', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:11 root         DEBUG    request POST
+11-28 08:11 root         DEBUG    valid True
+11-28 08:11 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 08:11 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:11 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 08:11 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:11 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 08:11 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:11 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 08:11 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:11 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:11 root         DEBUG    pass
+11-28 08:11 django.db.backends DEBUG    (0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:11:02' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:11:02')
+11-28 08:11 django.db.backends DEBUG    (0.000) SAVEPOINT s3028_x1; args=()
+11-28 08:11 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:11 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', `expire_date` = '2012-12-11 23:11:02' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', u'2012-12-11 23:11:02', '6be62c2ce29ee3ae077c5ecbc32f2924')
+11-28 08:12 root         DEBUG    request POST
+11-28 08:12 root         DEBUG    valid True
+11-28 08:12 sqlalchemy.engine.base.Engine INFO     SELECT DATABASE()
+11-28 08:12 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:12 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'character_set%%'
+11-28 08:12 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:12 sqlalchemy.engine.base.Engine INFO     SHOW VARIABLES LIKE 'sql_mode'
+11-28 08:12 sqlalchemy.engine.base.Engine INFO     ()
+11-28 08:12 sqlalchemy.engine.base.Engine INFO     BEGIN (implicit)
+11-28 08:12 sqlalchemy.engine.base.Engine INFO     SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.user_name = %s AND xxsm_users_v.password = %s
+11-28 08:12 sqlalchemy.engine.base.Engine INFO     ('STMKMK', '827ccb0eea8a706c4c34a16891f84e7b')
+11-28 08:12 root         DEBUG    pass
+11-28 08:12 django.db.backends DEBUG    (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  AND `django_session`.`expire_date` > '2012-11-27 23:12:32' ); args=('6be62c2ce29ee3ae077c5ecbc32f2924', u'2012-11-27 23:12:32')
+11-28 08:12 django.db.backends DEBUG    (0.000) SAVEPOINT s7452_x1; args=()
+11-28 08:12 django.db.backends DEBUG    (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924'  LIMIT 1; args=('6be62c2ce29ee3ae077c5ecbc32f2924',)
+11-28 08:12 django.db.backends DEBUG    (0.000) UPDATE `django_session` SET `session_data` = 'MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', `expire_date` = '2012-12-11 23:12:32' WHERE `django_session`.`session_key` = '6be62c2ce29ee3ae077c5ecbc32f2924' ; args=('MmYyYzBmZmI5ODljYzlhMzI2OGIzY2FkMWQ4MDdiZDU1MzE5MWFkYzqAAn1xAShVCHVzZXJOYW1l\nWAYAAABTVE1LTUtVC2Rlc2NyaXB0aW9uWBkAAADquYDrrLjqt7woTEcgQ05TKSwgU1RNS01LdS4=\n', u'2012-12-11 23:12:32', '6be62c2ce29ee3ae077c5ecbc32f2924')

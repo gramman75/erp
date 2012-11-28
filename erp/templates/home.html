@@ -60,7 +60,12 @@
           <a class="brand" href="#">ERP Portal</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              <a href="/erp/login/"  onclick="content_ajax(this.href); return false;" class="navbar-link">Login</a>
+              {% if request.session.userName %}              	
+              	{{ request.session.description }}
+              	<a href="/erp/logout/" class="navbar-link">Logout</a>
+              {% else %}
+              	<a href="/erp/login/" class="navbar-link">Login</a>
+              {% endif %}
             </p>
             <ul class="nav">
               <li class="active"><a href="/erp/">Home</a></li>

@@ -22,7 +22,7 @@ class LoginForm(forms.Form):
         if userName == '':
             raise forms.ValidationError("Input User Name")
         return userName
-    
+    '''
     def clean_password(self):
         password = self.cleaned_data['password']
         p = re.compile('^(?=([a-zA-Z]+[0-9]+[a-zA-Z0-9]*|[0-9]+[a-zA-Z]+[a-zA-Z0-9]*)$).{6,12}')
@@ -34,6 +34,6 @@ class LoginForm(forms.Form):
             raise forms.ValidationError('Password Error')
         
         return password
-    
+    '''
     
     

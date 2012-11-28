@@ -105,6 +105,7 @@ TEMPLATE_LOADERS = (
 # template context processor
 TEMPLATE_CONTEXT_PROCESSORS = (
     'erp.context_processors.max_pages',
+    'django.core.context_processors.request',
     )
 
 MIDDLEWARE_CLASSES = (
