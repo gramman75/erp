@@ -3,7 +3,7 @@ import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-DJANGO_TOOLBAR = False
+DJANGO_TOOLBAR = True
 
 if os.name == 'nt':
     DB_PASSWORD = 'kmk7504'
@@ -138,6 +138,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'utilization',
+    'erp',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -175,7 +176,7 @@ LOGGING = {
             'level' : 'DEBUG',
             'class' : 'logging.handlers.RotatingFileHandler',
             'formatter' : 'verbose',
-            'filename' : 'erp/log/logconfig.log'
+            'filename' : os.path.join(PROJECT_DIR,'log/logconfig.log')
             }
     },
     'loggers': {
@@ -223,5 +224,24 @@ if DJANGO_TOOLBAR:
     def custom_show_toolbar(request):
         return True
 
-
+#session store method
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+#whether to expire the session when close browser.
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# Authetication Passowrd algorithms
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.SHA1PasswordHasher',
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+    'django.contrib.auth.hashers.CryptPasswordHasher',
+)
+
+#user profile
+AUTH_PROFILE_MODULE = 'erp.UserProfile'
+
+
+LOGIN_URL = '/erp/login/'

@@ -1,6 +1,6 @@
 # -*- coding: euckr -*-
 from django.shortcuts import render_to_response
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from utilization.models import  User, UserLogin, Department, Location
 from django.template import RequestContext
 from utilization.forms import UserSearchForm
@@ -15,9 +15,8 @@ import math
 import time
 import calendar
 import pygal
-    
 import logging, os
-
+from django.contrib.auth.decorators import login_required
 
 
 logging.basicConfig(filename=os.path.join(settings.PROJECT_DIR,'log\\debug.txt'), level=logging.DEBUG)
@@ -41,7 +40,10 @@ def util_user(request):
 def util_user_search(request):
     return render_to_response('userCount/user_search.html')
 
+@login_required
 def util_user(request):
+#    if not request.user.is_authenticated():
+#        return HttpResponseRedirect('/erp/login/')
     result =[]
     
     year = ''    

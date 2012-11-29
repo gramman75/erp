@@ -60,8 +60,8 @@
           <a class="brand" href="#">ERP Portal</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              {% if request.session.userName %}              	
-              	{{ request.session.description }}
+              {% if request.user.is_authenticated %}              	
+              	{{ request.user.username }}
               	<a href="/erp/logout/" class="navbar-link">Logout</a>
               {% else %}
               	<a href="/erp/login/" class="navbar-link">Login</a>
