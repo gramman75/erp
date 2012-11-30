@@ -3,7 +3,7 @@ import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-DJANGO_TOOLBAR = True
+DJANGO_TOOLBAR = False
 
 if os.name == 'nt':
     DB_PASSWORD = 'kmk7504'
@@ -244,4 +244,4 @@ PASSWORD_HASHERS = (
 AUTH_PROFILE_MODULE = 'erp.UserProfile'
 
 
-LOGIN_URL = '/erp/login/'
+LOGIN_URL = 'http://127.0.0.1:8000/erp/login/'

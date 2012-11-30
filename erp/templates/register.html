@@ -1,0 +1,93 @@
+{% extends "common/base.html" %}
+{% block title %}
+	Register
+{% endblock %}
+{% block content %}
+    {% include 'common/top_menu.html' %}
+<div class="row">
+	<div class="span6 offset3">	
+	<form class="form-horizontal" method="get" action="/erp/registerProcess/">
+	  
+		<div class="control-group">
+			<label class="control-label" for="inputUserName">User Name</label>
+			<div class="controls">
+	  			<input type="text" id="inputUserName" name="userName" placeholder="User Name">
+			</div>
+		</div>
+	  
+	    <div class="control-group">
+			<label class="control-label" for="inputPassword">Password</label>
+			<div class="controls">
+	  			<input type="password" id="inputPassword" name = "password" placeholder="Password">
+			</div>
+	    </div>
+	  
+	    <div class="control-group">
+			<label class="control-label" for="inputConfirm">Confirm</label>
+			<div class="controls">
+	  			<input type="password" id="inputConfirm" name="confirm" placeholder="Confirm">
+			</div>
+  	    </div>
+  	    
+  	    <div class="control-group">
+			<label class="control-label" for="inputEmail">Email</label>
+			<div class="controls">
+	  			<input type="text" id="inputEmail" name="email" placeholder="Email">
+			</div>
+		</div>
+		
+
+		<div class ="control-group">
+			<label class="control-label" for="inputFirstName">First Name</label>
+			<div class="controls">
+				<input type="text" id="inputFirstName" name="firstName" placeholder="First Name">
+			</div>
+		</div>
+		
+		<div class ="control-group">
+			<label class="control-label" for="inputLastName">Last Name</label>
+			<div class="controls">
+				<input type="text" id="inputLastName" name="lastName" placeholder="Last Name">
+			</div>
+		</div>	  
+		
+		<div class ="control-group">
+			<label class="control-label" for="inputHobby">Hobby</label>
+			<div class="controls">
+				<input type="text" id="inputHobby" name="hobby" placeholder="Hobby">
+			</div>
+		</div>	  
+		
+		<div class ="control-group">
+			<label class="control-label" for="inputFavoriteAnimal">Favorite Animal</label>
+			<div class="controls">
+				<input type="text" id="inputFavoriteAnimal" name="favoriteAnimal" placeholder="Favorite Animal">
+			</div>
+		</div>	  	  
+	  
+	  <div class="control-group">
+	    <div class="controls">
+	      <label class="checkbox">
+	        <input type="checkbox" name="aggrement"> you are agreeing to the Terms of Service and the Privacy Policy.
+	      </label>
+	      <button type="submit" class="btn">Sign in</button>
+	    </div>
+	  </div>
+</form>
+</div>
+<div class="span7 off7 hero-unit">
+	<P><h2>Welcome to ERP Portal</h2>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	</P>
+</div>
+</div>
+
+
+{% endblock %}

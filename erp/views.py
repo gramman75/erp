@@ -1,7 +1,7 @@
 # Create your views here.
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, redirect
-from erp.forms import LoginForm
+from erp.forms import LoginForm, RegisterForm
 from utilization.models import User
 from django.conf import settings
 import logging, os
@@ -11,7 +11,7 @@ from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 from django.template import RequestContext
 import md5
 
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth  import authenticate, login, logout
 
 logging.basicConfig(filename=os.path.join(settings.PROJECT_DIR,'log\\debug.txt'),\
                     level=logging.DEBUG,format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',\
@@ -26,7 +26,6 @@ def home(request):
 
 def login_view(request):
     return render_to_response('login.html')
-
 def loginProcess(request):
     message =''
     if request.method == 'POST':
@@ -36,6 +35,7 @@ def loginProcess(request):
             cd = form.cleaned_data
             userName = cd['userName']
             password = cd['password']
+            next     = cd['next']
             #remmemberMe = cd['rememberMe']
             '''
             try:
@@ -46,6 +46,7 @@ def loginProcess(request):
                 message ='ID or Passwor is wrong'
             except MultipleResultsFound:
                 message = 'Contact System Admin.'
+            
             '''
             user = authenticate(username=userName, password=password)
             
@@ -67,11 +68,57 @@ def loginProcess(request):
                                
                                   )
     else:
+        #return HttpResponseRedirect(next)
         return render_to_response('home.html',context_instance=RequestContext(request,user))
 
 def logout_view(request):
     logout(request)
     return render_to_response('home.html')
+
+def register_view(requeset):
+    return render_to_response('register.html')
+
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        logging.debug('valid %s', form.is_valid())
+        if form.is_valid():
+            cd = form.cleaned_data
+            userName = cd['userName']
+            password = cd['password']
+            confirm  = cd['confirm']
+            email    = cd['email']
+            firstName = cd['firstName']
+            lastName  = cd['lastName']
+            hobby     = cd['hobby']
+            favoriteAnimal = ['favoriteAnimal']
+            aggrement = cd['aggrement']
+            
+             
+           
+            user = authenticate(username=userName, password=password)
+            
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                else:
+                    message = 'This user is inactive'
+            else:
+                message = 'ID or password is wrong'
+                
+    else:
+        form = LoginForm()
+    
+    
+    if form.errors or message:
+        return render_to_response('login.html',{'form' : form,
+                                                'message' : message}
+                               
+                                  )
+    else:
+        #return HttpResponseRedirect(next)
+        return render_to_response('home.html',context_instance=RequestContext(request,user))
+    
 def hello(request):
     return HttpResponse('hello')
 
