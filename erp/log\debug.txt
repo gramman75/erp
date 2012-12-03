@@ -3132,3 +3132,12 @@ Traceback (most recent call last):
   File "/Volumes/Data/project/erp/erp/forms.py", line 31, in clean_password
     logger.debug('m %s', m.group())
 AttributeError: 'NoneType' object has no attribute 'group'
+11-30 23:00 django.db.backends DEBUG    (0.002) SELECT `django_site`.`id`, `django_site`.`domain`, `django_site`.`name` FROM `django_site` WHERE `django_site`.`id` = 1 ; args=(1,)
+11-30 23:00 django.db.backends DEBUG    (0.002) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '58081e22bb5791428f9f25d78a0c32dd'  LIMIT 1; args=('58081e22bb5791428f9f25d78a0c32dd',)
+11-30 23:00 django.db.backends DEBUG    (0.000) SAVEPOINT s4394037248_x1; args=()
+11-30 23:00 django.db.backends DEBUG    (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '58081e22bb5791428f9f25d78a0c32dd'  LIMIT 1; args=('58081e22bb5791428f9f25d78a0c32dd',)
+11-30 23:00 django.db.backends DEBUG    (0.001) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('58081e22bb5791428f9f25d78a0c32dd', 'Y2QxNjVlOGMxMDFmN2IxNThmNWFjNzY0YTkwODY3YWJiNTIzNmZhNzqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n', '2012-12-14 14:00:45'); args=('58081e22bb5791428f9f25d78a0c32dd', 'Y2QxNjVlOGMxMDFmN2IxNThmNWFjNzY0YTkwODY3YWJiNTIzNmZhNzqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n', u'2012-12-14 14:00:45')
+11-30 23:00 django.db.backends DEBUG    (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '58081e22bb5791428f9f25d78a0c32dd'  AND `django_session`.`expire_date` > '2012-11-30 14:00:56' ); args=('58081e22bb5791428f9f25d78a0c32dd', u'2012-11-30 14:00:56')
+11-30 23:00 django.db.backends DEBUG    (0.000) SAVEPOINT s4394037248_x1; args=()
+11-30 23:00 django.db.backends DEBUG    (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '58081e22bb5791428f9f25d78a0c32dd'  LIMIT 1; args=('58081e22bb5791428f9f25d78a0c32dd',)
+11-30 23:00 django.db.backends DEBUG    (0.001) UPDATE `django_session` SET `session_data` = 'YTBmNjMwMzU3N2JkZmFkNTU5MGY2Y2ZmNjU5OWM5NTJlZTNmZGVhYjqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2VkcQJzLg==\n', `expire_date` = '2012-12-14 14:00:56' WHERE `django_session`.`session_key` = '58081e22bb5791428f9f25d78a0c32dd' ; args=('YTBmNjMwMzU3N2JkZmFkNTU5MGY2Y2ZmNjU5OWM5NTJlZTNmZGVhYjqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2VkcQJzLg==\n', u'2012-12-14 14:00:56', '58081e22bb5791428f9f25d78a0c32dd')

@@ -8,7 +8,6 @@ from django import forms
 import re, logging
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.db.
 
 logging.config.dictConfig(settings.LOGGING)
 logger = logging.getLogger('file')
@@ -67,10 +66,18 @@ class RegisterForm(forms.Form):
         
         if password != confirm:
             raise forms.ValidationError("Password doesn't match the confirmation")
+        return confirm
     def clean_userName(self):
+        userName =self.changed_data['userName']
         try:
-            user = User.objects.get(username = self.userName)
-        except DoesNotExist:
+            user = User.objects.get(username = userName)
+        except User.DoesNotExist:
+            user = None
+        
+        if user:
+            raise forms.ValidationError("Username is already taken.")
+        
+        return userName
             
         
         

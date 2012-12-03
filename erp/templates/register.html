@@ -4,8 +4,10 @@
 {% endblock %}
 {% block content %}
     {% include 'common/top_menu.html' %}
-<div class="row">
-	<div class="span6 offset3">	
+<div class="row-fluid">
+<div class="container-fluid">    
+
+	<div class="span5 ">	
 	<form class="form-horizontal" method="get" action="/erp/registerProcess/">
 	  
 		<div class="control-group">
@@ -75,7 +77,11 @@
 	  </div>
 </form>
 </div>
-<div class="span7 off7 hero-unit">
+</div>
+</div>
+<div class="row">
+<div class="container-fluid">
+	<div class="span7 off7">
 	<P><h2>Welcome to ERP Portal</h2>
 		<br>
 		<br>
@@ -88,6 +94,5 @@
 	</P>
 </div>
 </div>
-
-
+</div>
 {% endblock %}
