@@ -40,19 +40,23 @@ class LoginForm(forms.Form):
     '''
 class RegisterForm(forms.Form):
     userName = forms.CharField()
-    password = forms.PasswordInput()
-    confirm  = forms.PasswordInput()
+    password = forms.CharField()
+    confirm  = forms.CharField()
     email    = forms.EmailField()
     firstName = forms.CharField()
     lastName = forms.CharField()
     hobby    = forms.CharField(required=False)
     favoriteAnimal = forms.CharField(required=False)
-    aggrement = forms.CheckboxInput()
+    aggrement = forms.CharField()
+    '''
     
     def clean_password(self):
         password = self.cleaned_data['password']
+        logging.debug('password %s', password)
         p = re.compile('^(?=([a-zA-Z]+[0-9]+[a-zA-Z0-9]*|[0-9]+[a-zA-Z]+[a-zA-Z0-9]*)$).{6,12}')
         m = p.match(password)       
+        
+        logging.debug('m %s', m)
         
         if m:
             pass
@@ -61,14 +65,15 @@ class RegisterForm(forms.Form):
         
         return password
     def clean_confirm(self):
-        password = self.changed_data['password']
-        confirm  = self.changed_data['confirm']
+        password = self.cleaned_data['password']
+        confirm  = self.cleaned_data['confirm']
         
         if password != confirm:
             raise forms.ValidationError("Password doesn't match the confirmation")
         return confirm
+    '''
     def clean_userName(self):
-        userName =self.changed_data['userName']
+        userName =self.cleaned_data['userName']
         try:
             user = User.objects.get(username = userName)
         except User.DoesNotExist:

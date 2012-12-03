@@ -2,7 +2,8 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, redirect
 from erp.forms import LoginForm, RegisterForm
-from utilization.models import User
+#from utilization.models import User
+from django.contrib.auth.models import User
 from django.conf import settings
 import logging, os
 from sqlalchemy import create_engine
@@ -84,6 +85,7 @@ def register(request):
         logging.debug('valid %s', form.is_valid())
         if form.is_valid():
             cd = form.cleaned_data
+            logging.debug('cleand data %s', cd)
             userName = cd['userName']
             password = cd['password']
             confirm  = cd['confirm']
@@ -93,28 +95,25 @@ def register(request):
             hobby     = cd['hobby']
             favoriteAnimal = ['favoriteAnimal']
             aggrement = cd['aggrement']
+
+            user = User(username=userName, first_name=firstName, last_name= lastName)
+            user.set_password(password)
+            user.save()
             
-             
-           
-            user = authenticate(username=userName, password=password)
+            p = user.get_profile()
             
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                else:
-                    message = 'This user is inactive'
-            else:
-                message = 'ID or password is wrong'
+            p.accepted_eula = aggrement
+            p.hobby = hobby
+            p.favoriteAnimal = favoriteAnimal
+            
+            p.save()
                 
     else:
-        form = LoginForm()
+        form = RegisterForm()
     
     
-    if form.errors or message:
-        return render_to_response('login.html',{'form' : form,
-                                                'message' : message}
-                               
-                                  )
+    if form.errors:
+        return render_to_response('register.html',{'form' : form})
     else:
         #return HttpResponseRedirect(next)
         return render_to_response('home.html',context_instance=RequestContext(request,user))

@@ -4,11 +4,11 @@
 {% endblock %}
 {% block content %}
     {% include 'common/top_menu.html' %}
-<div class="row-fluid">
 <div class="container-fluid">    
+<div class="row-fluid">
 
 	<div class="span5 ">	
-	<form class="form-horizontal" method="get" action="/erp/registerProcess/">
+	<form class="form-horizontal" method="POST" action="/erp/registerProcess/">
 	  
 		<div class="control-group">
 			<label class="control-label" for="inputUserName">User Name</label>
@@ -20,7 +20,7 @@
 	    <div class="control-group">
 			<label class="control-label" for="inputPassword">Password</label>
 			<div class="controls">
-	  			<input type="password" id="inputPassword" name = "password" placeholder="Password">
+	  			<input type="password" id="inputPassword" name="password" placeholder="Password">
 			</div>
 	    </div>
 	  
@@ -77,22 +77,11 @@
 	  </div>
 </form>
 </div>
-</div>
-</div>
-<div class="row">
-<div class="container-fluid">
-	<div class="span7 off7">
-	<P><h2>Welcome to ERP Portal</h2>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-	</P>
-</div>
+    <div class="row-fluid">
+	    <div class="span6 hero-unit">
+	<P><h2>Welcome to ERP Portal</h2></P>
+    </div>
+    </div>
 </div>
 </div>
 {% endblock %}
