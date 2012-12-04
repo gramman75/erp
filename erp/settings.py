@@ -4,6 +4,7 @@ import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 DJANGO_TOOLBAR = False
+HOME_URL = 'http://127.0.0.1:8000/'
 
 if os.name == 'nt':
     DB_PASSWORD = 'kmk7504'
@@ -177,7 +178,7 @@ LOGGING = {
             'class' : 'logging.handlers.RotatingFileHandler',
             'formatter' : 'verbose',
             'filename' : os.path.join(PROJECT_DIR,'log/logconfig.log')
-            }
+            }               
     },
     'loggers': {
         'django.request': {
@@ -243,5 +244,6 @@ PASSWORD_HASHERS = (
 #user profile
 AUTH_PROFILE_MODULE = 'erp.UserProfile'
 
-
 LOGIN_URL = 'http://127.0.0.1:8000/erp/login/'
+
+LOGIN_REDIRECT_URL = HOME_URL +'erp/'

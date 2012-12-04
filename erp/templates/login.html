@@ -1,26 +1,32 @@
 {% extends "common/base.html" %}
+{% load url from future %}
 {% block title %}
 	Login Page
 {% endblock %}
 
 {% block content %}
  {% include 'common/top_menu.html' %}
+ 
+
+
 <div class="row">
-	<div class="span6 offset6">
-<form class="form-horizontal" method ="POST" id="form" action="/erp/loginProcess/">
 	
+
+<div class="span6 offset6">
+	{% if form.errors %}
+	<div class="alert">
+		<button type="button" class="close" data-dismiss="alert">×</button>
+	  	<strong>Warning!</strong> Your username and password didn't match. Please try again.
+	</div>
+	{% endif %}	
+<form class="form-horizontal" method ="POST" id="form" action="{% url 'django.contrib.auth.views.login' %}">
+{% csrf_token %}	
   <h2 class="form-signin-heading offset2" >Please sign in</h2>
   
 	  <div class="control-group">
 	    <label class="control-label" for="inputEmail">User Name</label>
 	    <div class="controls">
-	      <input type="text" id="inputEmail" placeholder="Employee Number" name="userName">
-	          {% if form.userName.errors %}
-	  	<div>
-	     	{{ form.userName.errors }}
-	 	</div>
-	{% endif %}
-	    
+	      <input type="text" id="inputEmail" placeholder="Employee Number" name="username">
 	    </div>
 	  </div>
  
@@ -28,26 +34,15 @@
     <label class="control-label" for="inputPassword">Password</label>
     <div class="controls">
       <input type="password" id="inputPassword" placeholder="Password" name="password">
-    
-    {% if form.password.errors %}
-    	<div>
-	      	{{ form.password.errors }}
-   	 	</div>
-   	 {% endif %}
-      
     </div>
-    
-    
   </div>
+  
   <div class="control-group">
-    <div class="controls">
-      <label class="checkbox">
-        <input type="checkbox" name="rememberMe"> Remember me
-      </label>
+    <div class="controls">    
       <button type="submit" class="btn">Sign in</button>
     </div>
   </div>
-  <input type="hidden" name="next" value={{ next }} />
+  
 </form>
 </div>
 </div>

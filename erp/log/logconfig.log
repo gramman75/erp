@@ -1,38 +1,35 @@
-DEBUG 2012-11-26 23:18:13,716 forms logging test
-DEBUG 2012-11-26 23:31:47,564 forms password 1234rtyhf
-DEBUG 2012-11-26 23:31:47,564 forms m 1234rtyhf
-DEBUG 2012-11-26 23:32:11,045 forms password 123
-DEBUG 2012-11-26 23:33:31,631 forms password 234
-DEBUG 2012-11-26 23:33:57,354 forms password 123
-DEBUG 2012-11-26 23:35:23,883 forms password 23
-DEBUG 2012-11-26 23:35:35,145 forms password asd
-DEBUG 2012-11-26 23:36:13,518 forms password 123
-DEBUG 2012-11-26 23:36:33,241 forms password asd
-DEBUG 2012-11-26 23:36:58,839 forms password asdf1234
-DEBUG 2012-11-26 23:36:58,839 forms m asdf1234
-DEBUG 2012-11-26 23:45:33,728 forms password 098
-DEBUG 2012-11-26 23:46:23,695 forms password 123
-DEBUG 2012-11-27 15:58:56,130 forms password 131231231fef
-DEBUG 2012-11-27 15:58:56,130 forms m 131231231fef
-DEBUG 2012-11-27 15:59:24,223 forms password 131231231fef
-DEBUG 2012-11-27 15:59:24,223 forms m 131231231fef
-DEBUG 2012-11-27 16:08:47,948 forms password asdf
-DEBUG 2012-11-27 16:29:18,828 forms password 123
-DEBUG 2012-11-27 16:30:18,589 forms password 232
-DEBUG 2012-11-27 16:30:18,589 forms not(m) True
-DEBUG 2012-11-27 16:31:30,598 forms password qaz
-DEBUG 2012-11-27 16:31:30,599 forms not(m) True
-DEBUG 2012-11-27 16:32:32,513 forms password 543
-DEBUG 2012-11-27 16:32:32,513 forms not(m) True
-DEBUG 2012-11-27 16:33:14,655 forms password 098
-DEBUG 2012-11-27 16:33:14,657 forms not(m) True
-DEBUG 2012-11-27 16:33:44,967 forms password mnb
-DEBUG 2012-11-27 16:33:44,967 forms not(m) None
-DEBUG 2012-11-27 16:34:33,931 forms password qaz
-DEBUG 2012-11-27 16:34:33,933 forms not(m) None
-DEBUG 2012-11-27 16:35:48,158 forms password iop
-DEBUG 2012-11-27 16:35:48,160 forms not(m) None
-DEBUG 2012-11-27 16:36:35,144 forms password ert
-DEBUG 2012-11-27 16:36:35,144 forms not(m) None
-DEBUG 2012-11-27 16:36:35,145 forms a
-DEBUG 2012-11-27 16:36:35,145 forms c
+DEBUG 2012-12-04 10:12:43,505 views start
+DEBUG 2012-12-04 10:13:12,950 views user name : 201
+DEBUG 2012-12-04 10:13:12,950 views password : 121
+DEBUG 2012-12-04 10:14:45,400 views user name : 201
+DEBUG 2012-12-04 10:14:45,401 views password : 123
+DEBUG 2012-12-04 10:16:16,289 views user name : 201
+DEBUG 2012-12-04 10:16:16,289 views password : 234
+DEBUG 2012-12-04 10:17:03,200 views user name : 201
+DEBUG 2012-12-04 10:17:03,203 views password : 123
+DEBUG 2012-12-04 10:17:03,203 views form
+DEBUG 2012-12-04 10:18:45,214 views user name : 201
+DEBUG 2012-12-04 10:18:45,216 views password : 123
+DEBUG 2012-12-04 10:18:45,216 views form
+DEBUG 2012-12-04 10:24:24,443 views user name : 201
+DEBUG 2012-12-04 10:24:24,444 views password : 1212
+DEBUG 2012-12-04 10:24:24,444 views form
+DEBUG 2012-12-04 10:24:34,747 views user name : stmkmk
+DEBUG 2012-12-04 10:24:34,747 views password : 12345
+DEBUG 2012-12-04 10:24:34,749 views form
+DEBUG 2012-12-04 10:25:04,956 views user name : stmkmk
+DEBUG 2012-12-04 10:25:04,957 views password : 12345
+DEBUG 2012-12-04 10:25:04,957 views form
+DEBUG 2012-12-04 10:25:46,269 views user name : stmkmk
+DEBUG 2012-12-04 10:25:46,269 views password : 1212
+DEBUG 2012-12-04 10:25:46,269 views form
+DEBUG 2012-12-04 10:27:09,772 views user name : stmkmk
+DEBUG 2012-12-04 10:27:09,772 views password : 123
+DEBUG 2012-12-04 10:27:09,773 views form
+DEBUG 2012-12-04 10:27:09,773 forms username stmkmk
+DEBUG 2012-12-04 10:29:20,058 views user name : stmkmk
+DEBUG 2012-12-04 10:30:59,986 views user name : stmkmk
+DEBUG 2012-12-04 10:41:15,506 views user name : 1212
+DEBUG 2012-12-04 10:41:15,506 views password : 12
+DEBUG 2012-12-04 10:41:15,506 views form
+DEBUG 2012-12-04 10:41:15,507 forms username 1212
