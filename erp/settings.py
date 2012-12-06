@@ -1,3 +1,5 @@
+#-*- encoding:utf-8 -*-
+
 # Django settings for erp project.
 import os
 
@@ -72,7 +74,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(PROJECT_DIR,'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -140,6 +142,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'utilization',
     'erp',
+    'notice',
+    'ckeditor',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -244,6 +248,11 @@ PASSWORD_HASHERS = (
 #user profile
 AUTH_PROFILE_MODULE = 'erp.UserProfile'
 
+#로그인 정보가 없을 경우 이동하는 페이지
 LOGIN_URL = 'http://127.0.0.1:8000/erp/login/'
 
+#로그인 후 이동하는 페이지.
 LOGIN_REDIRECT_URL = HOME_URL +'erp/'
+
+CKEDITOR_UPLOAD_PATH = os.path.join(PROJECT_DIR,'media/upload')
+#CKEDITOR_UPLOAD_PREFIX = "http://******/media/newsletter/uploads/"

@@ -15,4 +15,7 @@
 </pydev_pathproperty>
 
 
+<pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
+<path>C:\Python27\Lib\site-packages\django_ckeditor-3.6.2.1-py2.7.egg\ckeditor</path>
+</pydev_pathproperty>
 </pydev_project>

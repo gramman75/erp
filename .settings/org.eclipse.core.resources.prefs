@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//erp/forms.py=euckr
+encoding//erp/settings.py=utf-8
+encoding//notice/models.py=utf8
 encoding//utilization/models.py=utf8
 encoding//utilization/user.py=euckr

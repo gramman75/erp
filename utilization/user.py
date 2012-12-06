@@ -19,8 +19,9 @@ import logging, os
 from django.contrib.auth.decorators import login_required
 
 
-logging.basicConfig(filename=os.path.join(settings.PROJECT_DIR,'log\\debug.txt'), level=logging.DEBUG)
-#log = logging.getLogger("ex")
+logging.config.dictConfig(settings.LOGGING)
+logger = logging.getLogger('file')
+
 
 engine = create_engine(settings.CONNECT_INFO,echo=True,encoding='euc-kr',convert_unicode=True)
 Session = sessionmaker(engine)
@@ -28,17 +29,6 @@ session = Session()
 
 
 # Create your views here.
-def header(requeset):
-    return render_to_response('common/header.html')
-
-def nav(requeset):
-    return render_to_response('common/nav.html')
-'''
-def util_user(request):
-    return render_to_response('userCount/user_content.html')
-'''
-def util_user_search(request):
-    return render_to_response('userCount/user_search.html')
 
 @login_required
 def util_user(request):

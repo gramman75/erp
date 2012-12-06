@@ -477,3 +477,371 @@ Traceback (most recent call last):
   File "D:\project\erp\erp\forms.py", line 89, in clean_confirm
     password = self.cleaned_data['password']
 KeyError: 'password'
+DEBUG:django.db.backends:(0.068) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74'  LIMIT 1; args=('a0f3c8320aca71beb1b9a59803839f74',)
+DEBUG:django.db.backends:(0.001) SAVEPOINT s4232_x1; args=()
+DEBUG:django.db.backends:(0.028) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74'  LIMIT 1; args=('a0f3c8320aca71beb1b9a59803839f74',)
+DEBUG:django.db.backends:(0.001) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('a0f3c8320aca71beb1b9a59803839f74', 'Y2QxNjVlOGMxMDFmN2IxNThmNWFjNzY0YTkwODY3YWJiNTIzNmZhNzqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n', '2012-12-18 22:07:51'); args=('a0f3c8320aca71beb1b9a59803839f74', 'Y2QxNjVlOGMxMDFmN2IxNThmNWFjNzY0YTkwODY3YWJiNTIzNmZhNzqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n', u'2012-12-18 22:07:51')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74'  AND `django_session`.`expire_date` > '2012-12-04 22:08:05' ); args=('a0f3c8320aca71beb1b9a59803839f74', u'2012-12-04 22:08:05')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74'  AND `django_session`.`expire_date` > '2012-12-04 22:08:05' ); args=('a0f3c8320aca71beb1b9a59803839f74', u'2012-12-04 22:08:05')
+DEBUG:django.db.backends:(0.001) SAVEPOINT s5108_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74'  LIMIT 1; args=('a0f3c8320aca71beb1b9a59803839f74',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'YTBmNjMwMzU3N2JkZmFkNTU5MGY2Y2ZmNjU5OWM5NTJlZTNmZGVhYjqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2VkcQJzLg==\n', `expire_date` = '2012-12-18 22:08:05' WHERE `django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74' ; args=('YTBmNjMwMzU3N2JkZmFkNTU5MGY2Y2ZmNjU5OWM5NTJlZTNmZGVhYjqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2VkcQJzLg==\n', u'2012-12-18 22:08:05', 'a0f3c8320aca71beb1b9a59803839f74')
+DEBUG:django.db.backends:(0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74'  AND `django_session`.`expire_date` > '2012-12-04 22:08:06' ); args=('a0f3c8320aca71beb1b9a59803839f74', u'2012-12-04 22:08:06')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74'  AND `django_session`.`expire_date` > '2012-12-04 22:08:06' ); args=('a0f3c8320aca71beb1b9a59803839f74', u'2012-12-04 22:08:06')
+DEBUG:django.db.backends:(0.001) SAVEPOINT s1400_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74'  LIMIT 1; args=('a0f3c8320aca71beb1b9a59803839f74',)
+DEBUG:django.db.backends:(0.000) UPDATE `django_session` SET `session_data` = 'YTBmNjMwMzU3N2JkZmFkNTU5MGY2Y2ZmNjU5OWM5NTJlZTNmZGVhYjqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2VkcQJzLg==\n', `expire_date` = '2012-12-18 22:08:06' WHERE `django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74' ; args=('YTBmNjMwMzU3N2JkZmFkNTU5MGY2Y2ZmNjU5OWM5NTJlZTNmZGVhYjqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2VkcQJzLg==\n', u'2012-12-18 22:08:06', 'a0f3c8320aca71beb1b9a59803839f74')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74'  AND `django_session`.`expire_date` > '2012-12-04 22:08:10' ); args=('a0f3c8320aca71beb1b9a59803839f74', u'2012-12-04 22:08:10')
+DEBUG:django.db.backends:(0.000) SAVEPOINT s5080_x1; args=()
+DEBUG:django.db.backends:(0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74'  LIMIT 1; args=('a0f3c8320aca71beb1b9a59803839f74',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'YTBmNjMwMzU3N2JkZmFkNTU5MGY2Y2ZmNjU5OWM5NTJlZTNmZGVhYjqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2VkcQJzLg==\n', `expire_date` = '2012-12-18 22:08:10' WHERE `django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74' ; args=('YTBmNjMwMzU3N2JkZmFkNTU5MGY2Y2ZmNjU5OWM5NTJlZTNmZGVhYjqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2VkcQJzLg==\n', u'2012-12-18 22:08:10', 'a0f3c8320aca71beb1b9a59803839f74')
+DEBUG:django.db.backends:(0.327) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'stmkmk' ; args=(u'stmkmk',)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74'  AND `django_session`.`expire_date` > '2012-12-04 22:08:16' ); args=('a0f3c8320aca71beb1b9a59803839f74', u'2012-12-04 22:08:16')
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '712794ce34c5ff3c29df46c1777f0eba'  LIMIT 1; args=('712794ce34c5ff3c29df46c1777f0eba',)
+DEBUG:django.db.backends:(0.001) SAVEPOINT s5568_x1; args=()
+DEBUG:django.db.backends:(0.001) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('712794ce34c5ff3c29df46c1777f0eba', 'ZGYxMWMyYTdhZGU1YTQ1ZjY5NmIyM2FkYzQwZTc2NTlhOWUyYTFiNDqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2Vkcy4=\n', '2012-12-18 22:08:16'); args=('712794ce34c5ff3c29df46c1777f0eba', 'ZGYxMWMyYTdhZGU1YTQ1ZjY5NmIyM2FkYzQwZTc2NTlhOWUyYTFiNDqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2Vkcy4=\n', u'2012-12-18 22:08:16')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = 'a0f3c8320aca71beb1b9a59803839f74' ; args=('a0f3c8320aca71beb1b9a59803839f74',)
+DEBUG:django.db.backends:(0.000) DELETE FROM `django_session` WHERE `session_key` IN ('a0f3c8320aca71beb1b9a59803839f74'); args=(u'a0f3c8320aca71beb1b9a59803839f74',)
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `auth_user` WHERE `auth_user`.`id` = 2  LIMIT 1; args=(2,)
+DEBUG:django.db.backends:(0.001) UPDATE `auth_user` SET `username` = 'stmkmk', `first_name` = 'Kim', `last_name` = 'Moon Geun', `email` = 'gramman75@gmail.com', `password` = 'pbkdf2_sha256$10000$vp0orUWz9ZdT$REF+mCDl+O+s6ODGPGkEGbytpk4e7N4ItKKLqZ70QY0=', `is_staff` = 0, `is_active` = 1, `is_superuser` = 0, `last_login` = '2012-12-04 22:08:16', `date_joined` = '2012-11-28 22:17:38' WHERE `auth_user`.`id` = 2 ; args=(u'stmkmk', u'Kim', u'Moon Geun', u'gramman75@gmail.com', u'pbkdf2_sha256$10000$vp0orUWz9ZdT$REF+mCDl+O+s6ODGPGkEGbytpk4e7N4ItKKLqZ70QY0=', False, True, False, u'2012-12-04 22:08:16', u'2012-11-28 22:17:38', 2)
+DEBUG:django.db.backends:(0.000) SAVEPOINT s5568_x1; args=()
+DEBUG:django.db.backends:(0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '712794ce34c5ff3c29df46c1777f0eba'  LIMIT 1; args=('712794ce34c5ff3c29df46c1777f0eba',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'NTQ0ZWQ1MjYxY2E2ZGJjMTU1NGY1YWI5MzI1ZWE3NDgxMjBiMDAxNjqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQSKAQJ1Lg==\n', `expire_date` = '2012-12-18 22:08:16' WHERE `django_session`.`session_key` = '712794ce34c5ff3c29df46c1777f0eba' ; args=('NTQ0ZWQ1MjYxY2E2ZGJjMTU1NGY1YWI5MzI1ZWE3NDgxMjBiMDAxNjqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQSKAQJ1Lg==\n', u'2012-12-18 22:08:16', '712794ce34c5ff3c29df46c1777f0eba')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '712794ce34c5ff3c29df46c1777f0eba'  AND `django_session`.`expire_date` > '2012-12-04 22:08:16' ); args=('712794ce34c5ff3c29df46c1777f0eba', u'2012-12-04 22:08:16')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '712794ce34c5ff3c29df46c1777f0eba'  AND `django_session`.`expire_date` > '2012-12-04 22:09:06' ); args=('712794ce34c5ff3c29df46c1777f0eba', u'2012-12-04 22:09:06')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '712794ce34c5ff3c29df46c1777f0eba'  AND `django_session`.`expire_date` > '2012-12-04 22:09:10' ); args=('712794ce34c5ff3c29df46c1777f0eba', u'2012-12-04 22:09:10')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.001) SAVEPOINT s5080_x1; args=()
+DEBUG:django.db.backends:(0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '712794ce34c5ff3c29df46c1777f0eba'  LIMIT 1; args=('712794ce34c5ff3c29df46c1777f0eba',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'ODEzZDVhZWE5MmM0ZmFjOWU4YzBmYzBmOWVkMzJjNjNlMmUyMTMyOTqAAn1xAShVCnRlc3Rjb29r\naWVxAlUGd29ya2VkcQNVDV9hdXRoX3VzZXJfaWSKAQJVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGph\nbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmR1Lg==\n', `expire_date` = '2012-12-18 22:09:10' WHERE `django_session`.`session_key` = '712794ce34c5ff3c29df46c1777f0eba' ; args=('ODEzZDVhZWE5MmM0ZmFjOWU4YzBmYzBmOWVkMzJjNjNlMmUyMTMyOTqAAn1xAShVCnRlc3Rjb29r\naWVxAlUGd29ya2VkcQNVDV9hdXRoX3VzZXJfaWSKAQJVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGph\nbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmR1Lg==\n', u'2012-12-18 22:09:10', '712794ce34c5ff3c29df46c1777f0eba')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '712794ce34c5ff3c29df46c1777f0eba'  AND `django_session`.`expire_date` > '2012-12-04 22:09:11' ); args=('712794ce34c5ff3c29df46c1777f0eba', u'2012-12-04 22:09:11')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = '712794ce34c5ff3c29df46c1777f0eba' ; args=('712794ce34c5ff3c29df46c1777f0eba',)
+DEBUG:django.db.backends:(0.001) DELETE FROM `django_session` WHERE `session_key` IN ('712794ce34c5ff3c29df46c1777f0eba'); args=(u'712794ce34c5ff3c29df46c1777f0eba',)
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'd1e71b2c008afb91588bd6b50c1d133a'  LIMIT 1; args=('d1e71b2c008afb91588bd6b50c1d133a',)
+DEBUG:django.db.backends:(0.001) SAVEPOINT s5348_x1; args=()
+DEBUG:django.db.backends:(0.001) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('d1e71b2c008afb91588bd6b50c1d133a', 'NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', '2012-12-18 22:09:11'); args=('d1e71b2c008afb91588bd6b50c1d133a', 'NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', u'2012-12-18 22:09:11')
+DEBUG:django.db.backends:(0.001) SAVEPOINT s5348_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'd1e71b2c008afb91588bd6b50c1d133a'  LIMIT 1; args=('d1e71b2c008afb91588bd6b50c1d133a',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', `expire_date` = '2012-12-18 22:09:11' WHERE `django_session`.`session_key` = 'd1e71b2c008afb91588bd6b50c1d133a' ; args=('NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', u'2012-12-18 22:09:11', 'd1e71b2c008afb91588bd6b50c1d133a')
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'd1e71b2c008afb91588bd6b50c1d133a'  AND `django_session`.`expire_date` > '2012-12-04 22:09:13' ); args=('d1e71b2c008afb91588bd6b50c1d133a', u'2012-12-04 22:09:13')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'd1e71b2c008afb91588bd6b50c1d133a'  AND `django_session`.`expire_date` > '2012-12-04 22:09:13' ); args=('d1e71b2c008afb91588bd6b50c1d133a', u'2012-12-04 22:09:13')
+DEBUG:django.db.backends:(0.001) SAVEPOINT s5956_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'd1e71b2c008afb91588bd6b50c1d133a'  LIMIT 1; args=('d1e71b2c008afb91588bd6b50c1d133a',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'Y2QxNjVlOGMxMDFmN2IxNThmNWFjNzY0YTkwODY3YWJiNTIzNmZhNzqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n', `expire_date` = '2012-12-18 22:09:13' WHERE `django_session`.`session_key` = 'd1e71b2c008afb91588bd6b50c1d133a' ; args=('Y2QxNjVlOGMxMDFmN2IxNThmNWFjNzY0YTkwODY3YWJiNTIzNmZhNzqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n', u'2012-12-18 22:09:13', 'd1e71b2c008afb91588bd6b50c1d133a')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'stmkmk' ; args=(u'stmkmk',)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'd1e71b2c008afb91588bd6b50c1d133a'  AND `django_session`.`expire_date` > '2012-12-04 22:09:26' ); args=('d1e71b2c008afb91588bd6b50c1d133a', u'2012-12-04 22:09:26')
+DEBUG:django.db.backends:(0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '0094500920f37a553d2535cb8c8316e4'  LIMIT 1; args=('0094500920f37a553d2535cb8c8316e4',)
+DEBUG:django.db.backends:(0.000) SAVEPOINT s3228_x1; args=()
+DEBUG:django.db.backends:(0.000) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('0094500920f37a553d2535cb8c8316e4', 'ZGYxMWMyYTdhZGU1YTQ1ZjY5NmIyM2FkYzQwZTc2NTlhOWUyYTFiNDqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2Vkcy4=\n', '2012-12-18 22:09:26'); args=('0094500920f37a553d2535cb8c8316e4', 'ZGYxMWMyYTdhZGU1YTQ1ZjY5NmIyM2FkYzQwZTc2NTlhOWUyYTFiNDqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2Vkcy4=\n', u'2012-12-18 22:09:26')
+DEBUG:django.db.backends:(0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = 'd1e71b2c008afb91588bd6b50c1d133a' ; args=('d1e71b2c008afb91588bd6b50c1d133a',)
+DEBUG:django.db.backends:(0.001) DELETE FROM `django_session` WHERE `session_key` IN ('d1e71b2c008afb91588bd6b50c1d133a'); args=(u'd1e71b2c008afb91588bd6b50c1d133a',)
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `auth_user` WHERE `auth_user`.`id` = 2  LIMIT 1; args=(2,)
+DEBUG:django.db.backends:(0.002) UPDATE `auth_user` SET `username` = 'stmkmk', `first_name` = 'Kim', `last_name` = 'Moon Geun', `email` = 'gramman75@gmail.com', `password` = 'pbkdf2_sha256$10000$vp0orUWz9ZdT$REF+mCDl+O+s6ODGPGkEGbytpk4e7N4ItKKLqZ70QY0=', `is_staff` = 0, `is_active` = 1, `is_superuser` = 0, `last_login` = '2012-12-04 22:09:27', `date_joined` = '2012-11-28 22:17:38' WHERE `auth_user`.`id` = 2 ; args=(u'stmkmk', u'Kim', u'Moon Geun', u'gramman75@gmail.com', u'pbkdf2_sha256$10000$vp0orUWz9ZdT$REF+mCDl+O+s6ODGPGkEGbytpk4e7N4ItKKLqZ70QY0=', False, True, False, u'2012-12-04 22:09:27', u'2012-11-28 22:17:38', 2)
+DEBUG:django.db.backends:(0.000) SAVEPOINT s3228_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '0094500920f37a553d2535cb8c8316e4'  LIMIT 1; args=('0094500920f37a553d2535cb8c8316e4',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'NTQ0ZWQ1MjYxY2E2ZGJjMTU1NGY1YWI5MzI1ZWE3NDgxMjBiMDAxNjqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQSKAQJ1Lg==\n', `expire_date` = '2012-12-18 22:09:27' WHERE `django_session`.`session_key` = '0094500920f37a553d2535cb8c8316e4' ; args=('NTQ0ZWQ1MjYxY2E2ZGJjMTU1NGY1YWI5MzI1ZWE3NDgxMjBiMDAxNjqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQSKAQJ1Lg==\n', u'2012-12-18 22:09:27', '0094500920f37a553d2535cb8c8316e4')
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '0094500920f37a553d2535cb8c8316e4'  AND `django_session`.`expire_date` > '2012-12-04 22:09:27' ); args=('0094500920f37a553d2535cb8c8316e4', u'2012-12-04 22:09:27')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '0094500920f37a553d2535cb8c8316e4'  AND `django_session`.`expire_date` > '2012-12-04 22:09:34' ); args=('0094500920f37a553d2535cb8c8316e4', u'2012-12-04 22:09:34')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '0094500920f37a553d2535cb8c8316e4'  AND `django_session`.`expire_date` > '2012-12-04 22:09:38' ); args=('0094500920f37a553d2535cb8c8316e4', u'2012-12-04 22:09:38')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.005) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '0094500920f37a553d2535cb8c8316e4'  AND `django_session`.`expire_date` > '2012-12-04 22:09:40' ); args=('0094500920f37a553d2535cb8c8316e4', u'2012-12-04 22:09:40')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '0094500920f37a553d2535cb8c8316e4'  AND `django_session`.`expire_date` > '2012-12-04 22:09:44' ); args=('0094500920f37a553d2535cb8c8316e4', u'2012-12-04 22:09:44')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '0094500920f37a553d2535cb8c8316e4'  AND `django_session`.`expire_date` > '2012-12-04 22:09:47' ); args=('0094500920f37a553d2535cb8c8316e4', u'2012-12-04 22:09:47')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '0094500920f37a553d2535cb8c8316e4'  AND `django_session`.`expire_date` > '2012-12-04 22:09:49' ); args=('0094500920f37a553d2535cb8c8316e4', u'2012-12-04 22:09:49')
+DEBUG:django.db.backends:(0.000) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'd415bd0164d5b663817bfe61e1802440'  LIMIT 1; args=('d415bd0164d5b663817bfe61e1802440',)
+DEBUG:django.db.backends:(0.010) SAVEPOINT s1164_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'd415bd0164d5b663817bfe61e1802440'  LIMIT 1; args=('d415bd0164d5b663817bfe61e1802440',)
+DEBUG:django.db.backends:(0.001) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('d415bd0164d5b663817bfe61e1802440', 'Y2QxNjVlOGMxMDFmN2IxNThmNWFjNzY0YTkwODY3YWJiNTIzNmZhNzqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n', '2012-12-18 22:12:38'); args=('d415bd0164d5b663817bfe61e1802440', 'Y2QxNjVlOGMxMDFmN2IxNThmNWFjNzY0YTkwODY3YWJiNTIzNmZhNzqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n', u'2012-12-18 22:12:38')
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '53fe6edfd0b969922c5b8b151c811117'  AND `django_session`.`expire_date` > '2012-12-04 22:13:40' ); args=('53fe6edfd0b969922c5b8b151c811117', u'2012-12-04 22:13:40')
+DEBUG:django.db.backends:(0.000) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.000) SAVEPOINT s3788_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '53fe6edfd0b969922c5b8b151c811117'  LIMIT 1; args=('53fe6edfd0b969922c5b8b151c811117',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'ODEzZDVhZWE5MmM0ZmFjOWU4YzBmYzBmOWVkMzJjNjNlMmUyMTMyOTqAAn1xAShVCnRlc3Rjb29r\naWVxAlUGd29ya2VkcQNVDV9hdXRoX3VzZXJfaWSKAQJVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGph\nbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmR1Lg==\n', `expire_date` = '2012-12-18 22:17:23' WHERE `django_session`.`session_key` = '53fe6edfd0b969922c5b8b151c811117' ; args=('ODEzZDVhZWE5MmM0ZmFjOWU4YzBmYzBmOWVkMzJjNjNlMmUyMTMyOTqAAn1xAShVCnRlc3Rjb29r\naWVxAlUGd29ya2VkcQNVDV9hdXRoX3VzZXJfaWSKAQJVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGph\nbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmR1Lg==\n', u'2012-12-18 22:17:23', '53fe6edfd0b969922c5b8b151c811117')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '53fe6edfd0b969922c5b8b151c811117'  AND `django_session`.`expire_date` > '2012-12-04 22:17:24' ); args=('53fe6edfd0b969922c5b8b151c811117', u'2012-12-04 22:17:24')
+DEBUG:django.db.backends:(0.000) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = '53fe6edfd0b969922c5b8b151c811117' ; args=('53fe6edfd0b969922c5b8b151c811117',)
+DEBUG:django.db.backends:(0.000) DELETE FROM `django_session` WHERE `session_key` IN ('53fe6edfd0b969922c5b8b151c811117'); args=(u'53fe6edfd0b969922c5b8b151c811117',)
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '65f6a6d713b1bfc599d838d3970f1ca4'  LIMIT 1; args=('65f6a6d713b1bfc599d838d3970f1ca4',)
+DEBUG:django.db.backends:(0.000) SAVEPOINT s4936_x1; args=()
+DEBUG:django.db.backends:(0.001) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('65f6a6d713b1bfc599d838d3970f1ca4', 'NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', '2012-12-18 22:17:24'); args=('65f6a6d713b1bfc599d838d3970f1ca4', 'NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', u'2012-12-18 22:17:24')
+DEBUG:django.db.backends:(0.000) SAVEPOINT s4936_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '65f6a6d713b1bfc599d838d3970f1ca4'  LIMIT 1; args=('65f6a6d713b1bfc599d838d3970f1ca4',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', `expire_date` = '2012-12-18 22:17:24' WHERE `django_session`.`session_key` = '65f6a6d713b1bfc599d838d3970f1ca4' ; args=('NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', u'2012-12-18 22:17:24', '65f6a6d713b1bfc599d838d3970f1ca4')
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '65f6a6d713b1bfc599d838d3970f1ca4'  AND `django_session`.`expire_date` > '2012-12-04 22:17:26' ); args=('65f6a6d713b1bfc599d838d3970f1ca4', u'2012-12-04 22:17:26')
+DEBUG:django.db.backends:(0.000) SAVEPOINT s4408_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '65f6a6d713b1bfc599d838d3970f1ca4'  LIMIT 1; args=('65f6a6d713b1bfc599d838d3970f1ca4',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'Y2QxNjVlOGMxMDFmN2IxNThmNWFjNzY0YTkwODY3YWJiNTIzNmZhNzqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n', `expire_date` = '2012-12-18 22:17:26' WHERE `django_session`.`session_key` = '65f6a6d713b1bfc599d838d3970f1ca4' ; args=('Y2QxNjVlOGMxMDFmN2IxNThmNWFjNzY0YTkwODY3YWJiNTIzNmZhNzqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n', u'2012-12-18 22:17:26', '65f6a6d713b1bfc599d838d3970f1ca4')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'stmkmk' ; args=(u'stmkmk',)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '65f6a6d713b1bfc599d838d3970f1ca4'  AND `django_session`.`expire_date` > '2012-12-04 22:17:32' ); args=('65f6a6d713b1bfc599d838d3970f1ca4', u'2012-12-04 22:17:32')
+DEBUG:django.db.backends:(0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'ffcf2a38f4ad673a6b80101b5712b0a1'  LIMIT 1; args=('ffcf2a38f4ad673a6b80101b5712b0a1',)
+DEBUG:django.db.backends:(0.000) SAVEPOINT s5224_x1; args=()
+DEBUG:django.db.backends:(0.000) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('ffcf2a38f4ad673a6b80101b5712b0a1', 'ZGYxMWMyYTdhZGU1YTQ1ZjY5NmIyM2FkYzQwZTc2NTlhOWUyYTFiNDqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2Vkcy4=\n', '2012-12-18 22:17:32'); args=('ffcf2a38f4ad673a6b80101b5712b0a1', 'ZGYxMWMyYTdhZGU1YTQ1ZjY5NmIyM2FkYzQwZTc2NTlhOWUyYTFiNDqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2Vkcy4=\n', u'2012-12-18 22:17:32')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = '65f6a6d713b1bfc599d838d3970f1ca4' ; args=('65f6a6d713b1bfc599d838d3970f1ca4',)
+DEBUG:django.db.backends:(0.001) DELETE FROM `django_session` WHERE `session_key` IN ('65f6a6d713b1bfc599d838d3970f1ca4'); args=(u'65f6a6d713b1bfc599d838d3970f1ca4',)
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `auth_user` WHERE `auth_user`.`id` = 2  LIMIT 1; args=(2,)
+DEBUG:django.db.backends:(0.001) UPDATE `auth_user` SET `username` = 'stmkmk', `first_name` = 'Kim', `last_name` = 'Moon Geun', `email` = 'gramman75@gmail.com', `password` = 'pbkdf2_sha256$10000$vp0orUWz9ZdT$REF+mCDl+O+s6ODGPGkEGbytpk4e7N4ItKKLqZ70QY0=', `is_staff` = 0, `is_active` = 1, `is_superuser` = 0, `last_login` = '2012-12-04 22:17:32', `date_joined` = '2012-11-28 22:17:38' WHERE `auth_user`.`id` = 2 ; args=(u'stmkmk', u'Kim', u'Moon Geun', u'gramman75@gmail.com', u'pbkdf2_sha256$10000$vp0orUWz9ZdT$REF+mCDl+O+s6ODGPGkEGbytpk4e7N4ItKKLqZ70QY0=', False, True, False, u'2012-12-04 22:17:32', u'2012-11-28 22:17:38', 2)
+DEBUG:django.db.backends:(0.001) SAVEPOINT s5224_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'ffcf2a38f4ad673a6b80101b5712b0a1'  LIMIT 1; args=('ffcf2a38f4ad673a6b80101b5712b0a1',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'NTQ0ZWQ1MjYxY2E2ZGJjMTU1NGY1YWI5MzI1ZWE3NDgxMjBiMDAxNjqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQSKAQJ1Lg==\n', `expire_date` = '2012-12-18 22:17:32' WHERE `django_session`.`session_key` = 'ffcf2a38f4ad673a6b80101b5712b0a1' ; args=('NTQ0ZWQ1MjYxY2E2ZGJjMTU1NGY1YWI5MzI1ZWE3NDgxMjBiMDAxNjqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQSKAQJ1Lg==\n', u'2012-12-18 22:17:32', 'ffcf2a38f4ad673a6b80101b5712b0a1')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'ffcf2a38f4ad673a6b80101b5712b0a1'  AND `django_session`.`expire_date` > '2012-12-04 22:17:32' ); args=('ffcf2a38f4ad673a6b80101b5712b0a1', u'2012-12-04 22:17:32')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'ffcf2a38f4ad673a6b80101b5712b0a1'  AND `django_session`.`expire_date` > '2012-12-04 22:17:36' ); args=('ffcf2a38f4ad673a6b80101b5712b0a1', u'2012-12-04 22:17:36')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = 'ffcf2a38f4ad673a6b80101b5712b0a1' ; args=('ffcf2a38f4ad673a6b80101b5712b0a1',)
+DEBUG:django.db.backends:(0.001) DELETE FROM `django_session` WHERE `session_key` IN ('ffcf2a38f4ad673a6b80101b5712b0a1'); args=(u'ffcf2a38f4ad673a6b80101b5712b0a1',)
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'bc873269030eb3817395ab3dddc213dd'  LIMIT 1; args=('bc873269030eb3817395ab3dddc213dd',)
+DEBUG:django.db.backends:(0.001) SAVEPOINT s4412_x1; args=()
+DEBUG:django.db.backends:(0.002) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('bc873269030eb3817395ab3dddc213dd', 'NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', '2012-12-18 22:17:36'); args=('bc873269030eb3817395ab3dddc213dd', 'NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', u'2012-12-18 22:17:36')
+DEBUG:django.db.backends:(0.001) SAVEPOINT s4412_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'bc873269030eb3817395ab3dddc213dd'  LIMIT 1; args=('bc873269030eb3817395ab3dddc213dd',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', `expire_date` = '2012-12-18 22:17:36' WHERE `django_session`.`session_key` = 'bc873269030eb3817395ab3dddc213dd' ; args=('NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', u'2012-12-18 22:17:36', 'bc873269030eb3817395ab3dddc213dd')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'bc873269030eb3817395ab3dddc213dd'  AND `django_session`.`expire_date` > '2012-12-04 22:17:39' ); args=('bc873269030eb3817395ab3dddc213dd', u'2012-12-04 22:17:39')
+DEBUG:django.db.backends:(0.001) SAVEPOINT s5744_x1; args=()
+DEBUG:django.db.backends:(0.002) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'bc873269030eb3817395ab3dddc213dd'  LIMIT 1; args=('bc873269030eb3817395ab3dddc213dd',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'Y2QxNjVlOGMxMDFmN2IxNThmNWFjNzY0YTkwODY3YWJiNTIzNmZhNzqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n', `expire_date` = '2012-12-18 22:17:39' WHERE `django_session`.`session_key` = 'bc873269030eb3817395ab3dddc213dd' ; args=('Y2QxNjVlOGMxMDFmN2IxNThmNWFjNzY0YTkwODY3YWJiNTIzNmZhNzqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n', u'2012-12-18 22:17:39', 'bc873269030eb3817395ab3dddc213dd')
+DEBUG:django.db.backends:(0.000) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'stmkmk' ; args=(u'stmkmk',)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'bc873269030eb3817395ab3dddc213dd'  AND `django_session`.`expire_date` > '2012-12-04 22:17:44' ); args=('bc873269030eb3817395ab3dddc213dd', u'2012-12-04 22:17:44')
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29'  LIMIT 1; args=('5fddfb5345b2997121b63ee8feae0d29',)
+DEBUG:django.db.backends:(0.001) SAVEPOINT s1876_x1; args=()
+DEBUG:django.db.backends:(0.001) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('5fddfb5345b2997121b63ee8feae0d29', 'ZGYxMWMyYTdhZGU1YTQ1ZjY5NmIyM2FkYzQwZTc2NTlhOWUyYTFiNDqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2Vkcy4=\n', '2012-12-18 22:17:44'); args=('5fddfb5345b2997121b63ee8feae0d29', 'ZGYxMWMyYTdhZGU1YTQ1ZjY5NmIyM2FkYzQwZTc2NTlhOWUyYTFiNDqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2Vkcy4=\n', u'2012-12-18 22:17:44')
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = 'bc873269030eb3817395ab3dddc213dd' ; args=('bc873269030eb3817395ab3dddc213dd',)
+DEBUG:django.db.backends:(0.001) DELETE FROM `django_session` WHERE `session_key` IN ('bc873269030eb3817395ab3dddc213dd'); args=(u'bc873269030eb3817395ab3dddc213dd',)
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `auth_user` WHERE `auth_user`.`id` = 2  LIMIT 1; args=(2,)
+DEBUG:django.db.backends:(0.001) UPDATE `auth_user` SET `username` = 'stmkmk', `first_name` = 'Kim', `last_name` = 'Moon Geun', `email` = 'gramman75@gmail.com', `password` = 'pbkdf2_sha256$10000$vp0orUWz9ZdT$REF+mCDl+O+s6ODGPGkEGbytpk4e7N4ItKKLqZ70QY0=', `is_staff` = 0, `is_active` = 1, `is_superuser` = 0, `last_login` = '2012-12-04 22:17:44', `date_joined` = '2012-11-28 22:17:38' WHERE `auth_user`.`id` = 2 ; args=(u'stmkmk', u'Kim', u'Moon Geun', u'gramman75@gmail.com', u'pbkdf2_sha256$10000$vp0orUWz9ZdT$REF+mCDl+O+s6ODGPGkEGbytpk4e7N4ItKKLqZ70QY0=', False, True, False, u'2012-12-04 22:17:44', u'2012-11-28 22:17:38', 2)
+DEBUG:django.db.backends:(0.000) SAVEPOINT s1876_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29'  LIMIT 1; args=('5fddfb5345b2997121b63ee8feae0d29',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'NTQ0ZWQ1MjYxY2E2ZGJjMTU1NGY1YWI5MzI1ZWE3NDgxMjBiMDAxNjqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQSKAQJ1Lg==\n', `expire_date` = '2012-12-18 22:17:44' WHERE `django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29' ; args=('NTQ0ZWQ1MjYxY2E2ZGJjMTU1NGY1YWI5MzI1ZWE3NDgxMjBiMDAxNjqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQSKAQJ1Lg==\n', u'2012-12-18 22:17:44', '5fddfb5345b2997121b63ee8feae0d29')
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29'  AND `django_session`.`expire_date` > '2012-12-04 22:17:44' ); args=('5fddfb5345b2997121b63ee8feae0d29', u'2012-12-04 22:17:44')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29'  AND `django_session`.`expire_date` > '2012-12-04 22:18:40' ); args=('5fddfb5345b2997121b63ee8feae0d29', u'2012-12-04 22:18:40')
+DEBUG:django.db.backends:(0.000) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29'  AND `django_session`.`expire_date` > '2012-12-04 22:18:45' ); args=('5fddfb5345b2997121b63ee8feae0d29', u'2012-12-04 22:18:45')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+INFO:sqlalchemy.engine.base.Engine:SELECT DATABASE()
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:SHOW VARIABLES LIKE 'character_set%%'
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:SHOW VARIABLES LIKE 'sql_mode'
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jan, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS feb, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS mar, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS apr, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS may, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jun, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jul, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS aug, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS sep, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS oct, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS nov, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS `dec` 
+FROM xxsm_users_v INNER JOIN xxsm_user_logins ON xxsm_users_v.id = xxsm_user_logins.user_id INNER JOIN xxsm_departments_v ON xxsm_departments_v.department_code = xxsm_users_v.department_code_id INNER JOIN xxsm_locations_v ON xxsm_locations_v.location_code = xxsm_users_v.location_code_id 
+WHERE xxsm_user_logins.year = %s AND xxsm_users_v.description LIKE %s AND xxsm_departments_v.department LIKE %s AND xxsm_locations_v.location LIKE %s GROUP BY xxsm_users_v.user_name, xxsm_users_v.description, xxsm_departments_v.department, xxsm_locations_v.location
+INFO:sqlalchemy.engine.base.Engine:(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, '2012', '%STMKMK%', '%%', '%%')
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA114',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password 
+FROM xxsm_users_v 
+WHERE xxsm_users_v.id = %s
+INFO:sqlalchemy.engine.base.Engine:('15389',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_user_logins.year AS xxsm_user_logins_year, xxsm_user_logins.month AS xxsm_user_logins_month, sum(xxsm_user_logins.counts) AS count 
+FROM xxsm_user_logins 
+WHERE xxsm_user_logins.user_id = %s GROUP BY xxsm_user_logins.year, xxsm_user_logins.month
+INFO:sqlalchemy.engine.base.Engine:('15389',)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29'  AND `django_session`.`expire_date` > '2012-12-04 22:20:38' ); args=('5fddfb5345b2997121b63ee8feae0d29', u'2012-12-04 22:20:38')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29'  AND `django_session`.`expire_date` > '2012-12-04 22:21:08' ); args=('5fddfb5345b2997121b63ee8feae0d29', u'2012-12-04 22:21:08')
+DEBUG:django.db.backends:(0.000) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29'  AND `django_session`.`expire_date` > '2012-12-04 22:49:09' ); args=('5fddfb5345b2997121b63ee8feae0d29', u'2012-12-04 22:49:09')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29'  AND `django_session`.`expire_date` > '2012-12-04 22:51:02' ); args=('5fddfb5345b2997121b63ee8feae0d29', u'2012-12-04 22:51:02')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29'  AND `django_session`.`expire_date` > '2012-12-04 22:51:07' ); args=('5fddfb5345b2997121b63ee8feae0d29', u'2012-12-04 22:51:07')
+DEBUG:django.db.backends:(0.000) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+INFO:sqlalchemy.engine.base.Engine:SELECT DATABASE()
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:SHOW VARIABLES LIKE 'character_set%%'
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:SHOW VARIABLES LIKE 'sql_mode'
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jan, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS feb, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS mar, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS apr, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS may, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jun, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jul, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS aug, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS sep, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS oct, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS nov, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS `dec` 
+FROM xxsm_users_v INNER JOIN xxsm_user_logins ON xxsm_users_v.id = xxsm_user_logins.user_id INNER JOIN xxsm_departments_v ON xxsm_departments_v.department_code = xxsm_users_v.department_code_id INNER JOIN xxsm_locations_v ON xxsm_locations_v.location_code = xxsm_users_v.location_code_id 
+WHERE xxsm_user_logins.year = %s AND xxsm_users_v.description LIKE %s AND xxsm_departments_v.department LIKE %s AND xxsm_locations_v.location LIKE %s GROUP BY xxsm_users_v.user_name, xxsm_users_v.description, xxsm_departments_v.department, xxsm_locations_v.location
+INFO:sqlalchemy.engine.base.Engine:(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, '2012', '%\xb1\xe8%', '%%', '%%')
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KD005',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB019',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA246',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB129',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB013',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB042',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB098',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB103',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC011',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC071',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB072',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB030',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB016',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC070',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC066',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC024',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC012',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC042',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB014',)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29'  AND `django_session`.`expire_date` > '2012-12-04 22:51:18' ); args=('5fddfb5345b2997121b63ee8feae0d29', u'2012-12-04 22:51:18')
+DEBUG:django.db.backends:(0.002) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_users_v.department_code_id AS xxsm_users_v_department_code_id, xxsm_users_v.location_code_id AS xxsm_users_v_location_code_id, xxsm_users_v.id AS xxsm_users_v_id, xxsm_users_v.user_name AS xxsm_users_v_user_name, xxsm_users_v.description AS xxsm_users_v_description, xxsm_users_v.enable AS xxsm_users_v_enable, xxsm_users_v.inactive_date AS xxsm_users_v_inactive_date, xxsm_users_v.password AS xxsm_users_v_password, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jan, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS feb, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS mar, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS apr, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS may, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jun, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS jul, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS aug, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS sep, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS oct, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS nov, sum(CASE WHEN (xxsm_user_logins.month = %s) THEN xxsm_user_logins.counts ELSE %s END) AS `dec` 
+FROM xxsm_users_v INNER JOIN xxsm_user_logins ON xxsm_users_v.id = xxsm_user_logins.user_id INNER JOIN xxsm_departments_v ON xxsm_departments_v.department_code = xxsm_users_v.department_code_id INNER JOIN xxsm_locations_v ON xxsm_locations_v.location_code = xxsm_users_v.location_code_id 
+WHERE xxsm_user_logins.year = %s AND xxsm_users_v.description LIKE %s AND xxsm_departments_v.department LIKE %s AND xxsm_locations_v.location LIKE %s GROUP BY xxsm_users_v.user_name, xxsm_users_v.description, xxsm_departments_v.department, xxsm_locations_v.location
+INFO:sqlalchemy.engine.base.Engine:(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, '2012', '%\xb1\xe8%', '%%', '%%')
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA073',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB004',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB086',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA299',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB024',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB071',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KG023',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB143',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC004',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA071',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KB011',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KA085',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC001',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KG047',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC033',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KD030',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC002',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KC042',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KD102',)
+INFO:sqlalchemy.engine.base.Engine:SELECT xxsm_departments_v.department_code AS xxsm_departments_v_department_code, xxsm_departments_v.department AS xxsm_departments_v_department 
+FROM xxsm_departments_v 
+WHERE xxsm_departments_v.department_code = %s
+INFO:sqlalchemy.engine.base.Engine:('KD027',)
+DEBUG:django.db.backends:(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29'  AND `django_session`.`expire_date` > '2012-12-04 22:52:35' ); args=('5fddfb5345b2997121b63ee8feae0d29', u'2012-12-04 22:52:35')
+DEBUG:django.db.backends:(0.001) SELECT `auth_user`.`id`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 2 ; args=(2,)
+DEBUG:django.db.backends:(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = '5fddfb5345b2997121b63ee8feae0d29' ; args=('5fddfb5345b2997121b63ee8feae0d29',)
+DEBUG:django.db.backends:(0.001) DELETE FROM `django_session` WHERE `session_key` IN ('5fddfb5345b2997121b63ee8feae0d29'); args=(u'5fddfb5345b2997121b63ee8feae0d29',)
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'e45de8381c6e65b6ee4384d6657f1ce3'  LIMIT 1; args=('e45de8381c6e65b6ee4384d6657f1ce3',)
+DEBUG:django.db.backends:(0.001) SAVEPOINT s3216_x1; args=()
+DEBUG:django.db.backends:(0.001) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('e45de8381c6e65b6ee4384d6657f1ce3', 'NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', '2012-12-18 22:52:35'); args=('e45de8381c6e65b6ee4384d6657f1ce3', 'NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', u'2012-12-18 22:52:35')
+DEBUG:django.db.backends:(0.002) SELECT `django_site`.`id`, `django_site`.`domain`, `django_site`.`name` FROM `django_site` WHERE `django_site`.`id` = 1 ; args=(1,)
+DEBUG:django.db.backends:(0.001) SAVEPOINT s3216_x1; args=()
+DEBUG:django.db.backends:(0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'e45de8381c6e65b6ee4384d6657f1ce3'  LIMIT 1; args=('e45de8381c6e65b6ee4384d6657f1ce3',)
+DEBUG:django.db.backends:(0.001) UPDATE `django_session` SET `session_data` = 'NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', `expire_date` = '2012-12-18 22:52:35' WHERE `django_session`.`session_key` = 'e45de8381c6e65b6ee4384d6657f1ce3' ; args=('NWIyNGEzNjk3OGVjZWYzN2I3Yzc4OTgwMjY1NjA3YTljOWVjNzIyMjqAAn1xAS4=\n', u'2012-12-18 22:52:35', 'e45de8381c6e65b6ee4384d6657f1ce3')
+DEBUG:root:valid False
+DEBUG:root:valid False

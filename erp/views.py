@@ -1,6 +1,6 @@
 # Create your views here.
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render_to_response, redirect
+from django.http import HttpResponse
+from django.shortcuts import render_to_response
 from erp.forms import LoginForm, RegisterForm
 #from utilization.models import User
 from django.contrib.auth.models import User
@@ -25,7 +25,7 @@ session = Session()
 
 @login_required
 def home(request):
-    return render_to_response('home.html')
+    return render_to_response('home.html',context_instance=RequestContext(request))
 
 def register_view(requeset):
     return render_to_response('register.html')
