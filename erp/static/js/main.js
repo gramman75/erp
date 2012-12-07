@@ -49,6 +49,17 @@ var popup = function(me){
 	
 }
 
+var get_programs = function(me){
+	$.ajax({
+		url : '/erp/notice/register/program',
+		data : 'applicationId='+me.value,
+		async : true,
+		success : function(html){			
+			$('#selectProgram').html(html);
+		}
+	});
+}
+
 // 메뉴 active
 $(document).ready(function(){
 	var $navList = $('#nav li a');

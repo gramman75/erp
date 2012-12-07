@@ -1,6 +1,8 @@
 <script type="text/javascript">
-	CKEDITOR.replace("id_body", {"filebrowserWindowWidth": 940, "width": 835, "skin": "django", "filebrowserWindowHeight": 725, "filebrowserBrowseUrl": "/ckeditor/browse/", "filebrowserUploadUrl": "/ckeditor/upload/", "toolbar": "Full", "height": 291});
+	CKEDITOR.replace("id_body", {"filebrowserWindowWidth": 940, "width": 835, "skin": "django", "filebrowserWindowHeight": 725, "filebrowserBrowseUrl": "/ckeditor/browse/", "filebrowserUploadUrl": "/ckeditor/upload/", "toolbar": "Full", "height": 291});	
 </script>
+
+<script src="/static/js/main.js"></script>
 
 <div class="container-fluid">
 	<div class="row-fluid">
@@ -10,18 +12,17 @@
 			</ul>
 		</div>
 		<div class="row-fluid">
-			<form class="form-horizontal">
+			<form class="form-horizontal" action="/erp/notice/register/save/" method="GET">
 	
 				
 				<div class="control-group">
 					<label class="control-label" for="selectApplication">Application</label>
 					<div class="controls">
-						<select id="selecctApplication" class="span2" name="application">
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
+						<select id="selecctApplication" class="span3" name="application" onchange="get_programs(this);">
+							<option value="0">-- Choose Application --</option>
+							{% for app in apps %}
+								<option value="{{ app.application_id }}">{{ app.application_name }}</option>
+							{% endfor %}
 						</select>
 					</div>
 				</div> <!-- control-group application-->
@@ -29,12 +30,8 @@
 				<div class="control-group">
 					<label class="control-label" for="selectProgram">Program</label>
 					<div class="controls">
-						<select id="sselectProgram" class="span2" name="program">
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
+						<select id="selectProgram" class="span3" name="program">
+							<option value="0">-- Choose a Application first --</option>
 						</select>
 					</div>
 				</div> <!-- contro-group program-->
@@ -42,29 +39,38 @@
 				<div class="control-group inline">
 					<label class="control-label inline" for="listTarget">Target</label>
 					<div class="controls">							
-						<select multiple="mulltiple" id="listTarget" class="span2" name="loc">
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
+						<select multiple="mulltiple" id="listTarget" class="span2" name="unit">
+							{% for unit in units %}
+								<option value="{{ unit.operation_unit_id }}">{{ unit.name }}</option>
+							{% endfor %}
 						</select>						
-						<select multiple="mulltiple" id="listTarget" class="span2" name="dept">
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
-						</select>		
-						<select multiple="mulltiple" id="listTarget" class="span2" name="employee">
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
-							<option>1</option>
+						
+						<select multiple="mulltiple" id="listTarget" class="span2" name="division">
+							{% for division in divisions %}
+								<option value="{{division.division_code}}">{{division.name}}</option>
+							{% endfor %}
+						</select>
+								
+						<select multiple="mulltiple" id="listTarget" class="span2" name="location">
+							{% for location in locations %}
+								<option value="{{location.location_code|cut:' '}}">{{location.location}}</option>
+							{% endfor %}
 						</select>									
+						
+						<select multiple="mulltiple" id="listTarget" class="span2" name="department">
+							{% for department in departments %}
+								<option value="{{department.department_code}}">{{department.department}}</option>
+							{% endfor %}							
+						</select>
 					</div>
 				</div> <!-- contro-group -->
+				
+				<div class="control-group">
+					<label = class="control-label">Title</label>
+					<div class="controls">
+						<input type = "text" name="title" class="input-xxlarge" /> 
+					</div>
+				</div>
 					
 				<div class="control-group">
 					<label = class="control-label">Body</label>
@@ -73,11 +79,18 @@
 					</div>
 				</div>
 				
-
+				<div class="control-group">
+					<label class="control-label" for="effectiveDate">Effective Date</label>
+					<div class="controls">
+						<input type ="text" id="effectiveDate" class="span3" name="fromDate" />							
+						~
+						<input type ="text" id="effectiveDate" class="span3" name="toDate" />
+					</div>
+				</div> <!-- contro-group program-->
+				
 			</form>
 		</div>
 	</div>
 </div>
 
-    
 

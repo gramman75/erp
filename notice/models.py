@@ -1,7 +1,7 @@
 # -*- coding: utf8 -*-
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import backref, relationship
-from sqlalchemy. import Column, Integer, String, ForeignKey, Date, Unicode, Sequence
+from sqlalchemy import Column, Integer, String, ForeignKey, Date, Unicode, Sequence
 
 Base = declarative_base()
   
@@ -27,7 +27,7 @@ class Application(Base):
 class Program(Base):
     __tablename__ = 'xxsm_programs_v'
     
-    program_id = Column(Integer, primaery_key = True)
+    program_id = Column(Integer, primary_key = True)
     #type       = Column(String(30), primary_key = True)
     application_id  = Column('application_id',Integer,ForeignKey('xxsm_applications_v.application_id'))
     program_short_name = Column(String(50))
@@ -44,28 +44,46 @@ class Program(Base):
 class OperationUnit(Base):
     __tablename__ = 'xxsm_operation_units_v'
     operation_unit_id = Column(Integer,primary_key=True)
-    name              = Column(String(250))  
+    name              = Column(Unicode(250))  
     
     def __repr__(self):
         return '<Operation Unit : %s>' % (self.name)
     
 class Division(Base):
+    __tablename__='xxsm_divisions_v'
+    
     division_code = Column(String(30),primary_key=True)
-    name = Column(String(250))
+    name = Column(Unicode(250))
     
     def __repr__(self):
         return '<Division : %s, %s>' % (self.division_code, self.name)    
     
     
 class Notice(Base):
-    __tablename__ = 'xxsm_notices_v'
+    __tablename__ = 'xxsm_notices'
     
     notice_id = Column(Integer, Sequence('notice_id_seq'),primary_key= True)
     program_id = Column(Integer,ForeignKey('xxsm_programs_v.program_id'))
     from_date  = Column(Date)
     to_date    = Column(Date)
-    title      = Column(String(250))
-    body       = Column(String(4000))
+    title      = Column(Unicode(250))
+    body       = Column(Unicode(4000))
     
-         
+    target = relationship('Target', backref = backref('xxsm_notices'))
     
+    def __repr__(self):
+        return '<Notice : %s >' %self.title
+    
+    
+class Target(Base):
+    __tablename__ ='xxsm_notice_targets'
+    
+    target_id = Column(Integer,Sequence('target_id_seq'), primary_key=True)
+    notice_id = Column(Integer, ForeignKey('xxsm_notices.notice_id'))
+    type      = Column(String(30))
+    value     = Column(Unicode(100))
+    
+    notice = relationship('Notice', backref = backref('xxsm_notice_targets'))
+    
+    def repr(self):
+        return '<Target : %s, %s>' %(self.type, self.value)

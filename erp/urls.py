@@ -24,7 +24,9 @@ urlpatterns += patterns('utilization.user',
                        )
 
 urlpatterns += patterns('notice.views',
-                        url(r'erp/notice/register/$','register'),
+                        url(r'erp/notice/register/$','register_view'),
+                        url(r'erp/notice/register/save/$','register_save'),
+                        url(r'erp/notice/register/program/$','ajax_program'),
                         )
                        
 
