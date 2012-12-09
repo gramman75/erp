@@ -71,6 +71,12 @@ class Notice(Base):
     
     target = relationship('Target', backref = backref('xxsm_notices'))
     
+    def __init__(self,program_id, from_date, to_date, title, body):
+        self.program_id = program_id
+        self.from_date = from_date
+        self.to_date = to_date
+        self.title = title
+        self.body = body
     def __repr__(self):
         return '<Notice : %s >' %self.title
     
@@ -85,5 +91,10 @@ class Target(Base):
     
     notice = relationship('Notice', backref = backref('xxsm_notice_targets'))
     
+    def init(self,notice_id, source, value):
+        self.notice_id = notice_id
+        self.type = source
+        self.value = value
+        
     def repr(self):
         return '<Target : %s, %s>' %(self.type, self.value)

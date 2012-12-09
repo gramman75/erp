@@ -3,7 +3,7 @@
 from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required
 
-from notice.models import Application, Program, OperationUnit, Division
+from notice.models import Application, Program, OperationUnit, Division, Notice, Target
 from notice.forms import NoticeForm
 from utilization.models import Location, Department 
 
@@ -36,23 +36,53 @@ def register_view(request):
 def register_save(request):
     #logger.debug('request %s', request)
     if request.GET['application'] and request.GET['program'] and request.GET['body']:
-        form = NoticeForm(request.GET)
+        application = request.GET['application']
+        program     = request.GET['program']
+        units       = request.GET.getlist('unit')
+        divisions   = request.GET.getlist('division')
+        locations   = request.GET.getlist('location')
+        departments = request.GET.getlist('department')
+        title       = request.GET['title']
+        body        = request.GET['body']
+        fromDate    = request.GET['fromDate']
+        toDate      = request.GET['toDate']
+        '''
+        logger.debug('application %s', application)
+        logger.debug('program %s', program)
+        logger.debug('unit %s', unit)
+        logger.debug('division %s', division)
+        logger.debug('location %s', location)
+        logger.debug('department %s', department)
+        logger.debug('title %s', title)
+        logger.debug('body %s', body)
+        logger.debug('fromDate %s', fromDate)
+        logger.debug('toDate %s', toDate)
+        '''
         
-        if form.is_valid():
-            cd = form.cleaned_data
-            application = cd['application']
-            program     = cd['program']
-            unit        = cd['unit']
-            division    = cd['division']
-            location    = cd['location']
-            department  = cd['department']
-            title       = cd['title']
-            body        = cd['body']
-            fromDate    = cd['fromDate']
-            toDate      = cd['toDate']
+        notice = Notice(program, fromDate, toDate, title, body)
+        session.add(notice)
+        session.commit()
+        noticeId = Notice.notice_id
+        
+        for unit in units:
+            target = Target(noticeId,'UNIT',unit)
+            session.add(target)
+        
+        for division in divisions:
+            target = Target(noticeId,'DIVISION',division)
+            session.add(target)
+        
+        for location in locations:
+            target = Target(noticeId,'LOCATION',location)
+            session.add(target)
+        
+        for department in departments:
+            target = Target(noticeId,'DEPARTMENT',department)
+            session.add(target)
+        
+        session.commit()
+        
             
-        logger.debug('form %s', form)
-        
     return render_to_response('notice/register.html')
     
 
