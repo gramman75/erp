@@ -12,13 +12,16 @@
 				{% include 'common/nav.html' %}
 		</div>
 	 
-	
 	    <div class="span9">
 	      <span id="content">{% include 'initial.html' %}</span>
 	    </div>	
 	    
 		</div>
 	 </div>
-	
-
+	 
+	{% autoescape off %}
+		{{ script }}
+	{% endautoescape %}
+	 
 {% endblock %}
+

@@ -2,6 +2,7 @@
 
 from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
 from notice.models import Application, Program, OperationUnit, Division, Notice, Target
 from notice.forms import NoticeForm
@@ -10,6 +11,8 @@ from utilization.models import Location, Department
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.exc import IntegrityError
+
 import logging, os
 from django.conf import settings
 
@@ -35,34 +38,38 @@ def register_view(request):
 
 def register_save(request):
     #logger.debug('request %s', request)
-    if request.GET['application'] and request.GET['program'] and request.GET['body']:
-        application = request.GET['application']
-        program     = request.GET['program']
-        units       = request.GET.getlist('unit')
-        divisions   = request.GET.getlist('division')
-        locations   = request.GET.getlist('location')
-        departments = request.GET.getlist('department')
-        title       = request.GET['title']
-        body        = request.GET['body']
-        fromDate    = request.GET['fromDate']
-        toDate      = request.GET['toDate']
-        '''
+    if request.POST['application'] and request.POST['program'] and request.POST['body']:
+        application = request.POST['application']
+        program     = request.POST['program']
+        units       = request.POST.getlist('unit')
+        divisions   = request.POST.getlist('division')
+        locations   = request.POST.getlist('location')
+        departments = request.POST.getlist('department')
+        title       = request.POST['title']
+        body        = request.POST['body']
+        fromDate    = request.POST['fromDate']
+        toDate      = request.POST['toDate']
+        
         logger.debug('application %s', application)
         logger.debug('program %s', program)
-        logger.debug('unit %s', unit)
-        logger.debug('division %s', division)
-        logger.debug('location %s', location)
-        logger.debug('department %s', department)
+        logger.debug('unit %s', units)
+        logger.debug('division %s', divisions)
+        logger.debug('location %s', locations)
+        logger.debug('department %s', departments)
         logger.debug('title %s', title)
         logger.debug('body %s', body)
         logger.debug('fromDate %s', fromDate)
         logger.debug('toDate %s', toDate)
-        '''
+        
         
         notice = Notice(program, fromDate, toDate, title, body)
         session.add(notice)
+        
         session.commit()
-        noticeId = Notice.notice_id
+            
+        noticeId = notice.notice_id
+        
+        logger.debug('noticeId %s', noticeId)
         
         for unit in units:
             target = Target(noticeId,'UNIT',unit)
@@ -81,10 +88,16 @@ def register_save(request):
             session.add(target)
         
         session.commit()
-        
-            
-    return render_to_response('notice/register.html')
-    
+                    
+    #return render_to_response('home.html')
+    script = '''
+        <script>
+            alert('Register Complete!');
+            content_ajax('/erp/notice/register/');
+        </script>
+        '''
+    #return HttpResponse(script)
+    return render_to_response('home.html',{'script' : script })
 
 def ajax_program(request):
     if 'applicationId' in request.GET and request.GET['applicationId']:

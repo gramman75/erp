@@ -1,28 +1,351 @@
-DEBUG 2012-12-08 15:53:22,669 views form <tr><th><label for="id_application">Application:</label></th><td><input type="text" name="application" value="39" id="id_application" /></td></tr>
-<tr><th><label for="id_program">Program:</label></th><td><input type="text" name="program" value="6026" id="id_program" /></td></tr>
-<tr><th><label for="id_unit">Unit:</label></th><td><ul class="errorlist"><li>Select a valid choice. 6 is not one of the available choices.</li></ul><select multiple="multiple" name="unit" id="id_unit">
-</select></td></tr>
-<tr><th><label for="id_division">Division:</label></th><td><ul class="errorlist"><li>Select a valid choice. LOB is not one of the available choices.</li></ul><select multiple="multiple" name="division" id="id_division">
-</select></td></tr>
-<tr><th><label for="id_location">Location:</label></th><td><ul class="errorlist"><li>Select a valid choice. 본사 is not one of the available choices.</li></ul><select multiple="multiple" name="location" id="id_location">
-</select></td></tr>
-<tr><th><label for="id_department">Department:</label></th><td><ul class="errorlist"><li>Select a valid choice. PSA02 is not one of the available choices.</li></ul><select multiple="multiple" name="department" id="id_department">
-</select></td></tr>
-<tr><th><label for="id_title">Title:</label></th><td><input type="text" name="title" value="title" id="id_title" /></td></tr>
-<tr><th><label for="id_body">Body:</label></th><td><input type="text" name="body" value="&lt;p&gt;
-	ddd&lt;/p&gt;
-" id="id_body" /></td></tr>
-<tr><th><label for="id_toDate">Todate:</label></th><td><input type="text" name="toDate" value="2012-01-30" id="id_toDate" /></td></tr>
-<tr><th><label for="id_fromDate">Fromdate:</label></th><td><input type="text" name="fromDate" value="2012-01-01" id="id_fromDate" /></td></tr>
-DEBUG 2012-12-08 16:06:08,288 views application 40
-DEBUG 2012-12-08 16:06:08,288 views program 6307
-DEBUG 2012-12-08 16:06:08,289 views unit [u'3', u'6']
-DEBUG 2012-12-08 16:06:08,289 views division [u'LHV', u'LPS']
-DEBUG 2012-12-08 16:06:08,289 views location [u'?\uac00\uc591', u'\ubcf8\uc0ac', u'\ubd80\uc0b0', u'\uc548\uc591']
-DEBUG 2012-12-08 16:06:08,289 views department [u'PSA01', u'KB998', u'PSA02', u'PKD14', u'PKD21']
-DEBUG 2012-12-08 16:06:08,289 views title title
-DEBUG 2012-12-08 16:06:08,289 views body <p>
-	body</p>
+DEBUG 2012-12-13 15:07:37,362 views noticeId Notice.notice_id
+DEBUG 2012-12-13 15:08:42,652 views noticeId 5
+DEBUG 2012-12-13 15:09:28,448 views noticeId 6
+DEBUG 2012-12-13 15:38:36,476 views noticeId 8
+DEBUG 2012-12-13 15:43:17,972 views application 31
+DEBUG 2012-12-13 15:43:17,972 views program 5936
+DEBUG 2012-12-13 15:44:06,191 views application 31
+DEBUG 2012-12-13 15:44:06,192 views program 5936
+DEBUG 2012-12-13 15:44:06,192 views unit [u'7', u'6', u'5']
+DEBUG 2012-12-13 15:44:06,192 views division [u'LHV', u'LPS']
+DEBUG 2012-12-13 15:44:06,193 views location [u'?\uac00\uc591', u'\ubcf8\uc0ac', u'\uc548\uc591']
+DEBUG 2012-12-13 15:44:06,193 views department [u'PSA02', u'PKB33', u'KB031', u'KB137']
+DEBUG 2012-12-13 15:44:06,193 views title [변경사항] Navigator기능 개선
+DEBUG 2012-12-13 15:44:06,193 views body <p>
+	안녕하세요.</p>
+<p>
+	&nbsp;</p>
+<p>
+	아래와 같이 Navigator기능을 변경하였습니다.</p>
+<p>
+	&nbsp;</p>
+<ul>
+	<li>
+		변경사항</li>
+</ul>
+<ol style="margin-left: 40px;">
+	<li>
+		top ten list-&gt; top 20 list</li>
+	<li>
+		순서변경</li>
+</ol>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+<hr />
+<p>
+	&nbsp;</p>
 
-DEBUG 2012-12-08 16:06:08,289 views fromDate 2012-01-01
-DEBUG 2012-12-08 16:06:08,289 views toDate 2012-01-30
+DEBUG 2012-12-13 15:44:06,193 views fromDate 2012-01-01
+DEBUG 2012-12-13 15:44:06,193 views toDate 2012-01-12
+DEBUG 2012-12-13 15:44:06,234 views noticeId 9
+DEBUG 2012-12-13 15:44:32,040 views application 31
+DEBUG 2012-12-13 15:44:32,040 views program 5936
+DEBUG 2012-12-13 15:44:32,040 views unit [u'7', u'6', u'5']
+DEBUG 2012-12-13 15:44:32,040 views division [u'LHV', u'LPS']
+DEBUG 2012-12-13 15:44:32,040 views location [u'?\uac00\uc591', u'\ubcf8\uc0ac', u'\uc548\uc591']
+DEBUG 2012-12-13 15:44:32,040 views department [u'PSA02', u'PKB33', u'KB031', u'KB137']
+DEBUG 2012-12-13 15:44:32,041 views title [변경사항] Navigator기능 개선
+DEBUG 2012-12-13 15:44:32,041 views body <p>
+	안녕하세요.</p>
+<p>
+	&nbsp;</p>
+<p>
+	아래와 같이 Navigator기능을 변경하였습니다.</p>
+<p>
+	&nbsp;</p>
+<ul>
+	<li>
+		변경사항</li>
+</ul>
+<ol style="margin-left: 40px;">
+	<li>
+		top ten list-&gt; top 20 list</li>
+	<li>
+		순서변경</li>
+</ol>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+<hr />
+<p>
+	&nbsp;</p>
+
+DEBUG 2012-12-13 15:44:32,041 views fromDate 2012-01-01
+DEBUG 2012-12-13 15:44:32,041 views toDate 2012-01-12
+DEBUG 2012-12-13 15:44:32,050 views noticeId 10
+DEBUG 2012-12-13 15:45:10,992 views application 31
+DEBUG 2012-12-13 15:45:10,993 views program 5936
+DEBUG 2012-12-13 15:45:10,993 views unit [u'7', u'6', u'5']
+DEBUG 2012-12-13 15:45:10,993 views division [u'LHV', u'LPS']
+DEBUG 2012-12-13 15:45:10,993 views location [u'?\uac00\uc591', u'\ubcf8\uc0ac', u'\uc548\uc591']
+DEBUG 2012-12-13 15:45:10,993 views department [u'PSA02', u'PKB33', u'KB031', u'KB137']
+DEBUG 2012-12-13 15:45:10,994 views title [변경사항] Navigator기능 개선
+DEBUG 2012-12-13 15:45:10,994 views body <p>
+	안녕하세요.</p>
+<p>
+	&nbsp;</p>
+<p>
+	아래와 같이 Navigator기능을 변경하였습니다.</p>
+<p>
+	&nbsp;</p>
+<ul>
+	<li>
+		변경사항</li>
+</ul>
+<ol style="margin-left: 40px;">
+	<li>
+		top ten list-&gt; top 20 list</li>
+	<li>
+		순서변경</li>
+</ol>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+<hr />
+<p>
+	&nbsp;</p>
+
+DEBUG 2012-12-13 15:45:10,994 views fromDate 2012-01-01
+DEBUG 2012-12-13 15:45:10,995 views toDate 
+DEBUG 2012-12-13 16:02:24,641 views application 8
+DEBUG 2012-12-13 16:02:24,648 views program 1484
+DEBUG 2012-12-13 16:02:24,648 views unit [u'6']
+DEBUG 2012-12-13 16:02:24,648 views division [u'LOB']
+DEBUG 2012-12-13 16:02:24,648 views location [u'\ubcf8\uc0ac']
+DEBUG 2012-12-13 16:02:24,649 views department [u'PSA02']
+DEBUG 2012-12-13 16:02:24,649 views title title
+DEBUG 2012-12-13 16:02:24,653 views body <p>
+	asdfsfd</p>
+<p>
+	&nbsp;</p>
+<p>
+	sadf</p>
+<p>
+	as</p>
+<p>
+	fa</p>
+<p>
+	sf</p>
+<p>
+	asf</p>
+<p>
+	as</p>
+<p>
+	f</p>
+
+DEBUG 2012-12-13 16:02:24,654 views fromDate 
+DEBUG 2012-12-13 16:02:24,654 views toDate 
+DEBUG 2012-12-13 16:15:29,234 views application 32
+DEBUG 2012-12-13 16:15:29,248 views program 5881
+DEBUG 2012-12-13 16:15:29,248 views unit [u'6']
+DEBUG 2012-12-13 16:15:29,248 views division [u'LPS']
+DEBUG 2012-12-13 16:15:29,248 views location [u'\ubcf8\uc0ac']
+DEBUG 2012-12-13 16:15:29,248 views department [u'KB998']
+DEBUG 2012-12-13 16:15:29,248 views title title
+DEBUG 2012-12-13 16:15:29,248 views body <p>
+	123</p>
+
+DEBUG 2012-12-13 16:15:29,249 views fromDate 2012-01-12
+DEBUG 2012-12-13 16:15:29,249 views toDate 2012-01-31
+DEBUG 2012-12-13 16:15:29,258 views noticeId 13
+DEBUG 2012-12-13 16:19:56,041 views application 41
+DEBUG 2012-12-13 16:19:56,042 views program 5931
+DEBUG 2012-12-13 16:19:56,042 views unit [u'3']
+DEBUG 2012-12-13 16:19:56,042 views division [u'LPS']
+DEBUG 2012-12-13 16:19:56,042 views location [u'\ubcf8\uc0ac']
+DEBUG 2012-12-13 16:19:56,042 views department [u'KB998']
+DEBUG 2012-12-13 16:19:56,042 views title t
+DEBUG 2012-12-13 16:19:56,042 views body <p>
+	t</p>
+
+DEBUG 2012-12-13 16:19:56,042 views fromDate 2012-01-12
+DEBUG 2012-12-13 16:19:56,043 views toDate 2012-01-12
+DEBUG 2012-12-13 16:19:56,066 views noticeId 14
+DEBUG 2012-12-13 16:20:25,670 views application 37
+DEBUG 2012-12-13 16:20:25,670 views program 6174
+DEBUG 2012-12-13 16:20:25,670 views unit [u'3']
+DEBUG 2012-12-13 16:20:25,670 views division [u'LPS']
+DEBUG 2012-12-13 16:20:25,670 views location [u'\ubcf8\uc0ac']
+DEBUG 2012-12-13 16:20:25,670 views department [u'PSA01']
+DEBUG 2012-12-13 16:20:25,671 views title w
+DEBUG 2012-12-13 16:20:25,671 views body <p>
+	w</p>
+
+DEBUG 2012-12-13 16:20:25,671 views fromDate 2012-01-12
+DEBUG 2012-12-13 16:20:25,671 views toDate 2012-01-31
+DEBUG 2012-12-13 16:20:25,688 views noticeId 15
+DEBUG 2012-12-13 16:52:04,742 views application 40
+DEBUG 2012-12-13 16:52:04,801 views program 6107
+DEBUG 2012-12-13 16:52:04,801 views unit [u'6']
+DEBUG 2012-12-13 16:52:04,801 views division [u'LPS']
+DEBUG 2012-12-13 16:52:04,801 views location [u'\ubcf8\uc0ac']
+DEBUG 2012-12-13 16:52:04,802 views department [u'KB998']
+DEBUG 2012-12-13 16:52:04,802 views title 2
+DEBUG 2012-12-13 16:52:04,802 views body <p>
+	2</p>
+
+DEBUG 2012-12-13 16:52:04,802 views fromDate 2012-01-12
+DEBUG 2012-12-13 16:52:04,802 views toDate 2012-01-12
+DEBUG 2012-12-13 16:52:04,827 views noticeId 16
+DEBUG 2012-12-13 16:54:32,348 views application 38
+DEBUG 2012-12-13 16:54:32,349 views program 6187
+DEBUG 2012-12-13 16:54:32,349 views unit [u'6']
+DEBUG 2012-12-13 16:54:32,349 views division [u'LPS']
+DEBUG 2012-12-13 16:54:32,349 views location [u'?\uac00\uc591', u'\ubcf8\uc0ac', u'\ubd80\uc0b0']
+DEBUG 2012-12-13 16:54:32,349 views department [u'KB998', u'PSA02']
+DEBUG 2012-12-13 16:54:32,349 views title t
+DEBUG 2012-12-13 16:54:32,349 views body <p>
+	t</p>
+
+DEBUG 2012-12-13 16:54:32,350 views fromDate 2012-01-01
+DEBUG 2012-12-13 16:54:32,350 views toDate 2012-01-31
+DEBUG 2012-12-13 16:54:32,363 views noticeId 17
+DEBUG 2012-12-13 16:57:46,819 views application 42
+DEBUG 2012-12-13 16:57:46,820 views program 5720
+DEBUG 2012-12-13 16:57:46,820 views unit [u'6']
+DEBUG 2012-12-13 16:57:46,820 views division [u'LOB']
+DEBUG 2012-12-13 16:57:46,820 views location [u'\ubcf8\uc0ac']
+DEBUG 2012-12-13 16:57:46,820 views department [u'KB998', u'PSA02']
+DEBUG 2012-12-13 16:57:46,820 views title title
+DEBUG 2012-12-13 16:57:46,821 views body <p>
+	t</p>
+
+DEBUG 2012-12-13 16:57:46,821 views fromDate 2012-01-12
+DEBUG 2012-12-13 16:57:46,821 views toDate 2012-01-12
+DEBUG 2012-12-13 16:57:46,845 views noticeId 18
+DEBUG 2012-12-13 17:02:57,484 views application 33
+DEBUG 2012-12-13 17:02:57,484 views program 5596
+DEBUG 2012-12-13 17:02:57,484 views unit [u'5']
+DEBUG 2012-12-13 17:02:57,484 views division [u'LOB']
+DEBUG 2012-12-13 17:02:57,484 views location [u'\ubcf8\uc0ac']
+DEBUG 2012-12-13 17:02:57,484 views department [u'KB998']
+DEBUG 2012-12-13 17:02:57,484 views title t
+DEBUG 2012-12-13 17:02:57,485 views body <p>
+	t</p>
+
+DEBUG 2012-12-13 17:02:57,485 views fromDate 2012-01-12
+DEBUG 2012-12-13 17:02:57,485 views toDate 2012-12-31
+DEBUG 2012-12-13 17:02:57,504 views noticeId 19
+DEBUG 2012-12-13 17:04:16,359 views application 42
+DEBUG 2012-12-13 17:04:16,359 views program 5723
+DEBUG 2012-12-13 17:04:16,359 views unit [u'7']
+DEBUG 2012-12-13 17:04:16,359 views division [u'LOB']
+DEBUG 2012-12-13 17:04:16,360 views location [u'\ubcf8\uc0ac']
+DEBUG 2012-12-13 17:04:16,360 views department [u'PSA02']
+DEBUG 2012-12-13 17:04:16,360 views title 2
+DEBUG 2012-12-13 17:04:16,360 views body <p>
+	2</p>
+
+DEBUG 2012-12-13 17:04:16,360 views fromDate 2012-01-12
+DEBUG 2012-12-13 17:04:16,360 views toDate 2012-01-31
+DEBUG 2012-12-13 17:04:16,389 views noticeId 20
+DEBUG 2012-12-13 17:06:28,192 views application 42
+DEBUG 2012-12-13 17:06:28,192 views program 5723
+DEBUG 2012-12-13 17:06:28,192 views unit [u'7']
+DEBUG 2012-12-13 17:06:28,192 views division [u'LOB']
+DEBUG 2012-12-13 17:06:28,192 views location [u'\ubcf8\uc0ac']
+DEBUG 2012-12-13 17:06:28,192 views department [u'KB998']
+DEBUG 2012-12-13 17:06:28,193 views title 3
+DEBUG 2012-12-13 17:06:28,193 views body <p>
+	3</p>
+
+DEBUG 2012-12-13 17:06:28,193 views fromDate 2012-01-12
+DEBUG 2012-12-13 17:06:28,193 views toDate 2012-01-12
+DEBUG 2012-12-13 17:06:28,200 views noticeId 21
+DEBUG 2012-12-13 17:06:55,475 views application 42
+DEBUG 2012-12-13 17:06:55,476 views program 5720
+DEBUG 2012-12-13 17:06:55,476 views unit [u'6']
+DEBUG 2012-12-13 17:06:55,476 views division [u'LOB']
+DEBUG 2012-12-13 17:06:55,476 views location [u'\ubcf8\uc0ac']
+DEBUG 2012-12-13 17:06:55,476 views department [u'KB998']
+DEBUG 2012-12-13 17:06:55,476 views title 2
+DEBUG 2012-12-13 17:06:55,476 views body <p>
+	2</p>
+
+DEBUG 2012-12-13 17:06:55,485 views fromDate 2012-01-12
+DEBUG 2012-12-13 17:06:55,485 views toDate 2012-12-31
+DEBUG 2012-12-13 17:06:55,505 views noticeId 22
+DEBUG 2012-12-13 17:07:33,058 views application 44
+DEBUG 2012-12-13 17:07:33,058 views program 5945
+DEBUG 2012-12-13 17:07:33,058 views unit [u'3']
+DEBUG 2012-12-13 17:07:33,058 views division [u'LOB']
+DEBUG 2012-12-13 17:07:33,058 views location [u'\ubcf8\uc0ac']
+DEBUG 2012-12-13 17:07:33,058 views department [u'KB998']
+DEBUG 2012-12-13 17:07:33,059 views title 2
+DEBUG 2012-12-13 17:07:33,059 views body <p>
+	2</p>
+
+DEBUG 2012-12-13 17:07:33,059 views fromDate 2012-01-12
+DEBUG 2012-12-13 17:07:33,059 views toDate 2012-01-31
+DEBUG 2012-12-13 17:07:33,075 views noticeId 23
+DEBUG 2012-12-13 17:14:46,946 views application 51
+DEBUG 2012-12-13 17:14:46,946 views program 6064
+DEBUG 2012-12-13 17:14:46,946 views unit [u'3']
+DEBUG 2012-12-13 17:14:46,946 views division [u'LPS']
+DEBUG 2012-12-13 17:14:46,946 views location [u'\ud574\uc678(\uc758\ucc3d)']
+DEBUG 2012-12-13 17:14:46,946 views department [u'PSA02']
+DEBUG 2012-12-13 17:14:46,946 views title title
+DEBUG 2012-12-13 17:14:46,947 views body <p>
+	aa</p>
+
+DEBUG 2012-12-13 17:14:46,947 views fromDate 2012-01-12
+DEBUG 2012-12-13 17:14:46,947 views toDate 2012-01-31
+DEBUG 2012-12-13 17:14:46,956 views noticeId 24

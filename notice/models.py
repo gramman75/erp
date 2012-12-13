@@ -91,10 +91,10 @@ class Target(Base):
     
     notice = relationship('Notice', backref = backref('xxsm_notice_targets'))
     
-    def init(self,notice_id, source, value):
+    def __init__(self,notice_id, source, value):
         self.notice_id = notice_id
         self.type = source
         self.value = value
         
-    def repr(self):
+    def __repr__(self):
         return '<Target : %s, %s>' %(self.type, self.value)
