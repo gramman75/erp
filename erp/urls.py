@@ -27,6 +27,7 @@ urlpatterns += patterns('notice.views',
                         url(r'erp/notice/register/$','register_view'),
                         url(r'erp/notice/register/save/$','register_save'),
                         url(r'erp/notice/register/program/$','ajax_program'),
+                        url(r'erp/notice/register/list/$','register_list'),
                         )
                        
 

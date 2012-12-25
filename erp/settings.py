@@ -256,3 +256,10 @@ LOGIN_REDIRECT_URL = HOME_URL +'erp/'
 
 CKEDITOR_UPLOAD_PATH = os.path.join(PROJECT_DIR,'media/upload')
 #CKEDITOR_UPLOAD_PREFIX = "http://******/media/newsletter/uploads/"
+
+CKEDITOR_CONFIGS ={'default':{
+                              'toolbar':'Full',
+                              'enterMode': 'CKEDITOR.ENTER_BR',
+                              },}
+
+

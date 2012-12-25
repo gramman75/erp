@@ -2,8 +2,13 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import backref, relationship
 from sqlalchemy import Column, Integer, String, ForeignKey, Date, Unicode, Sequence
+import datetime, logging
+from django.conf import settings
 
 Base = declarative_base()
+
+logging.config.dictConfig(settings.LOGGING)
+logger = logging.getLogger('file')
   
 class Application(Base):
     __tablename__ = 'xxsm_applications_v'
@@ -68,15 +73,25 @@ class Notice(Base):
     to_date    = Column(Date)
     title      = Column(Unicode(250))
     body       = Column(Unicode(4000))
+    creation_date = Column(Date)
+    created_by    = Column(Integer)
+    last_update_date = Column(Date)
+    last_updated_by  = Column(Integer)
     
     target = relationship('Target', backref = backref('xxsm_notices'))
     
-    def __init__(self,program_id, from_date, to_date, title, body):
-        self.program_id = program_id
-        self.from_date = from_date
-        self.to_date = to_date
-        self.title = title
-        self.body = body
+    def __init__(self,program_id, from_date, to_date, title, body, userId):
+        
+        self.program_id       = program_id
+        self.from_date        = from_date
+        self.to_date          = to_date
+        self.title            = title
+        self.body             = body
+        self.creation_date    = datetime.datetime.now()
+        self.created_by       = userId
+        self.last_update_date = datetime.datetime.now()
+        self.last_updated_by  = userId
+        
     def __repr__(self):
         return '<Notice : %s >' %self.title
     

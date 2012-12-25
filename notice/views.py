@@ -49,6 +49,9 @@ def register_save(request):
         body        = request.POST['body']
         fromDate    = request.POST['fromDate']
         toDate      = request.POST['toDate']
+        userId      = request.user.id
+        
+        logger.debug('userId %s', request.user.id)
         
         logger.debug('application %s', application)
         logger.debug('program %s', program)
@@ -62,7 +65,8 @@ def register_save(request):
         logger.debug('toDate %s', toDate)
         
         
-        notice = Notice(program, fromDate, toDate, title, body)
+        
+        notice = Notice(program, fromDate, toDate, title, body,userId)
         session.add(notice)
         
         session.commit()
@@ -106,7 +110,8 @@ def ajax_program(request):
     
     return render_to_response('notice/ajax_program.html',locals())
         
-        
+def register_list(request):
+    return render_to_response('notice/register_list.html')        
         
         
         
