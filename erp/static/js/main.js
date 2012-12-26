@@ -19,12 +19,11 @@ var getform = function(element, parent){
 
 
 var content_ajax = function(href,param){
-
 	$.ajax({
 		url : href,
 		data : param,
 		async : false,
-		success : function(html){			
+		success : function(html){
 			$("#content").html(html);
 		}
 	});		

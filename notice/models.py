@@ -79,6 +79,7 @@ class Notice(Base):
     last_updated_by  = Column(Integer)
     
     target = relationship('Target', backref = backref('xxsm_notices'))
+    program = relationship('Program', backref = backref('xxsm_applications'))
     
     def __init__(self,program_id, from_date, to_date, title, body, userId):
         

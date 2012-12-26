@@ -1,6 +1,31 @@
+<script src="/static/js/main.js"></script>
+
 <div class="search">
 	<form class="form-search" method="get" id="form">
-		Application <input type = "text" name="application" class = "input-small search-query"  />
+		<label for="selectApplication">Application</label> 
+		<select id="selectApplication" class="input-medium search-query" name="application" onchange="get_programs(this);">
+			<option value="0">-- Choose Application --</option>
+			{% for app in apps %}
+				<option value="{{ app.application_id }}">{{ app.application_name }}</option>
+			{% endfor %}
+		</select>
 	
+	
+		<label for="selectProgram">Program</label>
+		<select id="selectProgram" class="input-medium search-query" name="program">
+			<option value="0">-- Choose a Application first --</option>
+		</select>
+		
+		<label>Title</label>
+		<input type="text" class="input-large search-query" name="title" />
+		
+		<button class="btn" onclick="content_ajax('/erp/notice/register/list/',getform('input','#form')); return false;">Submit</button>
 	</form>
+	
+	<table class="table table-striped">
+		<tr><th>Title</th></tr>
+		{% for notice in notices %}
+			<tr><td>{{ notice.title }}</td></tr>
+		{% endfor %}
+	</table>
 </div>

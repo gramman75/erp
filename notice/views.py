@@ -16,6 +16,8 @@ from sqlalchemy.exc import IntegrityError
 import logging, os
 from django.conf import settings
 
+from django.template import RequestContext  
+
 logging.config.dictConfig(settings.LOGGING)
 logger = logging.getLogger('file')
 
@@ -111,14 +113,26 @@ def ajax_program(request):
     return render_to_response('notice/ajax_program.html',locals())
         
 def register_list(request):
-    return render_to_response('notice/register_list.html')        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    apps = session.query(Application).order_by(Application.application_name)
+    application = ''
+    program     = ''
+    title       = ''
+    notices     = ''
+    
+    if 'title' in request.GET:
+        '''
+        application = request.GET['application']
+        program     = request.GET['program']
+        title       = request.GET['title']
+        '''
+        notices  = session.query(Notice)\
+                          .join(Program, Application).all()
+                          
+                              
+    return render_to_response('notice/register_list.html',{ 'apps' : apps,
+                                                            'application' : application,
+                                                            'program' : program,
+                                                            'title' : title,
+                                                            'notices' : notices
+                                                           }
+                                                           ,context_instance=RequestContext(request))
